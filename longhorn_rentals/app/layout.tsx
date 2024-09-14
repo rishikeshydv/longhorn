@@ -8,25 +8,25 @@ export const metadata: Metadata = {
   description: "Best Trailers in Texas",
 };
 export const tungstenBold = localFont({
-  src: "/fonts/Tungsten/Tungsten-Black.ttf",
+  src: "@/fonts/Tungsten/Tungsten-Black.ttf",
   variable: "--font-tungsten-bold",
   weight: "900",
 });
 
 export const tungstenSemiBold = localFont({
-  src: "/fonts/Tungsten/Tungsten-Bold.ttf",
+  src: "@/fonts/Tungsten/Tungsten-Bold.ttf",
   variable: "--font-tungsten-semi-bold",
   weight: "700",
 });
 
 export const tungstenMedium = localFont({
-  src: "/fonts/Tungsten/Tungsten-Medium.ttf",
+  src: "@/fonts/Tungsten/Tungsten-Medium.ttf",
   variable: "--font-tungsten-medium",
   weight: "500",
 });
 
 export const tungsten = localFont({
-  src: "/fonts/Tungsten/Tungsten-SemiBold.ttf",
+  src: "@/fonts/Tungsten/Tungsten-SemiBold.ttf",
   variable: "--font-tungsten",
   weight: "600",
 });
