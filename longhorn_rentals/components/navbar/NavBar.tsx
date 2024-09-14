@@ -6,6 +6,7 @@ import { Input } from "antd";
 import { CiSearch } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
 import { tungstenMedium } from "@/app/layout";
+
 export default function NavBar() {
   return (
     <div className="flex justify-between px-[30px] py-[30px]">

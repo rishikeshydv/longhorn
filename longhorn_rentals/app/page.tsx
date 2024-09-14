@@ -1,6 +1,6 @@
 import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
-import { tungstenSemiBold, tungsten } from "./layout";
+
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,8 @@ import Hero1 from "@/public/heros/hero1.png";
 import Specialty from "@/components/specialty/Specialty";
 import Review from "@/components/review/Review";
 import { CiLocationOn } from "react-icons/ci";
+import { tungsten, tungstenSemiBold } from "./layout";
+
 export default function Home() {
   return (
     <main className="">
