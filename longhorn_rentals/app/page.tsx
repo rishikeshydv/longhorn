@@ -52,7 +52,7 @@ export default function Home() {
       <span className="text-[22px] text-black py-2">WE&apos;RE HERE TO HELP THOSE AFFECTED BY HURRICANE DEBBY. OUR EMERGENCY RESPONSE TEAM IS STANDING BY</span>&nbsp;&nbsp;&nbsp;
       <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6">24/7 TO HELP YOU RECOVER</Button>
   </section>
-  <section className="bg-[#FFFFFF] min-h-[100vh]">
+  <section className="bg-watermark min-h-[100vh]">
     <div className="grid grid-cols-2">
       <div>
         <Image src={Hero1} alt="Hero Image"/>
