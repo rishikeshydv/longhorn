@@ -1,101 +1,87 @@
+import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
-
+import { tungstenSemiBold } from "./layout";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import Hero1 from "@/public/heros/hero1.png";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+<main className="">
+  <section className="bg-home-section min-h-[100vh]">
+    <NavBar />
+    <div className="mt-[120px]">
+    <div className="text-[75px] tracking-wide px-[219px]">
+      <span className={`${tungstenSemiBold.className}`}>THE PERFECT RENTAL FOR</span>&nbsp;
+       <span className={`text-[#FFD100]`}>YOUR PERFECT MOMENT</span>
     </div>
+    {/* Box */}
+    <div className="px-[160px] mt-12">
+    <div className="flex space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]" style={{backgroundColor: "rgba(255, 255, 255, 0.5)"}}>
+    <div className="space-y-2">
+      <Label className="text-black text-[22px]">Rental Location</Label>
+      <Input placeholder="Find our location" className="text-[19px] w-[369px] h-[44px] px-[10px] py-[15px] text-gray-800"/>
+    </div>
+    <div className="space-y-2">
+      <Label className="text-black text-[22px]">Start Date</Label>
+      <Input placeholder="DD/MM/YYYY" className="text-[19px] w-[369px] h-[44px] px-[10px] py-[15px] text-gray-800"/>
+    </div>
+    <div className="mt-[25px]">
+    <RadioGroup defaultValue="option1" aria-labelledby="radio-group-label" className="rounded-lg p-4 text">
+      <div className="flex items-center space-x-8">
+        <Label htmlFor="option1" className="flex items-center space-x-2 text-[17px] cursor-pointer rounded-md border p-2 text-black">
+          <RadioGroupItem id="option1" value="option1" className="bg-[#FFD100 text-[#ffd100] border-[#FFD100]"/>
+          <span>Delivery</span>
+        </Label>
+        <Label htmlFor="option2" className="flex items-center space-x-2 text-[17px] cursor-pointer rounded-md border p-2 text-black">
+          <RadioGroupItem id="option2" value="option2" className="bg-[#FFD100 text-[#ffd100] border-[#FFD100]"/>
+          <span>Pickup</span>
+        </Label>
+      </div>
+    </RadioGroup>
+    </div>
+    <div className="mt-10">
+      <Button className="bg-[#FFD100] text-black text-[17px] py-[22px]">Get A Price</Button>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <section className="bg-[#FFD100] w-full h-[84px] flex justify-center items-center">
+      <span className="text-[22px] text-black py-2">WE&apos;RE HERE TO HELP THOSE AFFECTED BY HURRICANE DEBBY. OUR EMERGENCY RESPONSE TEAM IS STANDING BY</span>&nbsp;&nbsp;&nbsp;
+      <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6">24/7 TO HELP YOU RECOVER</Button>
+  </section>
+  <section className="bg-[#FFFFFF] min-h-[100vh]">
+    <div className="grid grid-cols-2">
+      <div>
+        <Image src={Hero1} alt="Hero Image"/>
+      </div>
+      <div>
+        <p>ABOUT US</p>
+        <div>
+          <span>CREATED FOR</span>&nbsp;
+          <span>THE RELENTLESS</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis omnis quia earum nam optio consequuntur facere! Atque temporibus qui iure provident excepturi natus, quos quisquam nostrum amet ut accusamus odit.</p>
+        <div>
+          <div className="border">
+          <p>250+</p>
+          <p>Projects Completed</p>
+          </div>
+          <div className="border">
+          <p>250+</p>
+          <p>Projects Completed</p>
+          </div>
+          <div className="border">
+          <p>250+</p>
+          <p>Projects Completed</p>
+          </div>
+        </div>
+        <Button>RENT A TRAILER</Button>
+      </div>
+    </div>
+  </section>
+</main>
   );
 }
