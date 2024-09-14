@@ -14,7 +14,7 @@ export default function Footer() {
           alt="Longhorn Trailer Rentals"
         />
         <p className="max-w-2xl text-center text-muted-foreground text-[24px]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
           standard dummy text ever since the 1500s.
         </p>
         <div className="flex space-x-4">
@@ -100,8 +100,8 @@ export default function Footer() {
     </div>
   )
 }
-
-function FacebookIcon(props:any) {
+//specify the type of the props
+function FacebookIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -121,7 +121,7 @@ function FacebookIcon(props:any) {
 }
 
 
-function InstagramIcon(props:any) {
+function InstagramIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -143,7 +143,7 @@ function InstagramIcon(props:any) {
 }
 
 
-function LinkedinIcon(props:any) {
+function LinkedinIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -165,7 +165,7 @@ function LinkedinIcon(props:any) {
 }
 
 
-function MailIcon(props:any) {
+function MailIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -186,7 +186,7 @@ function MailIcon(props:any) {
 }
 
 
-function MapPinIcon(props:any) {
+function MapPinIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -207,7 +207,7 @@ function MapPinIcon(props:any) {
 }
 
 
-function PhoneIcon(props:any) {
+function PhoneIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -227,7 +227,7 @@ function PhoneIcon(props:any) {
 }
 
 
-function TwitterIcon(props:any) {
+function TwitterIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -247,7 +247,7 @@ function TwitterIcon(props:any) {
 }
 
 
-function YoutubeIcon(props:any) {
+function YoutubeIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

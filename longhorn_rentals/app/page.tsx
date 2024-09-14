@@ -1,6 +1,6 @@
 import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
-import { tungstenMedium, tungstenSemiBold, tungsten } from "./layout";
+import { tungstenSemiBold, tungsten } from "./layout";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -30,7 +30,7 @@ export default function Specialty() {
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-yellow-500">Width</p>
-            <p>14'x83"x36"</p>
+            <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
             <p className="font-bold text-yellow-500">GVWR</p>
@@ -43,9 +43,9 @@ export default function Specialty() {
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Car Hauler</p>
           <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
         <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
       </CardContent>
@@ -75,7 +75,7 @@ export default function Specialty() {
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-yellow-500">Width</p>
-            <p>14'x83"x36"</p>
+            <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
             <p className="font-bold text-yellow-500">GVWR</p>
@@ -88,9 +88,9 @@ export default function Specialty() {
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Car Hauler</p>
           <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
         <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
       </CardContent>
@@ -120,7 +120,7 @@ export default function Specialty() {
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-yellow-500">Width</p>
-            <p>14'x83"x36"</p>
+            <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
             <p className="font-bold text-yellow-500">GVWR</p>
@@ -133,9 +133,9 @@ export default function Specialty() {
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Car Hauler</p>
           <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
-          <p className='text-[#808080] text-[18x]'>Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
         <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
       </CardContent>
@@ -144,7 +144,7 @@ export default function Specialty() {
   )
 }
 
-function CarIcon(props:any) {
+function CarIcon(props:React.SVGProps<SVGSVGElement>) {
     return (
 <svg
       {...props}
@@ -168,7 +168,7 @@ function CarIcon(props:any) {
   }
   
   
-  function LocateIcon(props:any) {
+  function LocateIcon(props:React.SVGProps<SVGSVGElement>) {
     return (
 <svg
       {...props}

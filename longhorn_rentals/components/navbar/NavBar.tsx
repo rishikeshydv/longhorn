@@ -23,7 +23,7 @@ export default function NavBar() {
       </div>
       <div className="flex space-x-4 mt-1">
         <Input placeholder="Find Our Search" className={`text-[18px] h-[44px] w-[300px] ${tungstenMedium.className}`} suffix={<CiSearch className="text-black w-[24px] h-[24px]"/>}/>
-        <Button className="bg-[#FFD100] text-black text-[18px] h-[44px]"><FiPhoneCall />&nbsp;&nbsp;LET'S TALK NOW</Button>
+        <Button className="bg-[#FFD100] text-black text-[18px] h-[44px]"><FiPhoneCall />&nbsp;&nbsp;LET&apos;S TALK NOW</Button>
       </div>
     </div>
   );
