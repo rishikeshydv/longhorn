@@ -8,17 +8,17 @@ import {
 
 export default function Filters() {
   return (
-    <div className="text-white text-[30px]">
-      <div className="flex justify-between border-b-[1px] border-gray-500">
-        <div>
+    <div className="text-white">
+      <div className="flex justify-between items-center border-b-[1px] border-gray-500">
+        <div className="text-[24px] flex space-x-[10px]">
             <img src="/svgs/sliders.svg" alt="" />
-            <span>FILTER</span>
+            <span className="mt-[1px]">FILTER</span>
         </div>
-        <div className="underline">
+        <div className="underline text-[20px]">
             CLEAR ALL
         </div>
       </div>
-      <div>
+      <div className="text-[22px]">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>WIDTH</AccordionTrigger>

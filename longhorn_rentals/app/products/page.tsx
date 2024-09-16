@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
 
@@ -6,9 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { tungsten, tungstenSemiBold } from '../layout';
-import Filters from '@/components/filter/Filters';
-import Individual from '@/components/specialty/Individual';
+import { tungsten, tungstenSemiBold } from "../layout";
+import Filters from "@/components/filter/Filters";
+import Individual from "@/components/specialty/Individual";
 import { CiLocationOn } from "react-icons/ci";
 export default function Products() {
   return (
@@ -46,7 +46,7 @@ export default function Products() {
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 />
               </div>
-              <div className="mt-[25px]" >
+              <div className="mt-[25px]">
                 <RadioGroup
                   defaultValue="option1"
                   aria-labelledby="radio-group-label"
@@ -89,19 +89,63 @@ export default function Products() {
           </div>
         </div>
       </section>
-      <section className='bg-black min-h-[100vh]'>
-        <div>
-        <div>
+      <section className="bg-black min-h-[100vh]">
+        <div className="flex space-x-[60px] pt-[150px] px-[80px]">
+          <div className="flex-[0.2]">
             <Filters />
-        </div>
-        <div className='grid grid-cols-2'>
-            <Individual />
-            <Individual />
-            <Individual />
-            <Individual />
-            <Individual />
-            <Individual />
-        </div>
+          </div>
+          <div className="flex flex-col flex-[0.8] pb-[120px]">
+            <div className="grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
+              <Individual />
+              <Individual />
+              <Individual />
+              <Individual />
+              <Individual />
+              <Individual />
+            </div>
+            {/* This is the pagination part */}
+            <div className="flex items-center justify-center w-full p-4 bg-black text-white pt-[60px] text-[24px]">
+              <div className="flex items-center space-x-4">
+                <span>1 - 10 of 50 Results</span>
+                <Button
+                  variant="outline"
+                  className="flex items-center space-x-2 text-[24px]"
+                >
+                  <ArrowLeftIcon className="w-[18px] h-[18px] text-[#FFD100]" />
+                  <span>Prev</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="bg-yellow-500 text-black text-[24px]"
+                >
+                  01
+                </Button>
+                <Button variant="outline" className="text-[24px]">
+                  02
+                </Button>
+                <Button variant="outline" className="text-[24px]">
+                  03
+                </Button>
+                <Button variant="outline" className="text-[24px]">
+                  04
+                </Button>
+                <Button variant="outline" className="text-[24px]">
+                  05
+                </Button>
+                <span>...</span>
+                <Button variant="outline" className="text-[24px]">
+                  10
+                </Button>
+                <Button
+                  variant="outline"
+                  className="flex items-center space-x-2 text-[24px]"
+                >
+                  <span>Next</span>
+                  <ArrowRightIcon className="w-[18px] h-[18px] text-[#FFD100]" />
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="bg-[#FFD100] w-full h-[250px] flex justify-center items-center">
@@ -130,5 +174,45 @@ export default function Products() {
         </div>
       </section>
     </main>
-  )
+  );
+}
+
+function ArrowLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  );
 }
