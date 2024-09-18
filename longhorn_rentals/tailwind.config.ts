@@ -54,8 +54,11 @@ const config: Config = {
   		},
   		backgroundImage: {
   			'home-section': 'url("/bgs/home-bg1.png")',
-  			watermark: 'url("/bgs/home-bg2.png")',
-  			'product-page': 'url("/bgs/home-bg3.png")'
+  			'watermark': 'url("/bgs/home-bg2.png")',
+  			'product-page': 'url("/bgs/home-bg3.png")',
+			'about': 'url("/bgs/home-bg4.png")',
+			'about-us': 'url("/bgs/home-bg5.png")',
+			'humberto': 'url("/bgs/home-bg6.png")',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
