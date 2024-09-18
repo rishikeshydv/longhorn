@@ -5,7 +5,6 @@ import { Button } from "../ui/button";
 import { Input } from "antd";
 import { CiSearch } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
-import { tungstenMedium } from "@/styles/fonts";
 
 export default function NavBar() {
   return (
@@ -23,7 +22,7 @@ export default function NavBar() {
         </ul>
       </div>
       <div className="flex space-x-4 mt-1">
-        <Input placeholder="Find Our Search" className={`text-[18px] h-[44px] w-[300px] ${tungstenMedium.className}`} suffix={<CiSearch className="text-black w-[24px] h-[24px]"/>}/>
+        <Input placeholder="Find Our Search" className={`text-[18px] h-[44px] w-[300px]`} style={{fontFamily:"tungsten-medium"}} suffix={<CiSearch className="text-black w-[24px] h-[24px]"/>}/>
         <Button className="bg-[#FFD100] text-black text-[18px] h-[44px]"><FiPhoneCall />&nbsp;&nbsp;LET&apos;S TALK NOW</Button>
       </div>
     </header>

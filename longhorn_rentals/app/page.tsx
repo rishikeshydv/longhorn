@@ -9,7 +9,6 @@ import Hero1 from "@/public/heros/hero1.png";
 import Specialty from "@/components/specialty/Specialty";
 import Review from "@/components/review/Review";
 import { CiLocationOn } from "react-icons/ci";
-import { tungsten, tungstenSemiBold } from "@/styles/fonts";
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
         <NavBar />
         <div className="mt-[120px]">
           <div className="text-[75px] tracking-wide px-[219px]">
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               THE PERFECT RENTAL FOR
             </span>
             &nbsp;
@@ -109,7 +108,7 @@ export default function Home() {
           <div>
             <p className="text-[25px] text-black">ABOUT US</p>
             <div className="text-[70px] tracking-wide">
-              <span className={`${tungstenSemiBold.className}`}>
+              <span style={{fontFamily:"tungsten-semibold"}}>
                 CREATED FOR
               </span>
               &nbsp;
@@ -124,7 +123,8 @@ export default function Home() {
             <div className="flex space-x-[30px] pb-[40px]">
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
-                  className={`text-[#FFD100] text-[50px] text-center ${tungsten.className}`}
+                  className={`text-[#FFD100] text-[50px] text-center`}
+                  style={{fontFamily:"tungsten"}}
                 >
                   250+
                 </p>
@@ -134,7 +134,8 @@ export default function Home() {
               </div>
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
-                  className={`text-[#FFD100] text-[50px] text-center ${tungsten.className}`}
+                                    className={`text-[#FFD100] text-[50px] text-center`}
+                                    style={{fontFamily:"tungsten"}}
                 >
                   35+
                 </p>
@@ -144,7 +145,8 @@ export default function Home() {
               </div>
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
-                  className={`text-[#FFD100] text-[50px] text-center ${tungsten.className}`}
+                  className={`text-[#FFD100] text-[50px] text-center`}
+                  style={{fontFamily:"tungsten"}}
                 >
                   80+
                 </p>
@@ -162,7 +164,7 @@ export default function Home() {
       <section className="min-h-[100vh] bg-[#000000]">
         <div className="pt-[100px] pb-[100px]">
           <div className="text-[70px] tracking-wide text-center">
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={`text-white`} style={{fontFamily:"tungsten-semibold"}}>
               OUR SPECIALTY
             </span>
             &nbsp;
@@ -184,7 +186,7 @@ export default function Home() {
       <section className="min-h-[100vh]">
         <div className="py-[150px]">
           <div className="text-[70px] tracking-wide text-center">
-            <span className={`${tungstenSemiBold.className} text-black`}>
+            <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
               HAPPY CUSTOMER
             </span>
             &nbsp;
@@ -224,7 +226,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col">
             <div className="text-[70px] tracking-wide text-center">
-              <span className={`${tungstenSemiBold.className} text-black`}>
+              <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
                 PROFESSIONAL
               </span>
               &nbsp;
@@ -245,7 +247,7 @@ export default function Home() {
       <section className="bg-black min-h-[70vh]">
         <div className="py-[120px]">
         <div className="text-[70px] tracking-wide text-center">
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               TRAILER RENTALS
             </span>
             &nbsp;

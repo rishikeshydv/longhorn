@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Specialty from "@/components/specialty/Specialty";
 import { Calendar } from "@/components/ui/calendar";
-import { tungstenSemiBold } from "@/styles/fonts";
 import { DateRange } from "react-day-picker";
 import { LuCalendarRange } from "react-icons/lu";
 import { GrLocation } from "react-icons/gr";
@@ -23,7 +22,7 @@ export default function Details() {
         <div className="mt-[120px]">
           <div className="text-[75px] tracking-wide px-[219px] text-center">
             <span className={`text-[#FFD100]`}>TRAILERS</span>&nbsp;
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               &gt; RENTAL LISTINGS
             </span>
           </div>
@@ -413,7 +412,7 @@ export default function Details() {
       <section className="min-h-[100vh] bg-[#000000]">
         <div className="pt-[100px] pb-[100px]">
           <div className="text-[70px] tracking-wide text-center">
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               TRAILER RENTALS
             </span>
             &nbsp;

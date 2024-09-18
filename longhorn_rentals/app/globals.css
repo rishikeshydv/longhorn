@@ -26,6 +26,26 @@ body {
   }
 }
 
+@font-face{
+  font-family: "tungsten";
+  src: url("/fonts/tungsten-semiBold.ttf");
+}
+
+@font-face{
+  font-family: "tungsten-medium";
+  src: url("/fonts/tungsten-medium.ttf");
+}
+
+@font-face{
+  font-family: "tungsten-semibold";
+  src: url("/fonts/tungsten-bold.ttf");
+}
+
+@font-face{
+  font-family: "tungsten-bold";
+  src: url("/fonts/tungsten-black.ttf");
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -8,7 +8,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Filters from "@/components/filter/Filters";
 import Individual from "@/components/specialty/Individual";
 import { CiLocationOn } from "react-icons/ci";
-import { tungstenSemiBold } from "@/styles/fonts";
 export default function Products() {
   return (
     <main>
@@ -17,7 +16,7 @@ export default function Products() {
         <div className="mt-[120px]">
           <div className="text-[75px] tracking-wide px-[219px] text-center">
             <span className={`text-[#FFD100]`}>TRAILERS</span>&nbsp;
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               &gt; RENTAL LISTINGS
             </span>
           </div>
@@ -154,7 +153,7 @@ export default function Products() {
           </div>
           <div className="flex flex-col">
             <div className="text-[70px] tracking-wide text-center">
-              <span className={`${tungstenSemiBold.className} text-black`}>
+              <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
                 PROFESSIONAL
               </span>
               &nbsp;

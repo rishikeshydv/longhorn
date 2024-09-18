@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from "@/components/navbar/NavBar";
 import { Card } from "@/components/ui/card"
-import {tungstenMedium, tungstenSemiBold } from '@/styles/fonts';
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -22,9 +21,9 @@ export default function Contact() {
     <section className='px-[150px] pt-[120px] pb-[100px]'>
       <div className="flex flex-col space-y-8">
         <div className='flex flex-col justify-center items-center'>
-        <p className={`${tungstenSemiBold.className} text-[80px]`}>
+        <p className={`text-[80px]`} style={{fontFamily:"tungsten-semibold"}}>
             GET IN&nbsp;
-          <span className={`text-yellow-500 ${tungstenMedium.className}`}>TOUCH</span>
+          <span className={`text-yellow-500`} style={{fontFamily:"tungsten-medium"}}>TOUCH</span>
         </p>
         <p className='uppercase text-[24px] text-[#808080]'>
         We have made contacting us very easy, simple and hassle-free!

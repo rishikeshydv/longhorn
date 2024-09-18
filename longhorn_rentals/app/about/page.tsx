@@ -2,7 +2,6 @@ import React from 'react'
 import NavBar from "@/components/navbar/NavBar";
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card"
-import { tungsten, tungstenMedium, tungstenSemiBold } from '@/styles/fonts';
 import Review from '@/components/review/Review';
 import LadyHero from "@/public/heros/hero4.png"
 import Image from 'next/image';
@@ -34,9 +33,9 @@ export default function About() {
         <div className='grid grid-cols-2 items-center space-x-[60px]'>
         <div className='flex flex-col flex-[0.55]'>
         <p className="text-[25px] font-medium text-muted-foreground">ABOUT COMPANY FOR RELIABLE TRAILER RENTAL</p>
-        <p className={`${tungstenSemiBold.className} text-[80px] flex flex-col mt-[-25px]`}>
+        <p className={`text-[80px] flex flex-col mt-[-25px]`} style={{fontFamily:"tungsten-semibold"}}>
             WHAT DO YOU GET WITH
-          <span className={`text-yellow-500 ${tungstenMedium.className} mt-[-40px]`}>LONGHORN RENTALS?</span>
+          <span className={`text-yellow-500  mt-[-40px]`} style={{fontFamily:"tungsten-medium"}}>LONGHORN RENTALS?</span>
         </p>
       </div>
       <p className="text-[24px] text-muted-foreground flex-[0.45]">
@@ -101,7 +100,7 @@ export default function About() {
         <div className="mt-8 md:mt-0 md:ml-12">
           <h2 className="text-[25px] font-semibold text-gray-400">CAMPING RV RENTALS</h2>
           <div className="text-[80px] tracking-wide mt-[-20px]">
-            <span className={`${tungstenSemiBold.className} text-white`}>
+            <span className={`text-white`} style={{fontFamily:"tungsten-semibold"}}>
               HAIL WITHOUT
             </span>
             &nbsp;
@@ -137,7 +136,7 @@ export default function About() {
       <section className="min-h-[100vh] w-screen">
         <div className="py-[150px]">
           <div className="text-[70px] tracking-wide text-center">
-            <span className={`${tungstenSemiBold.className} text-black`}>
+            <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
               HAPPY CUSTOMER
             </span>
             &nbsp;
@@ -173,11 +172,11 @@ export default function About() {
             <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
         <div className="flex mx-20 justify-center text-[80px] tracking-tight py-[100px]">
 
-          <span className={`${tungsten.className} text-white`}>
+          <span className={` text-white`} style={{fontFamily:"tungsten"}}>
               A MESSAGE FROM
             
             &nbsp;
-            <span className={`text-[#FFD100] ${tungstenMedium.className}`}>OUR FOUNDER</span>
+            <span className={`text-[#FFD100]`} style={{fontFamily:"tungsten-medium"}}>OUR FOUNDER</span>
             </span>
 
 
@@ -194,11 +193,11 @@ export default function About() {
           </div>
           <div className=" text-white p-8 rounded-3xl max-w-3xl bg-[#171717] absolute right-20">
       <div className="text-[75px]">
-            <span className={`${tungsten.className} text-white font-bold`}>
+            <span className={` text-white`} style={{fontFamily:"tungsten"}}>
               CREATED FOR
             </span>
             &nbsp;
-            <span className={`text-[#FFD100] ${tungstenMedium.className}`}>THE RELENTLESS</span>
+            <span className={`text-[#FFD100]`} style={{fontFamily:"tungsten-medium"}}>THE RELENTLESS</span>
         </div>
       <p className="mt-4 text-[20px] text-gray-400 tracking-wide">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
