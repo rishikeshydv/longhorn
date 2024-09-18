@@ -39,7 +39,7 @@ export default function About() {
         </p>
       </div>
       <p className="text-[24px] text-muted-foreground flex-[0.45]">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived not only five centuries.
       </p>
@@ -54,7 +54,7 @@ export default function About() {
           <h3 className="mb-2 text-[24px] font-semibold">Great Service Experience</h3>
           <p className="text-[20px] text-muted-foreground">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard.
+            industry&apos;s standard.
           </p>
         </Card>
         <Card className="py-[60px] px-[30px] text-center">
@@ -66,7 +66,7 @@ export default function About() {
           <h3 className="mb-2 text-[24px] font-semibold">Affordable & Discounts</h3>
           <p className="text-[20px] text-muted-foreground">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard.
+            industry&apos;s standard.
           </p>
         </Card>
         <Card className="py-[60px] px-[30px] text-center">
@@ -78,7 +78,7 @@ export default function About() {
           <h3 className="mb-2 text-[24px] font-semibold">Insuranced Vehicles</h3>
           <p className="text-[20px] text-muted-foreground">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard.
+            industry&apos;s standard.
           </p>
         </Card>
       </div>
@@ -200,7 +200,7 @@ export default function About() {
             <span className={`text-[#FFD100]`} style={{fontFamily:"tungsten-medium"}}>THE RELENTLESS</span>
         </div>
       <p className="mt-4 text-[20px] text-gray-400 tracking-wide">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived not only five centuries.
       </p>

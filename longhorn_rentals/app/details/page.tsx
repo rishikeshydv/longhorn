@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -194,10 +194,12 @@ export default function Details() {
                   selected={date}
                   numberOfMonths={2}
                   className="rounded-md text-[24px] bg-white shadow-lg"
-                  onSelect={(range) => {
-                    setDate(range);
-                    setStart(range?.from?.toLocaleDateString()!);
-                    setEnd(range?.to?.toLocaleDateString()!);
+                  onSelect={(range: DateRange | undefined) => {
+                    if (range && range.from && range.to) {
+                      setDate(range);
+                      setStart(range.from.toLocaleDateString());
+                      setEnd(range.to.toLocaleDateString());
+                    }
                   }}
                 />
               </div>
@@ -240,13 +242,13 @@ export default function Details() {
       <div className="space-y-4 text-[24px] ">
         <h2 className="text-[40px] font-bold">Description</h2>
         <p className="font-semibold">
-          2024 PJ 83 x 14' BP Tandem Axle Low Pro High Side Dump w/ 36" Sides – DM
+          2024 PJ 83 x 14&apos; BP Tandem Axle Low Pro High Side Dump w/ 36&quot; Sides – DM
         </p>
         <div className="grid grid-cols-3 gap-4 text-[20px] text-[#808080]">
           <ul className="space-y-2">
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              BP 2 5/16" Adjustable Demco EZ Latch Coupler
+              BP 2 5/16&quot; Adjustable Demco EZ Latch Coupler
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -254,7 +256,7 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              1 – Spring Loaded Drop Leg Jack (12,000 lb.)
+              1 - Spring Loaded Drop Leg Jack (12,000 lb.)
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -262,7 +264,7 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              2 – 7,000 lb. Dexter EZ Lube Brake Axles
+              2 - 7,000 lb. Dexter EZ Lube Brake Axles
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -274,11 +276,11 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              4 – 16" Black Mod Wheels
+              4 - 16&quot; Black Mod Wheels
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              4 – 235/80R16 10 Ply Radial Tires
+              4 - 235/80R16 10 Ply Radial Tires
             </li>
           </ul>
           <ul className="space-y-2">
@@ -296,15 +298,15 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              8" Formed I-Beam Frame & Tongue
+              8&quot; Formed I-Beam Frame & Tongue
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              3" Channel Crossmembers 16" on Center
+              3&quot; Channel Crossmembers 16&apos; on Center
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              6'6" Rear Slide In Ramps
+              6&apos;6&quot; Rear Slide In Ramps
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -334,7 +336,7 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              5" Hydraulic Cylinder w/ Scissor Lift
+              5&quot; Hydraulic Cylinder w/ Scissor Lift
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -342,11 +344,11 @@ export default function Details() {
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              Dump Bed Width: 83"
+              Dump Bed Width: 83&quot;
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              Deck Height: 28"
+              Deck Height: 28&quot;
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -360,7 +362,7 @@ export default function Details() {
           <ul className="space-y-2">
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              4 – D-rings (Welded Inside Box)
+              4 - D-rings (Welded Inside Box)
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
