@@ -9,7 +9,7 @@ import Hero1 from "@/public/heros/hero1.png";
 import Specialty from "@/components/specialty/Specialty";
 import Review from "@/components/review/Review";
 import { CiLocationOn } from "react-icons/ci";
-import { tungsten, tungstenSemiBold } from "./layout";
+import { tungsten, tungstenSemiBold } from "@/styles/fonts";
 
 export default function Home() {
   return (

@@ -1,17 +1,17 @@
+
 import React from "react";
 import NavBar from "@/components/navbar/NavBar";
-import Image from "next/image";
-
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { tungsten, tungstenSemiBold } from "../layout";
-import Filters from "@/components/filter/Filters";
-import Individual from "@/components/specialty/Individual";
-import { CiLocationOn } from "react-icons/ci";
 import Specialty from "@/components/specialty/Specialty";
+//import {DateRangePicker} from "@nextui-org/date-picker";
+//import { Calendar } from "@/components/ui/calendar"
+import { tungstenSemiBold } from "@/styles/fonts";
+
 export default function Details() {
+   // const [open, setOpen] = React.useState(true);
   return (
     <main>
       <section className="bg-product-page min-h-[95vh]">
@@ -91,7 +91,28 @@ export default function Details() {
         </div>
       </section>
       <section className="min-h-[100vh] bg-white">
-
+        <div>
+            <div>
+                <Label className="text-[22px] text-black">Booking Calendar</Label>
+            {/* <DateRangePicker 
+                className="text-gray-600 fill-gray-200 border-1"
+                isOpen={true}
+                size="lg"
+                visibleMonths={2}
+                isRequired
+                color="primary"
+                
+                //the calendar UI should have white background
+                
+                /> */}
+                  {/* <Calendar
+            mode="single"
+            // selected={date}
+            // onSelect={setDate}
+            // className="rounded-md border"
+          /> */}
+                    </div>
+        </div>
       </section>
       <section className="min-h-[100vh] bg-[#000000]">
         <div className="pt-[100px] pb-[100px]">

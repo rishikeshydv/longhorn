@@ -1,15 +1,14 @@
 import React from "react";
 import NavBar from "@/components/navbar/NavBar";
-import Image from "next/image";
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { tungsten, tungstenSemiBold } from "../layout";
 import Filters from "@/components/filter/Filters";
 import Individual from "@/components/specialty/Individual";
 import { CiLocationOn } from "react-icons/ci";
+import { tungstenSemiBold } from "@/styles/fonts";
 export default function Products() {
   return (
     <main>

@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { Input } from "antd";
 import { CiSearch } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
-import { tungstenMedium } from "@/app/layout";
+import { tungstenMedium } from "@/styles/fonts";
 
 export default function NavBar() {
   return (
