@@ -1,19 +1,19 @@
 import localFont from 'next/font/local'
 
 const tungstenBold = localFont({
-    src: "./Tungsten-Black.ttf",
+    src: "./Tungsten-black.ttf",
   });
   
   const tungstenSemiBold = localFont({
-    src: "./Tungsten-Bold.ttf",
+    src: "./tungsten-bold.ttf",
   });
   
   const tungstenMedium = localFont({
-    src: "./Tungsten-Medium.ttf",
+    src: "./tungsten-medium.ttf",
   });
   
   const tungsten = localFont({
-    src: "./Tungsten-SemiBold.ttf",
+    src: "./tungsten-semiBold.ttf",
   });
 
   export {tungstenBold, tungstenSemiBold, tungstenMedium, tungsten}
