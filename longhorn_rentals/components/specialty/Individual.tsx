@@ -1,10 +1,14 @@
+"use client"
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation'
+
 export default function Individual() {
+  const router = useRouter();
   return (
-    <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
+    <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px] hover:cursor-pointer" onClick={()=>router.push("details")}>
     <CardContent>
       <img
         src="/trailers/trailer1.png"

@@ -15,8 +15,8 @@ export default function Home() {
     <main className="">
       <section className="bg-home-section min-h-[100vh]">
         <NavBar />
-        <div className="mt-[120px]">
-          <div className="text-[75px] tracking-wide px-[219px]">
+        <div className="mt-[120px] flex flex-col justify-center items-center">
+          <div className="text-[75px] tracking-wide px-[219px] text-center">
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               THE PERFECT RENTAL FOR
             </span>
@@ -26,7 +26,7 @@ export default function Home() {
           {/* Box */}
           <div className="px-[160px] mt-12">
             <div
-              className="flex space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
+              className="flex justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="space-y-2">

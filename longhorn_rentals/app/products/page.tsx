@@ -13,7 +13,7 @@ export default function Products() {
     <main>
       <section className="bg-product-page min-h-[95vh]">
         <NavBar />
-        <div className="mt-[120px]">
+        <div className="mt-[120px] flex flex-col justify-center items-center">
           <div className="text-[75px] tracking-wide px-[219px] text-center">
             <span className={`text-[#FFD100]`}>TRAILERS</span>&nbsp;
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
@@ -23,7 +23,7 @@ export default function Products() {
           {/* Box */}
           <div className="px-[160px] mt-12">
             <div
-              className="flex space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
+              className="flex justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="space-y-2">
