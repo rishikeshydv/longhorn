@@ -25,11 +25,11 @@ export default function NavBar() {
       <div className="md:hidden">
       <DropdownMenu>
   <DropdownMenuTrigger><RxHamburgerMenu className="w-[40px] h-[20px] text-white mt-2"/></DropdownMenuTrigger>
-  <DropdownMenuContent className="">
-    <DropdownMenuItem onClick={()=>router.push("/")}>Home</DropdownMenuItem>
-    <DropdownMenuItem onClick={()=>router.push("/products")}>Trailers</DropdownMenuItem>
-    <DropdownMenuItem onClick={()=>router.push("/about")}>About Us</DropdownMenuItem>
-    <DropdownMenuItem onClick={()=>router.push("/contact")}>Contact</DropdownMenuItem>
+  <DropdownMenuContent className="bg-[#0f0f0f] text-white border-none">
+    <DropdownMenuItem className="text-[20px]" onClick={()=>router.push("/")}>Home</DropdownMenuItem>
+    <DropdownMenuItem className="text-[20px]" onClick={()=>router.push("/products")}>Trailers</DropdownMenuItem>
+    <DropdownMenuItem className="text-[20px]" onClick={()=>router.push("/about")}>About Us</DropdownMenuItem>
+    <DropdownMenuItem className="text-[20px]" onClick={()=>router.push("/contact")}>Contact</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
       </div>

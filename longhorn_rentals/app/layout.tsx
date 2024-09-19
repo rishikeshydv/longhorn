@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body
       style={{fontFamily:"tungsten-medium"}}
-      className="overflow-x-hidden"
+      className="overflow-x-hidden w-full"
       >
         {children}
         <Footer />
