@@ -33,19 +33,19 @@ export default function Products() {
   const router = useRouter();
   return (
     <main>
-      <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
+      <section className="bg-product-page bg-no-repeat bg-cover bg-center md:min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
-          <div className="text-[75px] tracking-wide px-[219px] text-center">
+          <div className="text-[35px] md:text-[75px] tracking-wide px-[55px] md:px-[219px] text-center">
             <span className={`text-[#FFD100]`}>TRAILERS</span>&nbsp;
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               &gt; RENTAL LISTINGS
             </span>
           </div>
           {/* Box */}
-          <div className="px-[160px] mt-12">
+          <div className="px-[80px] md:px-[160px] mt-12 mb-16 md:mb-0">
             <div
-              className="flex justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
+              className="flex flex-col md:flex-row md:justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[20px] md:px-[50px] md:py-[40px]"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="space-y-2">
@@ -59,7 +59,7 @@ export default function Products() {
                 /> */}
                 <Select>
                   <SelectTrigger
-                    className="text-[19px] w-[320px] h-[44px] px-[10px] py-[15px] text-[#808080]"
+                    className="text-[19px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
                     <SelectValue placeholder="Find Our Location" />
@@ -71,7 +71,7 @@ export default function Products() {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 md:mr-0">
                 <Label className="text-black text-[22px]">Rental Date</Label>
                 {/* <Input
                   placeholder="DD/MM/YYYY"
@@ -79,7 +79,7 @@ export default function Products() {
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 /> */}
                 <div
-                  className="flex justify-between items-center text-[19px] w-[320px] h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
+                  className="flex justify-between items-center text-[19px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 >
                   <p>
@@ -87,7 +87,7 @@ export default function Products() {
                   </p>
                   <div>
                     <Popover>
-                      <PopoverTrigger className="py-[10px]">
+                      <PopoverTrigger className="py-1 md:py-[10px]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="25"
@@ -101,7 +101,7 @@ export default function Products() {
                           />
                         </svg>
                       </PopoverTrigger>
-                      <PopoverContent className="w-full">
+                      <PopoverContent className="md:w-full">
                         <Calendar
                           mode="range"
                           selected={date}
@@ -163,13 +163,13 @@ export default function Products() {
           </div>
         </div>
       </section>
-      <section className="bg-black min-h-[100vh]">
-        <div className="flex space-x-[60px] pt-[150px] px-[80px]">
-          <div className="flex-[0.2]">
+      <section className="bg-black md:min-h-[100vh]">
+        <div className="flex flex-col md:flex-row space-y-[60px] md:space-y-[0px] md:space-x-[60px] pt-[80px] px-[60px] md:pt-[150px] md:px-[80px]">
+          <div className="md:flex-[0.2]">
             <Filters />
           </div>
-          <div className="flex flex-col flex-[0.8] pb-[120px]">
-            <div className="grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
+          <div className="flex flex-col md:flex-[0.8] pb-[120px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[20px]">
               <Individual />
               <Individual />
               <Individual />
@@ -178,8 +178,8 @@ export default function Products() {
               <Individual />
             </div>
             {/* This is the pagination part */}
-            <div className="flex items-center justify-center w-full p-4 bg-black text-white pt-[60px] text-[24px]">
-              <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-center w-full p-4 bg-black text-white md:pt-[60px] text-[24px]">
+              <div className="flex flex-col md:flex-row items-center md:space-y-0 space-y-2 space-x-1 md:space-x-4">
                 <span>1 - 10 of 50 Results</span>
                 <Button
                   variant="outline"
@@ -188,6 +188,7 @@ export default function Products() {
                   <ArrowLeftIcon className="w-[18px] h-[18px] text-[#FFD100]" />
                   <span>Prev</span>
                 </Button>
+                <div className="flex items-center space-x-1 md:space-x-4">
                 <Button
                   variant="outline"
                   className="bg-yellow-500 text-black text-[24px]"
@@ -210,7 +211,8 @@ export default function Products() {
                 <Button variant="outline" className="text-[24px]">
                   10
                 </Button>
-                <Button
+
+                </div>                <Button
                   variant="outline"
                   className="flex items-center space-x-2 text-[24px]"
                 >
@@ -222,7 +224,7 @@ export default function Products() {
           </div>
         </div>
       </section>
-      <section className="bg-[#FFD100] w-full min-h-[250px] flex justify-center items-center">
+      <section className="bg-[#FFD100] w-full min-h-[250px] hidden md:flex justify-center items-center">
         <div className="flex space-x-[80px] px-[40px] py-[60px]">
           <div className="flex justify-center items-center">
             <img src="/heros/hero2.png" alt="" className="w-[300px] h-auto" />
@@ -230,7 +232,7 @@ export default function Products() {
           <div className="flex flex-col">
             <div className="text-[60px] tracking-wide text-center">
               <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
-                RENT
+                LOOKING TO RENT
               </span>
               &nbsp;
               <span>A TRAILER</span>
