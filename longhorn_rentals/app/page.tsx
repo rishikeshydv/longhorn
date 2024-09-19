@@ -3,12 +3,9 @@
 import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Hero1 from "@/public/heros/hero1.png";
-import Specialty from "@/components/specialty/Specialty";
-import Review from "@/components/review/Review";
 import { CiLocationOn } from "react-icons/ci";
 import { DateRange } from "react-day-picker";
 import { Calendar } from "@/components/ui/calendar";
@@ -26,14 +23,6 @@ import {
 } from "@/components/ui/popover";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Individual from "@/components/specialty/Individual";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import MyCarousal from "@/components/carousal/MyCarousal";
 import ReviewCarousal from "@/components/carousal/ReviewCarousal";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
