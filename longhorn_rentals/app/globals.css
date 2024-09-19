@@ -27,8 +27,8 @@ body {
 }
 
 @font-face{
-  font-family: "tungsten-1";
-  src: url("/fonts/tungsten-semiBold.ttf");
+  font-family: "tungsten";
+  src: url("/fonts/tungsten-semibold.ttf");
 }
 
 @font-face{
