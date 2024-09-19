@@ -8,12 +8,13 @@ import { Button } from "@/components/ui/button"
 export default function Footer() {
   return (
     <div className="flex flex-col items-center w-full py-8 px-[100px] space-y-8 bg-white">
-      <div className="flex items-center space-x-16 pt-[60px]">
+      <div className="flex md:flex-row flex-col items-center space-y-10 md:space-y-0 md:space-x-16 pt-[60px]">
         <img
           src="/logo/logo1.png"
           alt="Longhorn Trailer Rentals"
+          className="mr-6 md:mr-0"
         />
-        <p className="max-w-2xl text-center text-muted-foreground text-[24px]">
+        <p className="hidden md:flex max-w-2xl text-center text-muted-foreground text-[24px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
           standard dummy text ever since the 1500s.
         </p>
@@ -37,7 +38,7 @@ export default function Footer() {
       </div>
       <div className="w-full border-t" />
       <div className="grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-4">
-        <div className="space-y-2">
+        <div className="hidden md:flex flex-col space-y-2">
           <h3 className="text-[24px] font-bold">BEST FEATURES</h3>
           <ul className="space-y-1 text-muted-foreground text-[18px]">
             <li>Career Management</li>
@@ -47,7 +48,7 @@ export default function Footer() {
             <li>Scheduling</li>
           </ul>
         </div>
-        <div className="space-y-2">
+        <div className="hidden md:flex flex-col space-y-2">
           <h3 className="text-[24px] font-bold">RESOURCES</h3>
           <ul className="space-y-1 text-muted-foreground text-[18px]">
             <li>Benefits</li>
@@ -57,7 +58,7 @@ export default function Footer() {
             <li>About Us</li>
           </ul>
         </div>
-        <div className="space-y-2">
+        <div className="hidden md:flex flex-col space-y-2">
           <h3 className="text-[24px] font-bold">USEFUL LINKS</h3>
           <ul className="space-y-1 text-muted-foreground text-[18px]">
             <li>Rent a Trailer</li>

@@ -26,7 +26,11 @@ import { useRouter } from "next/navigation";
 import MyCarousal from "@/components/carousal/MyCarousal";
 import ReviewCarousal from "@/components/carousal/ReviewCarousal";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
-ReviewCarousal
+import Individual from "@/components/specialty/Individual";
+import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
+import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
+import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
+
 
 export default function Home() {
   const router = useRouter();
@@ -39,10 +43,10 @@ export default function Home() {
 
   return (
     <main className="">
-      <section className="bg-home-section bg-no-repeat bg-cover bg-center min-h-[100vh]">
+      <section className="bg-home-section bg-no-repeat bg-cover bg-center md:min-h-[100vh] md:w-full">
         <NavBar />
-        <div className="mt-[120px] flex flex-col justify-center items-center">
-          <div className="text-[65px] tracking-wide px-[219px] text-center">
+        <div className="mt-[40px] md:mt-[120px] flex flex-col justify-center items-center">
+          <div className="text-[35px] md:text-[65px] tracking-wide px-[55px] md:px-[219px] text-center">
             <span
               className={` text-white`}
               style={{ fontFamily: "tungsten-semibold" }}
@@ -53,9 +57,9 @@ export default function Home() {
             <span className={`text-[#FFD100]`}>YOUR PERFECT MOMENT</span>
           </div>
           {/* Box */}
-          <div className="px-[160px] mt-12">
+          <div className="px-[80px] md:px-[160px] mt-12 mb-16 md:mb-0">
             <div
-              className="flex justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
+              className="flex flex-col md:flex-row md:justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[20px] md:px-[50px] md:py-[40px]"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="space-y-2">
@@ -69,7 +73,7 @@ export default function Home() {
                 /> */}
                 <Select>
                   <SelectTrigger
-                    className="text-[19px] w-[320px] h-[44px] px-[10px] py-[15px] text-[#808080]"
+                    className="text-[19px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
                     <SelectValue placeholder="Find Our Location" />
@@ -81,7 +85,7 @@ export default function Home() {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 md:mr-0">
                 <Label className="text-black text-[22px]">Rental Date</Label>
                 {/* <Input
                   placeholder="DD/MM/YYYY"
@@ -89,7 +93,7 @@ export default function Home() {
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 /> */}
                 <div
-                  className="flex justify-between items-center text-[19px] w-[320px] h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
+                  className="flex justify-between items-center text-[19px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 >
                   <p>
@@ -97,7 +101,7 @@ export default function Home() {
                   </p>
                   <div>
                     <Popover>
-                      <PopoverTrigger className="py-[10px]">
+                      <PopoverTrigger className="py-1 md:py-[10px]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="25"
@@ -111,7 +115,7 @@ export default function Home() {
                           />
                         </svg>
                       </PopoverTrigger>
-                      <PopoverContent className="w-full">
+                      <PopoverContent className="md:w-full">
                         <Calendar
                           mode="range"
                           selected={date}
@@ -173,7 +177,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[#FFD100] w-full h-[84px] space-x-2 flex justify-center items-center">
+      <section className="bg-[#FFD100] w-full h-[84px] space-x-2 hidden lg:flex justify-center items-center">
         <span className="text-[22px] text-black py-2">
           WE&apos;RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT JOB.
         </span>
@@ -182,21 +186,21 @@ export default function Home() {
           CONTACT US NOW
         </Button>
       </section>
-      <section className="bg-watermark min-h-[100vh] w-full ">
-        <div className="grid grid-cols-2 py-[145px] pl-[150px] pr-[140px]">
-          <div>
+      <section className="bg-watermark md:min-h-[100vh] w-full ">
+        <div className="md:grid md:grid-cols-2 p-10 md:py-[145px] md:pl-[150px] md:pr-[140px]">
+          <div className="hidden md:flex">
             <Image src={Hero1} alt="Hero Image" className="w-[500px] h-auto" />
           </div>
           <div>
-            <p className="text-[25px] text-black">ABOUT US</p>
-            <div className="text-[70px] tracking-wide">
+            <p className="text-[20px] md:text-[25px] text-black">ABOUT US</p>
+            <div className="text-[35px] md:text-[70px] tracking-wide">
               <span style={{ fontFamily: "tungsten-semibold" }}>
                 CREATED FOR
               </span>
               &nbsp;
               <span className="text-[#FFD100]">THE RELENTLESS</span>
             </div>
-            <p className="text-[24px] pb-[40px]">
+            <p className="text-[20px] md:text-[24px] pb-[40px]">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
               omnis quia earum nam optio consequuntur facere! Atque temporibus
               qui iure provident excepturi natus, quos quisquam nostrum amet ut
@@ -243,9 +247,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-[100vh] bg-[#000000]">
-        <div className="pt-[100px] pb-[80px]">
-          <div className="text-[70px] tracking-wide text-center">
+      <section className="md:min-h-[100vh] bg-[#000000]">
+        <div className="pt-[70px] md:pt-[100px] pb-[80px]">
+          <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
               className={`text-white`}
               style={{ fontFamily: "tungsten-semibold" }}
@@ -255,23 +259,19 @@ export default function Home() {
             &nbsp;
             <span className="text-[#FFD100]">RESOURCES</span>
           </div>
+          <div className="hidden md:flex">
           <MyCarousal />
-          {/* <Specialty /> */}
-          {/* <div className="flex justify-between px-[140px] pt-[60px]">
-            <Button className="bg-[#FFD100] hover:bg-yellow-600 text-black text-[18px] w-[98px]" onClick={()=>router.push("/products")}>
-              View All
-            </Button>
-            <div className="flex space-x-4">
-              <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-              <div className="w-[15px] h-[15px] bg-yellow-500 rounded-full" />
-              <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-            </div>
-          </div> */}
+          </div>
+
+          <div className="md:hidden p-10">
+          <MyCarousalMobile />
+          </div>
+
         </div>
       </section>
-      <section className="min-h-[100vh]">
-        <div className="py-[150px]">
-          <div className="text-[70px] tracking-wide text-center">
+      <section className="md:min-h-[100vh]">
+        <div className="py-[80px] md:py-[150px]">
+          <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
               className={` text-black`}
               style={{ fontFamily: "tungsten-semibold" }}
@@ -301,10 +301,16 @@ export default function Home() {
               profession="Trailer Rental Customer"
             />
           </div> */}
+          <div className="md:flex hidden">
           <ReviewCarousal/>
+          </div>
+          
+          <div className="md:hidden">
+            <ReviewCarousalMobile/>
+          </div>
         </div>
       </section>
-      <section className="bg-[#FFD100] w-full min-h-[250px] flex justify-center items-center">
+      <section className="bg-[#FFD100] w-full min-h-[250px] hidden md:flex justify-center items-center">
         <div className="flex space-x-[80px] px-[40px] py-[60px]">
           <div className="flex justify-center items-center">
             <img src="/heros/hero2.png" alt="" className="w-[300px] h-auto" />
@@ -333,8 +339,8 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-black min-h-[70vh]">
-        <div className="py-[120px]">
-          <div className="text-[70px] tracking-wide text-center">
+        <div className="py-[60px] md:py-[120px]">
+          <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
               className={` text-white`}
               style={{ fontFamily: "tungsten-semibold" }}
@@ -345,7 +351,7 @@ export default function Home() {
             <span className="text-[#FFD100]">GALLERY</span>
           </div>
           <main className="flex flex-col items-center ">
-            <ImgCarousal />
+            <ImgCarousalMobile />
           </main>
         </div>
       </section>
