@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 export default function Contact() {
   return (
     <main>
-    <section className="flex flex-col min-h-[90vh] bg-about">
+    <section className="flex flex-col min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
      <NavBar />
       <div className="flex-1 flex items-center justify-center">
         <div className="container px-4 md:px-6 text-center space-y-4 lg:mb-10">
@@ -23,7 +23,7 @@ export default function Contact() {
         <div className='flex flex-col justify-center items-center'>
         <p className={`text-[80px]`} style={{fontFamily:"tungsten-semibold"}}>
             GET IN&nbsp;
-          <span className={`text-yellow-500`} style={{fontFamily:"tungsten-medium"}}>TOUCH</span>
+          <span className={`text-[#ffd100]`} style={{fontFamily:"tungsten-medium"}}>TOUCH</span>
         </p>
         <p className='uppercase text-[24px] text-[#808080]'>
         We have made contacting us very easy, simple and hassle-free!
@@ -136,7 +136,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="flex justify-center mt-6">
-          <Button className="bg-[#ffd100] text-black hover:bg-yellow-600 w-[131px] h-[44px] text-[16px] uppercase">Send Message</Button>
+          <Button className="bg-[#ffd100] text-black hover:bg-yellow-500 w-[131px] h-[44px] text-[16px] uppercase">Send Message</Button>
         </div>
       </div>
     </div>

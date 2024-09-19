@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import NavBar from "@/components/navbar/NavBar";
 
@@ -8,10 +9,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Filters from "@/components/filter/Filters";
 import Individual from "@/components/specialty/Individual";
 import { CiLocationOn } from "react-icons/ci";
+import { useRouter } from "next/navigation";
+
 export default function Products() {
+  const router = useRouter();
   return (
     <main>
-      <section className="bg-product-page min-h-[95vh]">
+      <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
           <div className="text-[75px] tracking-wide px-[219px] text-center">
@@ -79,7 +83,7 @@ export default function Products() {
                 </RadioGroup>
               </div>
               <div className="mt-10">
-                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px]">
+                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
                   Get A Price
                 </Button>
               </div>
@@ -154,15 +158,15 @@ export default function Products() {
           <div className="flex flex-col">
             <div className="text-[60px] tracking-wide text-center">
               <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
-                PROFESSIONAL
+                RENT
               </span>
               &nbsp;
-              <span>GRADE TRAILER</span>
+              <span>A TRAILER</span>
             </div>
             <div className="flex justify-center">
-              <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] px-[30px] py-[25px] w-[200px]">
+              <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] px-[30px] py-[25px] w-[200px] hover:bg-yellow-500" onClick={()=>router.push("/products")}>
                 <CiLocationOn className="mb-[2px]" />
-                &nbsp;&nbsp;FIND A DEALER
+                &nbsp;&nbsp;VIEW TRAILERS
               </Button>
             </div>
           </div>

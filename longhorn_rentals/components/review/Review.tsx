@@ -9,7 +9,7 @@ interface ReviewProps {
 }
 export default function Review({img,content,name,profession}: ReviewProps) {
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4 bg-gray-100 py-16 px-6 rounded-3xl'>
         <div className='flex flex-col gap-4 items-center justify-center'>
         <Image
             src={img}
@@ -28,7 +28,7 @@ export default function Review({img,content,name,profession}: ReviewProps) {
         </div>
           <p className='text-center text-gray-500 text-md tracking-wide'>{content}</p>
         <div className='flex flex-col'>
-            <p className='font-bold text-center text-[#000000] text-xl tracking-wide'>{name}</p>
+            <p className='font-bold text-center text-[#000000] text-2xl tracking-wide'>{name}</p>
             <p className='text-center text-md tracking-wide'>{profession}</p>
         </div>
 

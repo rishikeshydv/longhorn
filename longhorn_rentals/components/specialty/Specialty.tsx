@@ -16,7 +16,7 @@ export default function Specialty() {
           style={{ aspectRatio: "350/200", objectFit: "cover" }}
         />
         <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-yellow-500 text-black text-[16px] px-[18px]">
+          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
             $100 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
@@ -29,25 +29,25 @@ export default function Specialty() {
         <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
-            <p className="font-bold text-yellow-500">Width</p>
+            <p className="font-bold text-[#ffd100]">Width</p>
             <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">GVWR</p>
+            <p className="font-bold text-[#ffd100]">GVWR</p>
             <p>15,900 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">Cargo Capacity</p>
+            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
             <p>9,345 - 11,827 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
+          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Car Hauler</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
+          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
-        <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
@@ -61,7 +61,7 @@ export default function Specialty() {
           style={{ aspectRatio: "350/200", objectFit: "cover" }}
         />
         <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-yellow-500 text-black text-[16px] px-[18px]">
+          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
             $100 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
@@ -74,25 +74,25 @@ export default function Specialty() {
         <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
-            <p className="font-bold text-yellow-500">Width</p>
+            <p className="font-bold text-[#ffd100]">Width</p>
             <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">GVWR</p>
+            <p className="font-bold text-[#ffd100]">GVWR</p>
             <p>15,900 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">Cargo Capacity</p>
+            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
             <p>9,345 - 11,827 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
+          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Car Hauler</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
+          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
-        <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
@@ -106,7 +106,7 @@ export default function Specialty() {
           style={{ aspectRatio: "350/200", objectFit: "cover" }}
         />
         <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-yellow-500 text-black text-[16px] px-[18px]">
+          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
             $100 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
@@ -119,25 +119,25 @@ export default function Specialty() {
         <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
-            <p className="font-bold text-yellow-500">Width</p>
+            <p className="font-bold text-[#ffd100]">Width</p>
             <p>14&apos;x83&apos;x36&apos;</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">GVWR</p>
+            <p className="font-bold text-[#ffd100]">GVWR</p>
             <p>15,900 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-yellow-500">Cargo Capacity</p>
+            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
             <p>9,345 - 11,827 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-yellow-500" />
+          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Car Hauler</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-yellow-500" />
+          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
         </div>
-        <Button className=" mt-4 bg-yellow-500 text-black text-[16px]">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
       </CardContent>
     </Card>
   </div>

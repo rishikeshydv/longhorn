@@ -17,7 +17,7 @@ export default function Details() {
 
   return (
     <main>
-      <section className="bg-product-page min-h-[95vh]">
+      <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
           <div className="text-[75px] tracking-wide px-[219px] text-center">
@@ -85,7 +85,7 @@ export default function Details() {
                 </RadioGroup>
               </div>
               <div className="mt-10">
-                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px]">
+                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
                   Get A Price
                 </Button>
               </div>
@@ -162,7 +162,7 @@ export default function Details() {
                 />
               </div>
               <div className="flex flex-col justify-start items-start pt-[60px]">
-                <p className="text-[40px]">Tandem Axle Low Pro Dump Trailer</p>
+                <p className="text-[40px] text-black">Tandem Axle Low Pro Dump Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
@@ -231,7 +231,7 @@ export default function Details() {
                 </p>
                 <div className="flex space-x-[30px]">
                   <p className="text-[26px]">Total: $800.00</p>
-                  <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black">
+                  <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black hover:bg-yellow-500">
                     BOOK NOW
                   </Button>
                 </div>

@@ -5,7 +5,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
 export default function Filters() {
   return (
     <div className="text-white">
@@ -23,31 +24,77 @@ export default function Filters() {
         <AccordionItem value="item-1">
           <AccordionTrigger>WIDTH</AccordionTrigger>
           <AccordionContent>
-            ENTER YOUR DATA
+          <RadioGroup defaultValue="option-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+          </div>
+        </RadioGroup>
+
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-2">
           <AccordionTrigger>LENGTH</AccordionTrigger>
           <AccordionContent>
-            ENTER YOUR DATA
+          <RadioGroup defaultValue="option-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+          </div>
+        </RadioGroup>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-3">
           <AccordionTrigger>GVMR</AccordionTrigger>
           <AccordionContent>
-            ENTER YOUR DATA
+          <RadioGroup defaultValue="option-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+          </div>
+        </RadioGroup>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-4">
           <AccordionTrigger>CARGO CAPACITY</AccordionTrigger>
           <AccordionContent>
-            ENTER YOUR DATA
+          <RadioGroup defaultValue="option-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+          </div>
+        </RadioGroup>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-5">
           <AccordionTrigger>PULL TYPE</AccordionTrigger>
           <AccordionContent>
-            ENTER YOUR DATA
+          <RadioGroup defaultValue="option-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+          </div>
+        </RadioGroup>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

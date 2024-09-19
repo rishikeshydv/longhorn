@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function About() {
   return (
     <main>
-    <section className="flex flex-col min-h-[90vh] bg-about">
+    <section className="flex flex-col min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
      <NavBar />
       <div className="flex-1 flex items-center justify-center">
         <div className="container px-4 md:px-6 text-center space-y-4 lg:mb-10">
@@ -24,7 +24,7 @@ export default function About() {
         Let&apos;s make something great work together.
         </span>
         &nbsp;&nbsp;&nbsp;
-        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 uppercase">
+        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 uppercase hover:bg-yellow-500">
         Got a project in mind?
         </Button>
       </section>
@@ -35,7 +35,7 @@ export default function About() {
         <p className="text-[25px] font-medium text-muted-foreground">ABOUT COMPANY FOR RELIABLE TRAILER RENTAL</p>
         <p className={`text-[80px] flex flex-col mt-[-25px]`} style={{fontFamily:"tungsten-semibold"}}>
             WHAT DO YOU GET WITH
-          <span className={`text-yellow-500  mt-[-40px]`} style={{fontFamily:"tungsten-medium"}}>LONGHORN RENTALS?</span>
+          <span className={`text-[#ffd100] mt-[-40px]`} style={{fontFamily:"tungsten-medium"}}>LONGHORN RENTALS?</span>
         </p>
       </div>
       <p className="text-[24px] text-muted-foreground flex-[0.45]">

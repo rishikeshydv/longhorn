@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 export default function NavBar() {
   const router = useRouter();
   return (
-    <header className="flex justify-between px-[30px] py-[30px] border-b-[1px] border-gray-500">
+    <header className="flex justify-between px-[30px] py-[15px] border-b-[1px] border-gray-500">
       <div >
         <Image src={Logo} alt="Longhorn Rentals Logo" className="h-[48px] w-[260px] hover:cursor-pointer" onClick={()=>router.push("/")}/>
       </div>
