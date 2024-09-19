@@ -4,7 +4,6 @@ import NavBar from "@/components/navbar/NavBar";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Specialty from "@/components/specialty/Specialty";
 import { Calendar } from "@/components/ui/calendar";
 import { DateRange } from "react-day-picker";
 import { LuCalendarRange } from "react-icons/lu";
