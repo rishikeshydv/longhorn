@@ -124,7 +124,7 @@ export default function Home() {
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
                   className={`text-[#FFD100] text-[50px] text-center`}
-                  style={{fontFamily:"tungsten"}}
+                  style={{fontFamily:"tungsten-1"}}
                 >
                   250+
                 </p>
@@ -135,7 +135,7 @@ export default function Home() {
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
                                     className={`text-[#FFD100] text-[50px] text-center`}
-                                    style={{fontFamily:"tungsten"}}
+                                    style={{fontFamily:"tungsten-1"}}
                 >
                   35+
                 </p>
@@ -146,7 +146,7 @@ export default function Home() {
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
                   className={`text-[#FFD100] text-[50px] text-center`}
-                  style={{fontFamily:"tungsten"}}
+                  style={{fontFamily:"tungsten-1"}}
                 >
                   80+
                 </p>
