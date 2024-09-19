@@ -32,7 +32,7 @@ export default function Products() {
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   const router = useRouter();
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <section className="bg-product-page bg-no-repeat bg-cover bg-center md:min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
