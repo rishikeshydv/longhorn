@@ -219,7 +219,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[#FFD100] w-full h-[250px] flex justify-center items-center">
+      <section className="bg-[#FFD100] w-full min-h-[250px] flex justify-center items-center">
         <div className="flex space-x-[80px] px-[40px] py-[60px]">
           <div className="flex justify-center items-center">
             <img src="/heros/hero2.png" alt="" className="w-[300px] h-auto" />
