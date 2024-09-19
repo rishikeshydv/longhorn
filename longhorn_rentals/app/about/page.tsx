@@ -2,9 +2,9 @@ import React from 'react'
 import NavBar from "@/components/navbar/NavBar";
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card"
-import Review from '@/components/review/Review';
 import LadyHero from "@/public/heros/hero4.png"
 import Image from 'next/image';
+import ReviewCarousal from '@/components/carousal/ReviewCarousal';
 
 export default function About() {
   return (
@@ -133,16 +133,19 @@ export default function About() {
       </div>
     </div>
       </section>
-      <section className="min-h-[100vh] w-screen">
+      <section className="min-h-[100vh]">
         <div className="py-[150px]">
           <div className="text-[70px] tracking-wide text-center">
-            <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
+            <span
+              className={` text-black`}
+              style={{ fontFamily: "tungsten-semibold" }}
+            >
               HAPPY CUSTOMER
             </span>
             &nbsp;
             <span className="text-[#FFD100]">SAYING</span>
           </div>
-          <div className="grid grid-cols-3 gap-16 p-20">
+          {/* <div className="grid grid-cols-3 gap-8 p-20">
             <Review
               img="/reviews/review2.jpg"
               content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
@@ -161,12 +164,8 @@ export default function About() {
               name="Genene Bell"
               profession="Trailer Rental Customer"
             />
-          </div>
-          <div className="flex justify-center space-x-4">
-            <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-            <div className="w-[15px] h-[15px] bg-yellow-500 rounded-full" />
-            <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-          </div>
+          </div> */}
+          <ReviewCarousal/>
         </div>
       </section>
         <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">

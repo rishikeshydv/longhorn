@@ -12,8 +12,6 @@ import Review from "@/components/review/Review";
 import { CiLocationOn } from "react-icons/ci";
 import { DateRange } from "react-day-picker";
 import { Calendar } from "@/components/ui/calendar";
-import { EmblaOptionsType } from 'embla-carousel'
-import EmblaCarousel from "@/components/carousal/EmblaCarousel";
 import {
   Select,
   SelectContent,
@@ -36,7 +34,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-
+import MyCarousal from "@/components/carousal/MyCarousal";
+import ReviewCarousal from "@/components/carousal/ReviewCarousal";
+import ImgCarousal from "@/components/carousal/ImgCarousal";
+ReviewCarousal
 
 export default function Home() {
   const router = useRouter();
@@ -251,7 +252,7 @@ export default function Home() {
         </div>
       </section>
       <section className="min-h-[100vh] bg-[#000000]">
-        <div className="pt-[100px] pb-[100px]">
+        <div className="pt-[100px] pb-[80px]">
           <div className="text-[70px] tracking-wide text-center">
             <span
               className={`text-white`}
@@ -262,9 +263,9 @@ export default function Home() {
             &nbsp;
             <span className="text-[#FFD100]">RESOURCES</span>
           </div>
-
+          <MyCarousal />
           {/* <Specialty /> */}
-          <div className="flex justify-between px-[140px] pt-[60px]">
+          {/* <div className="flex justify-between px-[140px] pt-[60px]">
             <Button className="bg-[#FFD100] hover:bg-yellow-600 text-black text-[18px] w-[98px]" onClick={()=>router.push("/products")}>
               View All
             </Button>
@@ -273,7 +274,7 @@ export default function Home() {
               <div className="w-[15px] h-[15px] bg-yellow-500 rounded-full" />
               <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="min-h-[100vh]">
@@ -288,7 +289,7 @@ export default function Home() {
             &nbsp;
             <span className="text-[#FFD100]">SAYING</span>
           </div>
-          <div className="grid grid-cols-3 gap-8 p-20">
+          {/* <div className="grid grid-cols-3 gap-8 p-20">
             <Review
               img="/reviews/review2.jpg"
               content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
@@ -307,12 +308,8 @@ export default function Home() {
               name="Genene Bell"
               profession="Trailer Rental Customer"
             />
-          </div>
-          <div className="flex justify-center space-x-4">
-            <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-            <div className="w-[15px] h-[15px] bg-yellow-500 rounded-full" />
-            <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-          </div>
+          </div> */}
+          <ReviewCarousal/>
         </div>
       </section>
       <section className="bg-[#FFD100] w-full min-h-[250px] flex justify-center items-center">
@@ -356,45 +353,7 @@ export default function Home() {
             <span className="text-[#FFD100]">GALLERY</span>
           </div>
           <main className="flex flex-col items-center ">
-            <div className="flex gap-10 overflow-x-auto px-4 pt-[103px] pb-[70px]">
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-            </div>
-            <div className="flex gap-2 mt-4">
-              <span className="w-2 h-2 bg-yellow-500 rounded-full" />
-              <span className="w-2 h-2 bg-gray-500 rounded-full" />
-              <span className="w-2 h-2 bg-gray-500 rounded-full" />
-            </div>
+            <ImgCarousal />
           </main>
         </div>
       </section>
