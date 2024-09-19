@@ -225,7 +225,7 @@ export default function Home() {
             <img src="/heros/hero2.png" alt="" className="w-[300px] h-auto" />
           </div>
           <div className="flex flex-col">
-            <div className="text-[70px] tracking-wide text-center">
+            <div className="text-[60px] tracking-wide text-center">
               <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
                 PROFESSIONAL
               </span>

@@ -146,13 +146,13 @@ export default function Products() {
           </div>
         </div>
       </section>
-      <section className="bg-[#FFD100] w-full h-[250px] flex justify-center items-center">
+      <section className="bg-[#FFD100] w-full min-h-[250px] flex justify-center items-center">
         <div className="flex space-x-[80px] px-[40px] py-[60px]">
           <div className="flex justify-center items-center">
             <img src="/heros/hero2.png" alt="" className="w-[300px] h-auto" />
           </div>
           <div className="flex flex-col">
-            <div className="text-[70px] tracking-wide text-center">
+            <div className="text-[60px] tracking-wide text-center">
               <span className={` text-black`} style={{fontFamily:"tungsten-semibold"}}>
                 PROFESSIONAL
               </span>

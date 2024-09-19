@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <header className="flex justify-between px-[30px] py-[30px] border-b-[1px] border-gray-500">
       <div >
-        <Image src={Logo} alt="Longhorn Rentals Logo" className="h-[48px] w-[260px]"/>
+        <Image src={Logo} alt="Longhorn Rentals Logo" className="h-[48px] w-[260px] hover:cursor-pointer" onClick={()=>router.push("/")}/>
       </div>
       <div className="text-[#FFFFFF] text-[22px] mt-3">
         <ul className="flex space-x-[50px] justify-center">
