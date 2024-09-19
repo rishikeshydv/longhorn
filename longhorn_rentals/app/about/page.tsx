@@ -169,7 +169,7 @@ export default function About() {
           </div>
         </div>
       </section>
-            <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
+        <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
         <div className="flex mx-20 justify-center text-[80px] tracking-tight py-[100px]">
 
           <span className={` text-white`} style={{fontFamily:"tungsten"}}>
