@@ -16,7 +16,7 @@ export default function Home() {
       <section className="bg-home-section min-h-[100vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
-          <div className="text-[75px] tracking-wide px-[219px] text-center">
+          <div className="text-[65px] tracking-wide px-[219px] text-center">
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               THE PERFECT RENTAL FOR
             </span>
