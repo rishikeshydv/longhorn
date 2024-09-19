@@ -21,6 +21,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import DetailsCarousal from "@/components/carousal/DetailsCarousal";
+import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
+
 export default function Details() {
   const [date, setDate] = React.useState<DateRange>({
     from: new Date(),
@@ -34,16 +37,16 @@ export default function Details() {
       <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
-          <div className="text-[75px] tracking-wide px-[219px] text-center">
+          <div className="text-[35px] md:text-[75px] tracking-wide px-[55px] md:px-[219px] text-center">
             <span className={`text-[#FFD100]`}>TRAILERS</span>&nbsp;
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               &gt; RENTAL LISTINGS
             </span>
           </div>
           {/* Box */}
-          <div className="px-[160px] mt-12">
+          <div className="px-[80px] md:px-[160px] mt-12 mb-16 md:mb-0">
             <div
-              className="flex justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] px-[50px] py-[40px]"
+              className="flex flex-col md:flex-row md:justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[20px] md:px-[50px] md:py-[40px]"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="space-y-2">
@@ -57,7 +60,7 @@ export default function Details() {
                 /> */}
                 <Select>
                   <SelectTrigger
-                    className="text-[19px] w-[320px] h-[44px] px-[10px] py-[15px] text-[#808080]"
+                    className="text-[19px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
                     <SelectValue placeholder="Find Our Location" />
@@ -69,7 +72,7 @@ export default function Details() {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 md:mr-0">
                 <Label className="text-black text-[22px]">Rental Date</Label>
                 {/* <Input
                   placeholder="DD/MM/YYYY"
@@ -77,7 +80,7 @@ export default function Details() {
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 /> */}
                 <div
-                  className="flex justify-between items-center text-[19px] w-[320px] h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
+                  className="flex justify-between items-center text-[19px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 >
                   <p>
@@ -85,7 +88,7 @@ export default function Details() {
                   </p>
                   <div>
                     <Popover>
-                      <PopoverTrigger className="py-[10px]">
+                      <PopoverTrigger className="py-1 md:py-[10px]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="25"
@@ -99,7 +102,7 @@ export default function Details() {
                           />
                         </svg>
                       </PopoverTrigger>
-                      <PopoverContent className="w-full">
+                      <PopoverContent className="md:w-full">
                         <Calendar
                           mode="range"
                           selected={date}
@@ -163,7 +166,7 @@ export default function Details() {
       </section>
       <section className="min-h-[100vh] bg-white">
         <div className="py-[80px] px-[60px] flex flex-col gap-[60px]">
-          <div className="flex justify-center space-x-[30px]">
+          <div className="flex flex-col md:flex-row justify-center space-x-[30px]">
             <div className="flex flex-col bg-white overflow-hidden">
               <div className="relative w-full max-w-4xl object-cover">
                 <img
@@ -174,60 +177,8 @@ export default function Details() {
                   height="700"
                 />
               </div>
-              <div className="flex justify-center mt-4 space-x-2">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full" />
-                <div className="w-2 h-2 bg-gray-300 rounded-full" />
-                <div className="w-2 h-2 bg-gray-300 rounded-full" />
-              </div>
-              <div className="flex justify-center mt-4 space-x-4">
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 2"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 3"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 4"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
+              <div className="md:flex hidden">
+              <DetailsCarousal />
               </div>
               <div className="flex flex-col justify-start items-start pt-[60px]">
                 <p className="text-[40px] text-black">Tandem Axle Low Pro Dump Trailer</p>
@@ -239,7 +190,7 @@ export default function Details() {
             </div>
             <div className="bg-[#F5F5F5] flex flex-col gap-[26px]" style={{ borderRadius: "0px 0px 16px 16px" }}>
               <div className="bg-black" style={{ borderRadius: "16px 16px 0px 0px" }}>
-                <p className="text-[#ffd100] text-center text-[60px]">
+                <p className="text-[#ffd100] text-center text-[30px] md:text-[60px]">
                   $100.00
                 </p>
                 <p className="text-white text-[24px] text-center">PER DAY</p>
