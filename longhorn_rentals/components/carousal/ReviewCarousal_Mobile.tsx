@@ -42,7 +42,7 @@ export default function ReviewCarousalMobile() {
         <div className="flex">
           {/* First set of 3 reviews */}
           <div className="flex-[0_0_100%]">
-            <div className="md:grid md:grid-cols-3 gap-8 md:p-10">
+            <div className="md:grid md:grid-cols-3 gap-8 p-10">
               <Review
                 img="/reviews/review2.jpg"
                 content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."

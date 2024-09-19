@@ -28,7 +28,7 @@ import ReviewCarousal from "@/components/carousal/ReviewCarousal";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
-
+import ImgCarousal from "@/components/carousal/ImgCarousal";
 
 export default function Home() {
   const router = useRouter();
@@ -204,7 +204,7 @@ export default function Home() {
               qui iure provident excepturi natus, quos quisquam nostrum amet ut
               accusamus odit.
             </p>
-            <div className="flex space-x-[30px] pb-[40px]">
+            <div className="flex space-x-[5px] md:space-x-[30px] pb-[40px]">
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">
                 <p
                   className={`text-[#FFD100] text-[50px] text-center`}
@@ -303,7 +303,7 @@ export default function Home() {
           <ReviewCarousal/>
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden pt-6">
             <ReviewCarousalMobile/>
           </div>
         </div>
@@ -348,8 +348,11 @@ export default function Home() {
             &nbsp;
             <span className="text-[#FFD100]">GALLERY</span>
           </div>
-          <main className="flex flex-col items-center ">
+          <main className="md:hidden flex flex-col items-center ">
             <ImgCarousalMobile />
+          </main>
+          <main className="hidden md:flex flex-col items-center ">
+            <ImgCarousal />
           </main>
         </div>
       </section>
