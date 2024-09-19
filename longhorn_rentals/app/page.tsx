@@ -57,21 +57,17 @@ export default function Home() {
           {/* Box */}
           <div className="px-[80px] md:px-[160px] mt-12 mb-16 md:mb-0">
             <div
-              className="flex flex-col md:flex-row md:justify-center space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[20px] md:px-[50px] md:py-[40px]"
+              className="flex flex-col md:flex-row justify-center md:space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[25px] md:px-[50px] md:py-[40px] w-full"
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
-              <div className="space-y-2">
+              <div className="flex md:flex-row flex-col md:gap-7">
+              <div className="space-y-2 flex flex-col">
                 <Label className="text-black text-[22px]">
                   Rental Location
                 </Label>
-                {/* <Input
-                  placeholder="Find our location"
-                  className="text-[19px] w-[320px] h-[44px] px-[10px] py-[15px] text-gray-800"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
-                /> */}
                 <Select>
                   <SelectTrigger
-                    className="text-[19px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
+                    className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
                     <SelectValue placeholder="Find Our Location" />
@@ -83,15 +79,10 @@ export default function Home() {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2 md:mr-0">
+              <div className="space-y-2 flex flex-col mt-2 md:mt-0">
                 <Label className="text-black text-[22px]">Rental Date</Label>
-                {/* <Input
-                  placeholder="DD/MM/YYYY"
-                  className="text-[19px] w-[320px] h-[44px] px-[10px] py-[15px] text-gray-800"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
-                /> */}
                 <div
-                  className="flex justify-between items-center text-[19px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
+                  className="flex justify-between items-center text-[19px] w-[260px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                 >
                   <p>
@@ -113,7 +104,7 @@ export default function Home() {
                           />
                         </svg>
                       </PopoverTrigger>
-                      <PopoverContent className="md:w-full">
+                      <PopoverContent className="w-full">
                         <Calendar
                           mode="range"
                           selected={date}
@@ -132,13 +123,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="mt-[25px]">
+              </div>
+              <div className="mt-[15px] md:mt-[25px]">
                 <RadioGroup
                   defaultValue="option1"
                   aria-labelledby="radio-group-label"
                   className="rounded-lg p-4 text"
                 >
-                  <div className="flex items-center space-x-8">
+                  <div className="flex items-center justify-center space-x-7">
                     <Label
                       htmlFor="option1"
                       className="flex items-center justify-center space-x-2 w-[100px] text-[17px] cursor-pointer rounded-md border p-2 text-black"
@@ -166,7 +158,7 @@ export default function Home() {
                   </div>
                 </RadioGroup>
               </div>
-              <div className="mt-10">
+              <div className="mt-5 md:mt-10 flex justify-center">
                 <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
                   Get A Price
                 </Button>
