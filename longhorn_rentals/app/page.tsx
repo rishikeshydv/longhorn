@@ -30,7 +30,10 @@ ReviewCarousal
 
 export default function Home() {
   const router = useRouter();
-  const [date, setDate] = React.useState<DateRange | undefined>(undefined);
+  const [date, setDate] = React.useState<DateRange>({
+    from: new Date(),
+    to: new Date(),
+  });
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
 
@@ -109,19 +112,19 @@ export default function Home() {
                         </svg>
                       </PopoverTrigger>
                       <PopoverContent className="w-full">
-                      <Calendar
-                  mode="range"
-                  selected={date}
-                  numberOfMonths={2}
-                  className="rounded-md text-[24px] bg-white shadow-lg"
-                  onSelect={(range: DateRange | undefined) => {
-                    if (range && range.from && range.to) {
-                      setDate(range);
-                      setStart(range.from.toLocaleDateString());
-                      setEnd(range.to.toLocaleDateString());
-                    }
-                  }}
-                />
+                        <Calendar
+                          mode="range"
+                          selected={date}
+                          numberOfMonths={2}
+                          className="rounded-md text-[24px] bg-white shadow-lg"
+                          onSelect={(range: DateRange | undefined) => {
+                            if (range && range.from && range.to) {
+                              setDate(range);
+                              setStart(range.from.toLocaleDateString());
+                              setEnd(range.to.toLocaleDateString());
+                            }
+                          }}
+                        />
                       </PopoverContent>
                     </Popover>
                   </div>
@@ -312,10 +315,10 @@ export default function Home() {
                 className={` text-black`}
                 style={{ fontFamily: "tungsten-semibold" }}
               >
-                RENT
+                LOOKING TO RENT
               </span>
               &nbsp;
-              <span>A TRAILER</span>
+              <span>A TRAILER?</span>
             </div>
             <div className="flex justify-center">
               <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] px-[30px] py-[25px] w-[200px] hover:bg-yellow-500" onClick={()=>router.push("/products")}>

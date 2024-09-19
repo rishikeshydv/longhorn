@@ -168,7 +168,7 @@ export default function About() {
           <ReviewCarousal/>
         </div>
       </section>
-        <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
+        {/* <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
         <div className="flex mx-20 justify-center text-[80px] tracking-tight py-[100px]">
 
           <span className={` text-white`} style={{fontFamily:"tungsten"}}>
@@ -182,7 +182,7 @@ export default function About() {
         </div>
         <div className="grid grid-cols-2 w-full pr-24">
           <div className="ml-52">
-            {/* This is for the image */}
+
             <Image
               src={LadyHero}
               alt="Hero home image"
@@ -208,7 +208,7 @@ export default function About() {
       </p>
         </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
