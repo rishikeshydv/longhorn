@@ -22,7 +22,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import DetailsCarousal from "@/components/carousal/DetailsCarousal";
-import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
+// import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
 
 export default function Details() {
   const [date, setDate] = React.useState<DateRange>({
