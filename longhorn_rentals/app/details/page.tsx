@@ -22,7 +22,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import DetailsCarousal from "@/components/carousal/DetailsCarousal";
-// import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
+import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
+import MyCarousal from "@/components/carousal/MyCarousal";
+import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 
 export default function Details() {
   const [date, setDate] = React.useState<DateRange>({
@@ -165,8 +167,15 @@ export default function Details() {
         </div>
       </section>
       <section className="min-h-[100vh] bg-white">
-        <div className="py-[80px] px-[60px] flex flex-col gap-[60px]">
-          <div className="flex flex-col md:flex-row justify-center space-x-[30px]">
+        <div className="py-[80px] px-[30px] md:px-[60px] flex flex-col gap-[60px]">
+        <div className="md:hidden flex flex-col justify-start items-start">
+                <p className="text-[30px] text-black">Tandem Axle Low Pro Dump Trailer</p>
+                <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+<path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
+<path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
+</svg>Stephenville, TX - Reliable Dump Trailer</p>
+              </div>
+          <div className="flex flex-col md:flex-row justify-center md:space-x-[30px]">
             <div className="flex flex-col bg-white overflow-hidden">
               <div className="relative w-full max-w-4xl object-cover">
                 <img
@@ -180,7 +189,10 @@ export default function Details() {
               <div className="md:flex hidden">
               <DetailsCarousal />
               </div>
-              <div className="flex flex-col justify-start items-start pt-[60px]">
+              <div className="md:hidden">
+              <DetailsCarousalMobile />
+              </div>
+              <div className="hidden md:flex md:flex-col justify-start items-start pt-[60px]">
                 <p className="text-[40px] text-black">Tandem Axle Low Pro Dump Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
@@ -188,7 +200,7 @@ export default function Details() {
 </svg>Stephenville, TX - Reliable Dump Trailer</p>
               </div>
             </div>
-            <div className="bg-[#F5F5F5] flex flex-col gap-[26px]" style={{ borderRadius: "0px 0px 16px 16px" }}>
+            <div className="pt-6 md:pt-0 bg-[#F5F5F5] flex flex-col gap-[26px]" style={{ borderRadius: "0px 0px 16px 16px" }}>
               <div className="bg-black" style={{ borderRadius: "16px 16px 0px 0px" }}>
                 <p className="text-[#ffd100] text-center text-[30px] md:text-[60px]">
                   $100.00
@@ -249,7 +261,7 @@ export default function Details() {
                   Dates are available
                 </p>
                 <div className="flex space-x-[30px]">
-                  <p className="text-[26px]">Total: $800.00</p>
+                  <p className="md:text-[26px]">Total: $800.00</p>
                   <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black hover:bg-yellow-500">
                     BOOK NOW
                   </Button>
@@ -263,7 +275,7 @@ export default function Details() {
         <p className="font-semibold">
           2024 PJ 83 x 14&apos; BP Tandem Axle Low Pro High Side Dump w/ 36&quot; Sides – DM
         </p>
-        <div className="grid grid-cols-3 gap-4 text-[20px] text-[#808080]">
+        <div className="grid md:grid-cols-3 gap-4 text-[20px] text-[#808080]">
           <ul className="space-y-2">
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
@@ -302,8 +314,8 @@ export default function Details() {
               4 - 235/80R16 10 Ply Radial Tires
             </li>
           </ul>
-          <ul className="space-y-2">
-            <li className="flex items-start">
+          <ul className="space-y-2 hidden md:flex md:flex-col">
+            <li className="hidden md:flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
               Electric Breakaway Kit w/ Charger
             </li>
@@ -340,8 +352,8 @@ export default function Details() {
               Ultra-Wide Monster Step Driver Side
             </li>
           </ul>
-          <ul className="space-y-2">
-            <li className="flex items-start">
+          <ul className="space-y-2 hidden md:flex md:flex-col">
+            <li className="md:flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
               Interstate Deep Cycle Battery
             </li>
@@ -432,20 +444,19 @@ export default function Details() {
       </section>
       <section className="min-h-[100vh] bg-[#000000]">
         <div className="pt-[100px] pb-[100px]">
-          <div className="text-[70px] tracking-wide text-center">
+          <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span className={` text-white`} style={{fontFamily:"tungsten-semibold"}}>
               TRAILER RENTALS
             </span>
             &nbsp;
             <span className="text-[#FFD100]">GALLERY</span>
           </div>
-          <Specialty />
-          <div className="flex justify-center px-[140px] pt-[60px]">
-            <div className="flex space-x-4">
-              <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-              <div className="w-[15px] h-[15px] bg-yellow-500 rounded-full" />
-              <div className="w-[15px] h-[15px] bg-gray-700 rounded-full" />
-            </div>
+          <div className="hidden md:flex">
+          <MyCarousal />
+          </div>
+
+          <div className="md:hidden p-10">
+          <MyCarousalMobile />
           </div>
         </div>
       </section>

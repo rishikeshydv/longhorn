@@ -70,38 +70,6 @@ export default function DetailsCarousalMobile() {
                   height="100"
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 4"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
               </div>
           </div>
           
@@ -124,38 +92,6 @@ export default function DetailsCarousalMobile() {
                   height="100"
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 4"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
               </div>
           </div>
 
@@ -173,38 +109,6 @@ export default function DetailsCarousalMobile() {
                 <img
                   src="/trailers/trailer1.png"
                   alt="Thumbnail 3"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 4"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
-                  className="w-28 h-28 rounded-lg"
-                  width="150"
-                  height="100"
-                  style={{ aspectRatio: "150/100", objectFit: "cover" }}
-                />
-                <img
-                  src="/trailers/trailer1.png"
-                  alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
                   height="100"

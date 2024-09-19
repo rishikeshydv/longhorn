@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 export default function Contact() {
   return (
     <main>
-    <section className="flex flex-col min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
+    <section className="flex flex-col min-h-[30vh] md:min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
      <NavBar />
       <div className="flex-1 flex items-center justify-center">
         <div className="container px-4 md:px-6 text-center space-y-4 lg:mb-10">
@@ -18,14 +18,14 @@ export default function Contact() {
         </div>
       </div>
     </section>
-    <section className='px-[150px] pt-[120px] pb-[100px]'>
-      <div className="flex flex-col space-y-8">
+    <section className='px-[70px] md:px-[150px] pt-[60px] md:pt-[120px] pb-[50px] md:pb-[100px]'>
+      <div className="flex flex-col md:space-y-8">
         <div className='flex flex-col justify-center items-center'>
-        <p className={`text-[80px]`} style={{fontFamily:"tungsten-semibold"}}>
+        <p className={`text-[35px] md:text-[80px]`} style={{fontFamily:"tungsten-semibold"}}>
             GET IN&nbsp;
           <span className={`text-[#ffd100]`} style={{fontFamily:"tungsten-medium"}}>TOUCH</span>
         </p>
-        <p className='uppercase text-[24px] text-[#808080]'>
+        <p className='uppercase text-[15px] md:text-[24px] text-[#808080]'>
         We have made contacting us very easy, simple and hassle-free!
         </p>
         </div>
@@ -89,7 +89,7 @@ export default function Contact() {
       </div>
     </div>
       </section>
-      <section className='bg-home-section min-h-[100vh]'>
+      <section className='bg-home-section md:min-h-[100vh] px-10 md:px-0'>
       <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center border-1 border-white"
     >

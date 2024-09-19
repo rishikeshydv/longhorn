@@ -3,11 +3,12 @@ import NavBar from "@/components/navbar/NavBar";
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card"
 import ReviewCarousal from '@/components/carousal/ReviewCarousal';
+import ReviewCarousalMobile from '@/components/carousal/ReviewCarousal_Mobile';
 
 export default function About() {
   return (
     <main>
-    <section className="flex flex-col min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
+    <section className="flex flex-col min-h-[30vh] md:min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
      <NavBar />
       <div className="flex-1 flex items-center justify-center">
         <div className="container px-4 md:px-6 text-center space-y-4 lg:mb-10">
@@ -17,7 +18,7 @@ export default function About() {
         </div>
       </div>
     </section>
-    <section className="bg-[#FFD100] w-full h-[84px] flex justify-center items-center">
+    <section className="bg-[#FFD100] w-full h-[84px] hidden md:flex justify-center items-center">
         <span className="text-[22px] text-black py-2 uppercase">
         Let&apos;s make something great work together.
         </span>
@@ -26,17 +27,17 @@ export default function About() {
         Got a project in mind?
         </Button>
       </section>
-      <section className='px-[150px] pt-[120px] pb-[100px]'>
+      <section className='px-[75px] md:px-[150px] pt-[60px] md:pt-[120px] pb-[50px] md:pb-[100px]'>
       <div className="flex flex-col space-y-8">
-        <div className='grid grid-cols-2 items-center space-x-[60px]'>
-        <div className='flex flex-col flex-[0.55]'>
-        <p className="text-[25px] font-medium text-muted-foreground">ABOUT COMPANY FOR RELIABLE TRAILER RENTAL</p>
-        <p className={`text-[80px] flex flex-col mt-[-25px]`} style={{fontFamily:"tungsten-semibold"}}>
+        <div className='grid md:grid-cols-2 md:items-center md:space-x-[60px]'>
+        <div className='flex flex-col md:flex-[0.55]'>
+        <p className="text-[15px] md:text-[25px] font-medium text-muted-foreground">ABOUT COMPANY FOR RELIABLE TRAILER RENTAL</p>
+        <p className={`text-[35px] md:text-[80px] flex flex-col md:mt-[-25px]`} style={{fontFamily:"tungsten-semibold"}}>
             WHAT DO YOU GET WITH
-          <span className={`text-[#ffd100] mt-[-40px]`} style={{fontFamily:"tungsten-medium"}}>LONGHORN RENTALS?</span>
+          <span className={`text-[#ffd100] mt-[-15px] md:mt-[-40px]`} style={{fontFamily:"tungsten-medium"}}>LONGHORN RENTALS?</span>
         </p>
       </div>
-      <p className="text-[24px] text-muted-foreground flex-[0.45]">
+      <p className="text-[18px] md:text-[24px] text-muted-foreground md:flex-[0.45]">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived not only five centuries.
@@ -82,8 +83,8 @@ export default function About() {
       </div>
     </div>
       </section>
-      <section className='min-h-[100vh] bg-about-us px-[100px]'>
-      <div className="flex flex-col items-center justify-center min-h-screen text-white">
+      <section className='md:min-h-[100vh] bg-about-us md:px-[100px] px-[50px]'>
+      <div className="flex md:flex-col items-center justify-center min-h-screen text-white">
       <div className="flex flex-col md:flex-row justify-center items-center p-4">
         <div className="">
           <img
@@ -96,15 +97,15 @@ export default function About() {
           />
         </div>
         <div className="mt-8 md:mt-0 md:ml-12">
-          <h2 className="text-[25px] font-semibold text-gray-400">CAMPING RV RENTALS</h2>
-          <div className="text-[80px] tracking-wide mt-[-20px]">
+          <h2 className="text-[15px] font-semibold text-gray-400">CAMPING RV RENTALS</h2>
+          <div className="text-[35px] md:text-[80px] tracking-wide md:mt-[-20px]">
             <span className={`text-white`} style={{fontFamily:"tungsten-semibold"}}>
               HAIL WITHOUT
             </span>
             &nbsp;
             <span className={`text-[#FFD100]`}>WORRYING</span>
           </div>
-          <p className=" text-gray-300 text-[24px] mt-[-5px]">
+          <p className=" text-gray-300 text-[20px] md:text-[24px] mt-[-5px]">
             Longhorn Trailer Rentals is your go-to solution for reliable and convenient car hauler rentals. With a fleet
             of well-maintained trailers equipped with features like sturdy ramps and tie-down points, they ensure the
             safe and secure transportation of your vehicles.
@@ -131,9 +132,9 @@ export default function About() {
       </div>
     </div>
       </section>
-      <section className="min-h-[100vh]">
-        <div className="py-[150px]">
-          <div className="text-[70px] tracking-wide text-center">
+      <section className="md:min-h-[100vh]">
+        <div className="py-[80px] md:py-[150px]">
+          <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
               className={` text-black`}
               style={{ fontFamily: "tungsten-semibold" }}
@@ -163,7 +164,13 @@ export default function About() {
               profession="Trailer Rental Customer"
             />
           </div> */}
+          <div className="md:flex hidden">
           <ReviewCarousal/>
+          </div>
+          
+          <div className="md:hidden pt-6">
+            <ReviewCarousalMobile/>
+          </div>
         </div>
       </section>
         {/* <section className="max-h-[110vh] w-[100vw] pt-8 bg-humberto">
