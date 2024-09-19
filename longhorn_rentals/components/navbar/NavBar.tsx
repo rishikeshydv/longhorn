@@ -22,14 +22,14 @@ export default function NavBar() {
       <div >
         <Image src={Logo} alt="Longhorn Rentals Logo" className="h-[40px] w-[200px] md:h-[48px] md:w-[260px] hover:cursor-pointer" onClick={()=>router.push("/")}/>
       </div>
-      <div className="lg:hidden">
+      <div className="md:hidden">
       <DropdownMenu>
   <DropdownMenuTrigger><RxHamburgerMenu className="w-[40px] h-[20px] text-white mt-2"/></DropdownMenuTrigger>
-  <DropdownMenuContent className="bg-transparent w-[400px]">
-    <DropdownMenuItem>Home</DropdownMenuItem>
-    <DropdownMenuItem>Trailers</DropdownMenuItem>
-    <DropdownMenuItem>About Us</DropdownMenuItem>
-    <DropdownMenuItem>Contact</DropdownMenuItem>
+  <DropdownMenuContent className="">
+    <DropdownMenuItem onClick={()=>router.push("/")}>Home</DropdownMenuItem>
+    <DropdownMenuItem onClick={()=>router.push("/products")}>Trailers</DropdownMenuItem>
+    <DropdownMenuItem onClick={()=>router.push("/about")}>About Us</DropdownMenuItem>
+    <DropdownMenuItem onClick={()=>router.push("/contact")}>Contact</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
       </div>
