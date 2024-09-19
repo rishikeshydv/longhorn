@@ -2,7 +2,6 @@
 import React from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Specialty from "@/components/specialty/Specialty";

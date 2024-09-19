@@ -25,8 +25,6 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import MyCarousal from "@/components/carousal/MyCarousal";
 import ReviewCarousal from "@/components/carousal/ReviewCarousal";
-import ImgCarousal from "@/components/carousal/ImgCarousal";
-import Individual from "@/components/specialty/Individual";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";

@@ -2,8 +2,6 @@ import React from 'react'
 import NavBar from "@/components/navbar/NavBar";
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card"
-import LadyHero from "@/public/heros/hero4.png"
-import Image from 'next/image';
 import ReviewCarousal from '@/components/carousal/ReviewCarousal';
 
 export default function About() {

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import Logo from "@/public/logo/logo.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -8,13 +8,10 @@ import { CiSearch } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
