@@ -29,12 +29,6 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogTitle
-} from "@/components/ui/dialog";
 export default function Home() {
   const router = useRouter();
   const [date, setDate] = React.useState<DateRange>({
@@ -43,11 +37,8 @@ export default function Home() {
   });
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
+  const [trailerType, setTrailerType] = React.useState<string>("");
 
-  //logic to estimate the rental price
-  const estimatePrice = () => {
-    console.log("Estimating Price");
-  }
 
   return (
     <main className="overflow-x-hidden">
@@ -73,7 +64,7 @@ export default function Home() {
               <div className="flex md:flex-row flex-col md:gap-7">
                 <div className="space-y-2 flex flex-col">
                   <Label className="text-black text-[22px]">Trailer Type</Label>
-                  <Select>
+                  <Select onValueChange={(value)=>setTrailerType(value)}>
                     <SelectTrigger
                       className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
                       style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
@@ -206,29 +197,9 @@ export default function Home() {
                 </RadioGroup>
               </div>
               <div className="mt-5 md:mt-10 flex justify-center">
-                <Dialog>
-                  <DialogTitle className="hidden text-3xl font-bold text-black">
-                    Get A Price
-                  </DialogTitle>
-                  <DialogTrigger asChild>
-                    <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500" onClick={estimatePrice}>
-                      Get A Price
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="md:max-w-[425px] bg-white opacity-70">
-                    <div className="bg-background rounded-lg p-6 w-full max-w-md flex flex-col gap-4">
-                      <div className="flex flex-col items-center ">
-                        <h2 className="text-2xl font-bold">Estimated Price</h2>
-                        <div className="text-5xl font-bold text-[#ffd100] mt-4">
-                          $99.99
-                          <span className="text-xl font-medium text-muted-foreground">
-                            /trailer
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
+              <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
+                  Get A Price
+                </Button>
               </div>
             </div>
           </div>
@@ -240,7 +211,7 @@ export default function Home() {
           JOB.
         </span>
         &nbsp;&nbsp;&nbsp;
-        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 hover:bg-yellow-500">
+        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 hover:bg-yellow-500" onClick={()=>router.push("/contact")}>
           CONTACT US NOW
         </Button>
       </section>
