@@ -5,8 +5,10 @@ import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation';
 
 export default function MyCarousal() {
+  const router = useRouter();
   const [emblaRef, embla] = useEmblaCarousel({
     align: "start",
     loop: false, // No loop to easily manage sets of 3 reviews
@@ -48,7 +50,7 @@ export default function MyCarousal() {
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/2024-enclosed/2024-enclosed-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -66,34 +68,34 @@ export default function MyCarousal() {
             $550 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 7x16 Enclosed Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>83&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>7,000 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 3500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2024-enclosed")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/2023-enclosed/2023-enclosed-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -102,43 +104,43 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
+            $60 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
+            $150 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
+            $280 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2023 6x12 Enclosed Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>83&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>3,500 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(1) 3500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2023-enclosed")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/2021-pj/2021-pj-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -156,28 +158,28 @@ export default function MyCarousal() {
             $550 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2021 PJ 20&apos; x 102&quot; SUPERWIDE B5</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>102&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>9,899 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 5200 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Car Hauler</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2021-pj")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
   </div>
@@ -189,7 +191,7 @@ export default function MyCarousal() {
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/utility/utility-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -198,43 +200,43 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
+            $50 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
+            $130 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
+            $290 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">6&apos;x8&apos; Big Tex 30SA Utility Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>60&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>2,995 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 3500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Utility Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/utility")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/livestock/livestock-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -243,43 +245,43 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
+            $90 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
+            $240 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
+            $490 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 BCI Livestock Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>60&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>7,000 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 3,500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Livestock Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/livestock")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/dump/dump-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -288,37 +290,37 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
+            $145 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
+            $390 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
+            $800 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">14&apos;x83&apos;x36&apos; Dump Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>83&apos;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>7,000 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 3,500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Dump Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/dump")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
   </div>
@@ -327,10 +329,10 @@ export default function MyCarousal() {
                     {/* third set of 3 reviews */}
                     <div className="flex-[0_0_100%]">
           <div className="flex justify-center gap-4 p-4 bg-black mt-10">
-    <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
+          <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/superwide/superwide-1.jpg"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -348,34 +350,34 @@ export default function MyCarousal() {
             $550 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 PJ 102&quot;x20&apos; BP 5&quot; Superwide - B5</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>102&quot</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>9,899 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 5,200 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
           <p className="text-[#808080] text-[18x]">Car Hauler</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/superwide")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/2024-enclosed/2024-enclosed-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -393,34 +395,34 @@ export default function MyCarousal() {
             $550 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 7x16 Enclosed Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>83&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>7,000 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(2) 3500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2024-enclosed")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
     <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
-          src="/trailers/trailer1.png"
+          src="/trailers/2023-enclosed/2023-enclosed-1.png"
           alt="Trailer"
           className="rounded-md my-6"
           width="350"
@@ -429,37 +431,37 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
+            $60 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
+            $150 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
+            $280 : 1WEEK
           </Badge>
         </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">Tandem Axle Low Pro Dump Trailer</h2>
+        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2023 6x12 Enclosed Trailer</h2>
         <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
           <div>
             <p className="font-bold text-[#ffd100]">Width</p>
-            <p>14&apos;x83&apos;x36&apos;</p>
+            <p>83&quot;</p>
           </div>
           <div>
             <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>15,900 lbs</p>
+            <p>3,500 lbs</p>
           </div>
           <div>
-            <p className="font-bold text-[#ffd100]">Cargo Capacity</p>
-            <p>9,345 - 11,827 lbs</p>
+            <p className="font-bold text-[#ffd100]">Axle</p>
+            <p>(1) 3500 lbs</p>
           </div>
         </div>
         <div className="flex items-center mt-4">
           <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
+          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
           <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
+          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
         </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500">MORE DETAILS</Button>
+        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2023-enclosed")}>MORE DETAILS</Button>
       </CardContent>
     </Card>
   </div>

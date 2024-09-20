@@ -20,10 +20,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import DetailsCarousal from "@/components/carousal/DetailsCarousal";
-import DetailsCarousalMobile from "@/components/carousal/DetailsCarousalMobile";
 import MyCarousal from "@/components/carousal/MyCarousal";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
+import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
+import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
 
 export default function Details() {
   const [date, setDate] = React.useState<DateRange>({
@@ -35,6 +35,17 @@ export default function Details() {
   const [trailerType, setTrailerType] = React.useState<string>("");
   const price = 100.00;
   const [total, setTotal] = React.useState<number>(0);
+
+  //list of images
+  const urlList = [
+    "/trailers/2024-enclosed/2024-enclosed-1.png",
+    "/trailers/2024-enclosed/2024-enclosed-2.png",
+    "/trailers/2024-enclosed/2024-enclosed-3.png",
+    "/trailers/2024-enclosed/2024-enclosed-4.png",
+    "/trailers/2024-enclosed/2024-enclosed-5.png",
+    "/trailers/2024-enclosed/2024-enclosed-6.png",
+    "/trailers/2024-enclosed/2024-enclosed-7.png",
+  ];
   console.log(trailerType);
   React.useEffect(() => {
     if (!date.from || !date.to) {
@@ -218,11 +229,11 @@ export default function Details() {
       <section className="min-h-[100vh] bg-white">
         <div className="py-[80px] px-[30px] md:px-[60px] flex flex-col gap-[60px]">
         <div className="md:hidden flex flex-col justify-start items-start">
-                <p className="text-[30px] text-black">2024 7×16 Enclosed Trailer</p>
+                <p className="text-[30px] text-black">2024 7x16 Enclosed Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
-</svg>Stephenville, TX - Reliable Dump Trailer</p>
+</svg>Stephensville, TX - Reliable Enclosed Trailer</p>
               </div>
           <div className="flex flex-col md:flex-row justify-center md:space-x-[30px]">
             <div className="flex flex-col bg-white overflow-hidden">
@@ -236,17 +247,17 @@ export default function Details() {
                 />
               </div>
               <div className="md:flex hidden">
-              <DetailsCarousal />
+              <TrailerImgCarousal urlList={urlList} />
               </div>
               <div className="md:hidden">
-              <DetailsCarousalMobile />
+              <TrailerImgCarousalMobile urlList={urlList} />
               </div>
               <div className="hidden md:flex md:flex-col justify-start items-start pt-[60px]">
-                <p className="text-[40px] text-black">2024 7×16 Enclosed Trailer</p>
+                <p className="text-[40px] text-black">2024 7x16 Enclosed Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
-</svg>Stephenville, TX - Reliable Dump Trailer</p>
+</svg>Stephensville, TX - Reliable Enclosed Trailer</p>
               </div>
             </div>
             <div className="pt-6 md:pt-0 bg-[#F5F5F5] flex flex-col gap-[26px]" style={{ borderRadius: "0px 0px 16px 16px" }}>
