@@ -40,7 +40,7 @@ export default function Home() {
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden" >
       <section className="bg-home-section bg-no-repeat bg-cover bg-center md:min-h-[100vh] md:w-full">
         <NavBar />
         <div className="mt-[40px] md:mt-[120px] flex flex-col justify-center items-center">
@@ -263,7 +263,7 @@ export default function Home() {
         <div className="py-[80px] md:py-[150px]">
           <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
-              className={` text-black`}
+              className={` text-black dark:text-white`}
               style={{ fontFamily: "tungsten-semibold" }}
             >
               HAPPY CUSTOMER

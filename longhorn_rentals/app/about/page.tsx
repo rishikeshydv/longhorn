@@ -133,7 +133,7 @@ export default function About() {
     </div>
       </section>
       <section className="md:min-h-[100vh]">
-        <div className="py-[80px] md:py-[150px]">
+        <div className="py-[80px] md:pt-[150px] border-gray-500 border-b-[1px]">
           <div className="text-[35px] md:text-[70px] tracking-wide text-center">
             <span
               className={` text-black`}
