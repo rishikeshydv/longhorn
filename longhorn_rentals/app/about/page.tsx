@@ -23,7 +23,7 @@ export default function About() {
     </section>
     <section className="bg-[#FFD100] w-full h-[84px] hidden md:flex justify-center items-center">
         <span className="text-[22px] text-black py-2 uppercase">
-        WE'RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT JOB.
+        WE&apos;RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT JOB.
   
         </span>
         &nbsp;&nbsp;&nbsp;
