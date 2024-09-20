@@ -33,7 +33,27 @@ export default function Details() {
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   const [trailerType, setTrailerType] = React.useState<string>("");
-
+  const price = 100.00;
+  const [total, setTotal] = React.useState<number>(0);
+  console.log(trailerType);
+  React.useEffect(() => {
+    if (!date.from || !date.to) {
+      return;
+    }
+    const diff = Math.abs(date.to.getTime() - date.from.getTime());
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24))+1;
+    //3 days and 7 days discount
+    if (days == 3){
+      setTotal(270);
+    }
+    else if (days == 7){
+      setTotal(550);
+    }
+    else {
+      setTotal(price * days);
+    }
+  },
+  [date]);
   return (
     <main className="overflow-x-hidden">
       <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
@@ -78,7 +98,7 @@ export default function Details() {
                         value="2021-pj"
                         className="text-[18px] border-b-[1px]"
                       >
-                        2021 PJ 20&apos; x 102&quos; SUPERWIDE B5
+                        2021 PJ 20&apos; x 102&quot; SUPERWIDE B5
                       </SelectItem>
                       <SelectItem
                         value="utility"
@@ -198,7 +218,7 @@ export default function Details() {
       <section className="min-h-[100vh] bg-white">
         <div className="py-[80px] px-[30px] md:px-[60px] flex flex-col gap-[60px]">
         <div className="md:hidden flex flex-col justify-start items-start">
-                <p className="text-[30px] text-black">Tandem Axle Low Pro Dump Trailer</p>
+                <p className="text-[30px] text-black">2024 7×16 Enclosed Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
@@ -208,9 +228,9 @@ export default function Details() {
             <div className="flex flex-col bg-white overflow-hidden">
               <div className="relative w-full max-w-4xl object-cover">
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-1.png"
                   alt="Main trailer"
-                  className="w-full object-cover"
+                  className="w-full object-cover rounded-3xl"
                   width="1000"
                   height="700"
                 />
@@ -222,7 +242,7 @@ export default function Details() {
               <DetailsCarousalMobile />
               </div>
               <div className="hidden md:flex md:flex-col justify-start items-start pt-[60px]">
-                <p className="text-[40px] text-black">Tandem Axle Low Pro Dump Trailer</p>
+                <p className="text-[40px] text-black">2024 7×16 Enclosed Trailer</p>
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
@@ -290,7 +310,7 @@ export default function Details() {
                   Dates are available
                 </p>
                 <div className="flex space-x-[30px]">
-                  <p className="md:text-[26px]">Total: $800.00</p>
+                  <p className="md:text-[26px]">Total: ${total}.00</p>
                   <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black hover:bg-yellow-500">
                     BOOK NOW
                   </Button>
@@ -302,45 +322,45 @@ export default function Details() {
       <div className="space-y-4 text-[24px] ">
         <h2 className="text-[40px] font-bold">Description</h2>
         <p className="font-semibold">
-          2024 PJ 83 x 14&apos; BP Tandem Axle Low Pro High Side Dump w/ 36&quot; Sides – DM
+        2024 7x16 Enclosed Trailer
         </p>
         <div className="grid md:grid-cols-3 gap-4 text-[20px] text-[#808080]">
           <ul className="space-y-2">
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              BP 2 5/16&quot; Adjustable Demco EZ Latch Coupler
+              GVWR 7,000 lbs
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              Grade 70 Safety Chains w/ Clevis Hook
+              3,500Ib axle
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              1 - Spring Loaded Drop Leg Jack (12,000 lb.)
+              2&quot; 5/16 ball hitch
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              Lockable Front Toolbox (Houses Battery & Pump)
+              83&quot; wide
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              2 - 7,000 lb. Dexter EZ Lube Brake Axles
+              7&apos; tall
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              Electric Drum Brakes on Both Axles
+              Side Access Door
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              6 Leaf Slipper Spring Suspension
+              Ramp Door With Spring
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              4 - 16&quot; Black Mod Wheels
+              LED Lighting
             </li>
             <li className="flex items-start">
               <DotIcon className="mr-2 text-yellow-500" />
-              4 - 235/80R16 10 Ply Radial Tires
+              7 Pin Connector
             </li>
           </ul>
           <ul className="space-y-2 hidden md:flex md:flex-col">
@@ -419,36 +439,6 @@ export default function Details() {
               Dump Bed Capacity: 10.76 yd
             </li>
           </ul>
-          <ul className="space-y-2">
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              4 - D-rings (Welded Inside Box)
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              Spare Tire Mount
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              DOT Approved Flush Mount LED Lights
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              DOT Compliant Reflective Tape
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              All-Weather Wiring Harness (7-way RV)
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              Sand Blasted & Acid Washed
-            </li>
-            <li className="flex items-start">
-              <DotIcon className="mr-2 text-yellow-500" />
-              Primer + Black Powder Coat
-            </li>
-          </ul>
         </div>
       </div>
       <div className="mt-8 space-y-4">
@@ -456,11 +446,11 @@ export default function Details() {
         <ul className="space-y-2 text-[20px] text-[#808080]">
           <li className="flex items-start">
             <DotIcon className="mr-2 text-yellow-500" />
-            Trailer Type: Dump Trailer
+            Trailer Type: Enclosed Trailer
           </li>
           <li className="flex items-start">
             <DotIcon className="mr-2 text-yellow-500" />
-            Make: PJ Trailers
+            Make: N/A
           </li>
           <li className="flex items-start">
             <DotIcon className="mr-2 text-yellow-500" />

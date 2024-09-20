@@ -55,7 +55,7 @@ export default function DetailsCarousal() {
           <div className="flex-[0_0_100%]">
           <div className="flex justify-center mt-4 space-x-4">
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-2.png"
                   alt="Thumbnail 2"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -63,7 +63,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-3.png"
                   alt="Thumbnail 3"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -71,7 +71,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-4.png"
                   alt="Thumbnail 4"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -79,7 +79,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-5.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -87,7 +87,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-6.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -95,7 +95,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-7.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -109,7 +109,7 @@ export default function DetailsCarousal() {
           <div className="flex-[0_0_100%]">
           <div className="flex justify-center mt-4 space-x-4">
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-2.png"
                   alt="Thumbnail 2"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -117,7 +117,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-3.png"
                   alt="Thumbnail 3"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -125,7 +125,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-4.png"
                   alt="Thumbnail 4"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -133,7 +133,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-5.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -141,7 +141,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-6.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -149,7 +149,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-7.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -163,7 +163,7 @@ export default function DetailsCarousal() {
           <div className="flex-[0_0_100%]">
           <div className="flex justify-center mt-4 space-x-4">
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-2.png"
                   alt="Thumbnail 2"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -171,7 +171,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-3.png"
                   alt="Thumbnail 3"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -179,7 +179,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-4.png"
                   alt="Thumbnail 4"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -187,7 +187,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-5.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -195,7 +195,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-6.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"
@@ -203,7 +203,7 @@ export default function DetailsCarousal() {
                   style={{ aspectRatio: "150/100", objectFit: "cover" }}
                 />
                 <img
-                  src="/trailers/trailer1.png"
+                  src="/trailers/2024-enclosed/2024-enclosed-7.png"
                   alt="Thumbnail 5"
                   className="w-28 h-28 rounded-lg"
                   width="150"

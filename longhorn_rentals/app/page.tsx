@@ -39,7 +39,7 @@ export default function Home() {
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   const [trailerType, setTrailerType] = React.useState<string>("");
 
-
+  console.log(trailerType);
   return (
     <main className="overflow-x-hidden">
       <section className="bg-home-section bg-no-repeat bg-cover bg-center md:min-h-[100vh] md:w-full">
