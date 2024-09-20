@@ -29,7 +29,12 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
-
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle
+} from "@/components/ui/dialog";
 export default function Home() {
   const router = useRouter();
   const [date, setDate] = React.useState<DateRange>({
@@ -39,8 +44,13 @@ export default function Home() {
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
 
+  //logic to estimate the rental price
+  const estimatePrice = () => {
+    console.log("Estimating Price");
+  }
+
   return (
-    <main className="overflow-x-hidden" >
+    <main className="overflow-x-hidden">
       <section className="bg-home-section bg-no-repeat bg-cover bg-center md:min-h-[100vh] md:w-full">
         <NavBar />
         <div className="mt-[40px] md:mt-[120px] flex flex-col justify-center items-center">
@@ -61,68 +71,105 @@ export default function Home() {
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="flex md:flex-row flex-col md:gap-7">
-              <div className="space-y-2 flex flex-col">
-                <Label className="text-black text-[22px]">
-                  Rental Location
-                </Label>
-                <Select>
-                  <SelectTrigger
-                    className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
+                <div className="space-y-2 flex flex-col">
+                  <Label className="text-black text-[22px]">Trailer Type</Label>
+                  <Select>
+                    <SelectTrigger
+                      className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
+                    >
+                      <SelectValue placeholder="Choose Trailer Type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem
+                        value="2024-enclosed"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 7x16 Enclosed Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="2023-enclosed"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2023 6x12 Enclosed Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="2021-pj"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2021 PJ 20&apos; x 102&quos; SUPERWIDE B5
+                      </SelectItem>
+                      <SelectItem
+                        value="utility"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        6&apos;x8&apos; Big Tex 30SA Utility Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="livestock"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 BCI Livestock Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="dump"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        14&apos;x83&apos;x36&apos; Dump Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="superwide"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 PJ 102″x20&apos; BP 5″ Superwide - B5
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2 flex flex-col mt-2 md:mt-0">
+                  <Label className="text-black text-[22px]">Rental Date</Label>
+                  <div
+                    className="flex justify-between items-center text-[19px] w-[260px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
-                    <SelectValue placeholder="Find Our Location" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="stephensville" className="text-[18px]">
-                      Stephensville, TX
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2 flex flex-col mt-2 md:mt-0">
-                <Label className="text-black text-[22px]">Rental Date</Label>
-                <div
-                  className="flex justify-between items-center text-[19px] w-[260px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
-                >
-                  <p>
-                    {start}&nbsp;-&nbsp;{end}
-                  </p>
-                  <div>
-                    <Popover>
-                      <PopoverTrigger className="py-1 md:py-[10px]">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="24"
-                          viewBox="0 0 25 24"
-                          fill="none"
-                        >
-                          <path
-                            d="M17.1667 5.33333H16.5V4.66667C16.5 4.29867 16.202 4 15.8333 4C15.4647 4 15.1667 4.29867 15.1667 4.66667V5.33333H9.83333V4.66667C9.83333 4.29867 9.53533 4 9.16667 4C8.798 4 8.5 4.29867 8.5 4.66667V5.33333H7.83333C5.99533 5.33333 4.5 6.82867 4.5 8.66667V16.6667C4.5 18.5047 5.99533 20 7.83333 20H17.1667C19.0047 20 20.5 18.5047 20.5 16.6667V8.66667C20.5 6.82867 19.0047 5.33333 17.1667 5.33333ZM7.83333 6.66667H17.1667C18.2693 6.66667 19.1667 7.564 19.1667 8.66667V9.33333H5.83333V8.66667C5.83333 7.564 6.73067 6.66667 7.83333 6.66667ZM17.1667 18.6667H7.83333C6.73067 18.6667 5.83333 17.7693 5.83333 16.6667V10.6667H19.1667V16.6667C19.1667 17.7693 18.2693 18.6667 17.1667 18.6667ZM17.1667 13.3333C17.1667 13.7013 16.8687 14 16.5 14H8.5C8.13133 14 7.83333 13.7013 7.83333 13.3333C7.83333 12.9653 8.13133 12.6667 8.5 12.6667H16.5C16.8687 12.6667 17.1667 12.9653 17.1667 13.3333ZM12.5 16C12.5 16.368 12.202 16.6667 11.8333 16.6667H8.5C8.13133 16.6667 7.83333 16.368 7.83333 16C7.83333 15.632 8.13133 15.3333 8.5 15.3333H11.8333C12.202 15.3333 12.5 15.632 12.5 16Z"
-                            fill="black"
+                    <p>
+                      {start}&nbsp;-&nbsp;{end}
+                    </p>
+                    <div>
+                      <Popover>
+                        <PopoverTrigger className="py-1 md:py-[10px]">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="24"
+                            viewBox="0 0 25 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M17.1667 5.33333H16.5V4.66667C16.5 4.29867 16.202 4 15.8333 4C15.4647 4 15.1667 4.29867 15.1667 4.66667V5.33333H9.83333V4.66667C9.83333 4.29867 9.53533 4 9.16667 4C8.798 4 8.5 4.29867 8.5 4.66667V5.33333H7.83333C5.99533 5.33333 4.5 6.82867 4.5 8.66667V16.6667C4.5 18.5047 5.99533 20 7.83333 20H17.1667C19.0047 20 20.5 18.5047 20.5 16.6667V8.66667C20.5 6.82867 19.0047 5.33333 17.1667 5.33333ZM7.83333 6.66667H17.1667C18.2693 6.66667 19.1667 7.564 19.1667 8.66667V9.33333H5.83333V8.66667C5.83333 7.564 6.73067 6.66667 7.83333 6.66667ZM17.1667 18.6667H7.83333C6.73067 18.6667 5.83333 17.7693 5.83333 16.6667V10.6667H19.1667V16.6667C19.1667 17.7693 18.2693 18.6667 17.1667 18.6667ZM17.1667 13.3333C17.1667 13.7013 16.8687 14 16.5 14H8.5C8.13133 14 7.83333 13.7013 7.83333 13.3333C7.83333 12.9653 8.13133 12.6667 8.5 12.6667H16.5C16.8687 12.6667 17.1667 12.9653 17.1667 13.3333ZM12.5 16C12.5 16.368 12.202 16.6667 11.8333 16.6667H8.5C8.13133 16.6667 7.83333 16.368 7.83333 16C7.83333 15.632 8.13133 15.3333 8.5 15.3333H11.8333C12.202 15.3333 12.5 15.632 12.5 16Z"
+                              fill="black"
+                            />
+                          </svg>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-full">
+                          <Calendar
+                            mode="range"
+                            selected={date}
+                            numberOfMonths={2}
+                            className="rounded-md text-[24px] bg-white shadow-lg"
+                            onSelect={(range: DateRange | undefined) => {
+                              if (range && range.from && range.to) {
+                                setDate(range);
+                                setStart(range.from.toLocaleDateString());
+                                setEnd(range.to.toLocaleDateString());
+                              }
+                            }}
                           />
-                        </svg>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-full">
-                        <Calendar
-                          mode="range"
-                          selected={date}
-                          numberOfMonths={2}
-                          className="rounded-md text-[24px] bg-white shadow-lg"
-                          onSelect={(range: DateRange | undefined) => {
-                            if (range && range.from && range.to) {
-                              setDate(range);
-                              setStart(range.from.toLocaleDateString());
-                              setEnd(range.to.toLocaleDateString());
-                            }
-                          }}
-                        />
-                      </PopoverContent>
-                    </Popover>
+                        </PopoverContent>
+                      </Popover>
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
               <div className="mt-[15px] md:mt-[25px]">
                 <RadioGroup
@@ -159,9 +206,29 @@ export default function Home() {
                 </RadioGroup>
               </div>
               <div className="mt-5 md:mt-10 flex justify-center">
-                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
-                  Get A Price
-                </Button>
+                <Dialog>
+                  <DialogTitle className="hidden text-3xl font-bold text-black">
+                    Get A Price
+                  </DialogTitle>
+                  <DialogTrigger asChild>
+                    <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500" onClick={estimatePrice}>
+                      Get A Price
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="md:max-w-[425px] bg-white opacity-70">
+                    <div className="bg-background rounded-lg p-6 w-full max-w-md flex flex-col gap-4">
+                      <div className="flex flex-col items-center ">
+                        <h2 className="text-2xl font-bold">Estimated Price</h2>
+                        <div className="text-5xl font-bold text-[#ffd100] mt-4">
+                          $99.99
+                          <span className="text-xl font-medium text-muted-foreground">
+                            /trailer
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>
@@ -169,7 +236,8 @@ export default function Home() {
       </section>
       <section className="bg-[#FFD100] w-full h-[84px] space-x-2 hidden lg:flex justify-center items-center">
         <span className="text-[22px] text-black py-2">
-          WE&apos;RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT JOB.
+          WE&apos;RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT
+          JOB.
         </span>
         &nbsp;&nbsp;&nbsp;
         <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 hover:bg-yellow-500">
@@ -231,7 +299,10 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <Button className="bg-[#ffd100] hover:bg-yellow-500 text-black text-[18px] w-[125px]" onClick={()=>router.push("/products")}>
+            <Button
+              className="bg-[#ffd100] hover:bg-yellow-500 text-black text-[18px] w-[125px]"
+              onClick={() => router.push("/products")}
+            >
               RENT A TRAILER
             </Button>
           </div>
@@ -250,13 +321,12 @@ export default function Home() {
             <span className="text-[#FFD100]">RESOURCES</span>
           </div>
           <div className="hidden md:flex">
-          <MyCarousal />
+            <MyCarousal />
           </div>
 
           <div className="md:hidden p-10">
-          <MyCarousalMobile />
+            <MyCarousalMobile />
           </div>
-
         </div>
       </section>
       <section className="md:min-h-[100vh]">
@@ -292,11 +362,11 @@ export default function Home() {
             />
           </div> */}
           <div className="md:flex hidden">
-          <ReviewCarousal/>
+            <ReviewCarousal />
           </div>
-          
+
           <div className="md:hidden pt-6">
-            <ReviewCarousalMobile/>
+            <ReviewCarousalMobile />
           </div>
         </div>
       </section>
@@ -317,7 +387,10 @@ export default function Home() {
               <span>A TRAILER?</span>
             </div>
             <div className="flex justify-center">
-              <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] px-[30px] py-[25px] w-[200px] hover:bg-yellow-500" onClick={()=>router.push("/products")}>
+              <Button
+                className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] px-[30px] py-[25px] w-[200px] hover:bg-yellow-500"
+                onClick={() => router.push("/products")}
+              >
                 <CiLocationOn className="mb-[2px]" />
                 &nbsp;&nbsp;VIEW TRAILERS
               </Button>
