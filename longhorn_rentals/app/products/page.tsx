@@ -24,6 +24,7 @@ import { DateRange } from "react-day-picker";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Trailer from "@/components/trailer/Trailer";
 export default function Products() {
   const [date, setDate] = React.useState<DateRange>({
     from: new Date(),
@@ -32,6 +33,40 @@ export default function Products() {
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   const router = useRouter();
+  const [trailerType, setTrailerType] = React.useState<string>("");
+  const onSubmit = () => {
+    if (trailerType === "") {
+      alert("Please select a trailer type");
+      return;
+    }
+    if (trailerType === "2024-enclosed") {
+      router.push("/details/2024-enclosed");
+    }
+    else if (trailerType === "2023-enclosed") {
+      router.push("/details/2023-enclosed");
+    }
+    else if (trailerType === "2021-pj") {
+      router.push("/details/2021-pj");
+    }
+    else if (trailerType === "utility") {
+      router.push("/details/utility");
+    }
+    else if (trailerType === "livestock") {
+      router.push("/details/livestock");
+    }
+    else if (trailerType === "dump") {
+      router.push("/details/dump");
+    }
+    else if (trailerType === "superwide") {
+      router.push("/details/superwide");
+    }
+  }
+  //logic for pagination
+  const totalTrailers = 7;
+  const trailersPerPage = 4;
+  const totalPages = Math.ceil(totalTrailers / trailersPerPage);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  
   return (
     <main className="overflow-x-hidden">
       <section className="bg-product-page bg-no-repeat bg-cover bg-center md:min-h-[95vh]">
@@ -50,68 +85,105 @@ export default function Products() {
               style={{ backgroundColor: "rgba(255, 255, 255, 0.54)" }}
             >
               <div className="flex md:flex-row flex-col md:gap-7">
-              <div className="space-y-2 flex flex-col">
-                <Label className="text-black text-[22px]">
-                  Rental Location
-                </Label>
-                <Select>
-                  <SelectTrigger
-                    className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
+                <div className="space-y-2 flex flex-col">
+                  <Label className="text-black text-[22px]">Trailer Type</Label>
+                  <Select onValueChange={(value)=>setTrailerType(value)}>
+                    <SelectTrigger
+                      className="text-[19px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] py-[15px] text-[#808080]"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
+                    >
+                      <SelectValue placeholder="Choose Trailer Type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem
+                        value="2024-enclosed"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 7x16 Enclosed Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="2023-enclosed"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2023 6x12 Enclosed Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="2021-pj"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2021 PJ 20&apos; x 102&quos; SUPERWIDE B5
+                      </SelectItem>
+                      <SelectItem
+                        value="utility"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        6&apos;x8&apos; Big Tex 30SA Utility Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="livestock"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 BCI Livestock Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="dump"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        14&apos;x83&apos;x36&apos; Dump Trailer
+                      </SelectItem>
+                      <SelectItem
+                        value="superwide"
+                        className="text-[18px] border-b-[1px]"
+                      >
+                        2024 PJ 102″x20&apos; BP 5″ Superwide - B5
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2 flex flex-col mt-2 md:mt-0">
+                  <Label className="text-black text-[22px]">Rental Date</Label>
+                  <div
+                    className="flex justify-between items-center text-[19px] w-[260px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
                     style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
                   >
-                    <SelectValue placeholder="Find Our Location" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="stephensville" className="text-[18px]">
-                      Stephensville, TX
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2 flex flex-col mt-2 md:mt-0">
-                <Label className="text-black text-[22px]">Rental Date</Label>
-                <div
-                  className="flex justify-between items-center text-[19px] w-[260px] h-[40px] md:w-[320px] md:h-[44px] px-[10px] text-[#808080] rounded-md border border-input"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.50)" }}
-                >
-                  <p>
-                    {start}&nbsp;-&nbsp;{end}
-                  </p>
-                  <div>
-                    <Popover>
-                      <PopoverTrigger className="py-1 md:py-[10px]">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="24"
-                          viewBox="0 0 25 24"
-                          fill="none"
-                        >
-                          <path
-                            d="M17.1667 5.33333H16.5V4.66667C16.5 4.29867 16.202 4 15.8333 4C15.4647 4 15.1667 4.29867 15.1667 4.66667V5.33333H9.83333V4.66667C9.83333 4.29867 9.53533 4 9.16667 4C8.798 4 8.5 4.29867 8.5 4.66667V5.33333H7.83333C5.99533 5.33333 4.5 6.82867 4.5 8.66667V16.6667C4.5 18.5047 5.99533 20 7.83333 20H17.1667C19.0047 20 20.5 18.5047 20.5 16.6667V8.66667C20.5 6.82867 19.0047 5.33333 17.1667 5.33333ZM7.83333 6.66667H17.1667C18.2693 6.66667 19.1667 7.564 19.1667 8.66667V9.33333H5.83333V8.66667C5.83333 7.564 6.73067 6.66667 7.83333 6.66667ZM17.1667 18.6667H7.83333C6.73067 18.6667 5.83333 17.7693 5.83333 16.6667V10.6667H19.1667V16.6667C19.1667 17.7693 18.2693 18.6667 17.1667 18.6667ZM17.1667 13.3333C17.1667 13.7013 16.8687 14 16.5 14H8.5C8.13133 14 7.83333 13.7013 7.83333 13.3333C7.83333 12.9653 8.13133 12.6667 8.5 12.6667H16.5C16.8687 12.6667 17.1667 12.9653 17.1667 13.3333ZM12.5 16C12.5 16.368 12.202 16.6667 11.8333 16.6667H8.5C8.13133 16.6667 7.83333 16.368 7.83333 16C7.83333 15.632 8.13133 15.3333 8.5 15.3333H11.8333C12.202 15.3333 12.5 15.632 12.5 16Z"
-                            fill="black"
+                    <p>
+                      {start}&nbsp;-&nbsp;{end}
+                    </p>
+                    <div>
+                      <Popover>
+                        <PopoverTrigger className="py-1 md:py-[10px]">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="24"
+                            viewBox="0 0 25 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M17.1667 5.33333H16.5V4.66667C16.5 4.29867 16.202 4 15.8333 4C15.4647 4 15.1667 4.29867 15.1667 4.66667V5.33333H9.83333V4.66667C9.83333 4.29867 9.53533 4 9.16667 4C8.798 4 8.5 4.29867 8.5 4.66667V5.33333H7.83333C5.99533 5.33333 4.5 6.82867 4.5 8.66667V16.6667C4.5 18.5047 5.99533 20 7.83333 20H17.1667C19.0047 20 20.5 18.5047 20.5 16.6667V8.66667C20.5 6.82867 19.0047 5.33333 17.1667 5.33333ZM7.83333 6.66667H17.1667C18.2693 6.66667 19.1667 7.564 19.1667 8.66667V9.33333H5.83333V8.66667C5.83333 7.564 6.73067 6.66667 7.83333 6.66667ZM17.1667 18.6667H7.83333C6.73067 18.6667 5.83333 17.7693 5.83333 16.6667V10.6667H19.1667V16.6667C19.1667 17.7693 18.2693 18.6667 17.1667 18.6667ZM17.1667 13.3333C17.1667 13.7013 16.8687 14 16.5 14H8.5C8.13133 14 7.83333 13.7013 7.83333 13.3333C7.83333 12.9653 8.13133 12.6667 8.5 12.6667H16.5C16.8687 12.6667 17.1667 12.9653 17.1667 13.3333ZM12.5 16C12.5 16.368 12.202 16.6667 11.8333 16.6667H8.5C8.13133 16.6667 7.83333 16.368 7.83333 16C7.83333 15.632 8.13133 15.3333 8.5 15.3333H11.8333C12.202 15.3333 12.5 15.632 12.5 16Z"
+                              fill="black"
+                            />
+                          </svg>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-full">
+                          <Calendar
+                            mode="range"
+                            selected={date}
+                            numberOfMonths={2}
+                            className="rounded-md text-[24px] bg-white shadow-lg"
+                            onSelect={(range: DateRange | undefined) => {
+                              if (range && range.from && range.to) {
+                                setDate(range);
+                                setStart(range.from.toLocaleDateString());
+                                setEnd(range.to.toLocaleDateString());
+                              }
+                            }}
                           />
-                        </svg>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-full">
-                        <Calendar
-                          mode="range"
-                          selected={date}
-                          numberOfMonths={2}
-                          className="rounded-md text-[24px] bg-white shadow-lg"
-                          onSelect={(range: DateRange | undefined) => {
-                            if (range && range.from && range.to) {
-                              setDate(range);
-                              setStart(range.from.toLocaleDateString());
-                              setEnd(range.to.toLocaleDateString());
-                            }
-                          }}
-                        />
-                      </PopoverContent>
-                    </Popover>
+                        </PopoverContent>
+                      </Popover>
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
               <div className="mt-[15px] md:mt-[25px]">
                 <RadioGroup
@@ -148,7 +220,7 @@ export default function Products() {
                 </RadioGroup>
               </div>
               <div className="mt-5 md:mt-10 flex justify-center">
-                <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
+              <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500" onClick={onSubmit}>
                   Get A Price
                 </Button>
               </div>
@@ -162,357 +234,52 @@ export default function Products() {
             <Filters />
           </div>
           <div className="flex flex-col md:flex-[0.8] pb-[120px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[20px]">
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-      <CardContent>
-        <img
-          src="/trailers/2024-enclosed/2024-enclosed-1.png"
-          alt="Trailer"
-          className="rounded-md my-6"
-          width="450"
-          height="200"
-          style={{ aspectRatio: "350/200", objectFit: "cover" }}
-        />
-        <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
-          </Badge>
-        </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 7x16 Enclosed Trailer</h2>
-        <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-          <div>
-            <p className="font-bold text-[#ffd100]">Width</p>
-            <p>83&quot;</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>7,000 lbs</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">Axle</p>
-            <p>(2) 3500 lbs</p>
-          </div>
-        </div>
-        <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-        </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2024-enclosed")}>MORE DETAILS</Button>
-      </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-      <CardContent>
-        <img
-          src="/trailers/2023-enclosed/2023-enclosed-1.png"
-          alt="Trailer"
-          className="rounded-md my-6"
-          width="450"
-          height="200"
-          style={{ aspectRatio: "350/200", objectFit: "cover" }}
-        />
-        <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $60 : 1DAY
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $150 : 3DAYS
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $280 : 1WEEK
-          </Badge>
-        </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2023 6x12 Enclosed Trailer</h2>
-        <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-          <div>
-            <p className="font-bold text-[#ffd100]">Width</p>
-            <p>83&quot;</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>3,500 lbs</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">Axle</p>
-            <p>(1) 3500 lbs</p>
-          </div>
-        </div>
-        <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-        </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2023-enclosed")}>MORE DETAILS</Button>
-      </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-      <CardContent>
-        <img
-          src="/trailers/2021-pj/2021-pj-1.png"
-          alt="Trailer"
-          className="rounded-md my-6"
-          width="450"
-          height="200"
-          style={{ aspectRatio: "350/200", objectFit: "cover" }}
-        />
-        <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
-          </Badge>
-        </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2021 PJ 20&apos; x 102&quot; SUPERWIDE B5</h2>
-        <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-          <div>
-            <p className="font-bold text-[#ffd100]">Width</p>
-            <p>102&quot;</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>9,899 lbs</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">Axle</p>
-            <p>(2) 5200 lbs</p>
-          </div>
-        </div>
-        <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-        </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2021-pj")}>MORE DETAILS</Button>
-      </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-      <CardContent>
-        <img
-          src="/trailers/utility/utility-1.png"
-          alt="Trailer"
-          className="rounded-md my-6"
-          width="450"
-          height="200"
-          style={{ aspectRatio: "350/200", objectFit: "cover" }}
-        />
-        <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $50 : 1DAY
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $130 : 3DAYS
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $290 : 1WEEK
-          </Badge>
-        </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">6&apos;x8&apos; Big Tex 30SA Utility Trailer</h2>
-        <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-          <div>
-            <p className="font-bold text-[#ffd100]">Width</p>
-            <p>60&quot;</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>2,995 lbs</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">Axle</p>
-            <p>(2) 3500 lbs</p>
-          </div>
-        </div>
-        <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Utility Trailer</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-        </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/utility")}>MORE DETAILS</Button>
-      </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-              <CardContent>
-                <img
-                  src="/trailers/livestock/livestock-1.png"
-                  alt="Trailer"
-                  className="rounded-md my-6"
-                  width="450"
-                  height="200"
-                  style={{ aspectRatio: "350/200", objectFit: "cover" }}
-                />
-                <div className="flex justify-start gap-2 mt-4">
-                  <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-                    $90 : 1DAY
-                  </Badge>
-                  <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-                    $240 : 3DAYS
-                  </Badge>
-                  <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-                    $490 : 1WEEK
-                  </Badge>
-                </div>
-                <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 BCI Livestock Trailer</h2>
-                <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-                  <div>
-                    <p className="font-bold text-[#ffd100]">Width</p>
-                    <p>60&quot;</p>
+            
+              {
+                currentPage === 1 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[20px]">
+                    <Trailer trailer={1} />
+                    <Trailer trailer={2} />
+                    <Trailer trailer={3} />
+                    <Trailer trailer={4} />
                   </div>
-                  <div>
-                    <p className="font-bold text-[#ffd100]">GVWR</p>
-                    <p>7,000 lbs</p>
+                ):
+                (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[20px]">
+                    <Trailer trailer={5} />
+                    <Trailer trailer={6} />
+                    <Trailer trailer={7} />
                   </div>
-                  <div>
-                    <p className="font-bold text-[#ffd100]">Axle</p>
-                    <p>(2) 3,500 lbs</p>
-                  </div>
-                </div>
-                <div className="flex items-center mt-4">
-                  <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-                  <p className="text-[#808080] text-[18x]">Livestock Trailer</p>
-                  <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-                  <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-                </div>
-                <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/livestock")}>MORE DETAILS</Button>
-              </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-              <CardContent>
-                <img
-                  src="/trailers/dump/dump-1.png"
-                  alt="Trailer"
-                  className="rounded-md my-6"
-                  width="450"
-                  height="200"
-                  style={{ aspectRatio: "350/200", objectFit: "cover" }}
-                />
-                <div className="flex justify-start gap-2 mt-4">
-                  <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-                    $145 : 1DAY
-                  </Badge>
-                  <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-                    $390 : 3DAYS
-                  </Badge>
-                  <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-                    $800 : 1WEEK
-                  </Badge>
-                </div>
-                <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">14&apos;x83&apos;x36&apos; Dump Trailer</h2>
-                <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-                  <div>
-                    <p className="font-bold text-[#ffd100]">Width</p>
-                    <p>83&apos;</p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#ffd100]">GVWR</p>
-                    <p>7,000 lbs</p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#ffd100]">Axle</p>
-                    <p>(2) 3,500 lbs</p>
-                  </div>
-                </div>
-                <div className="flex items-center mt-4">
-                  <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-                  <p className="text-[#808080] text-[18x]">Dump Trailer</p>
-                  <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-                  <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-                </div>
-                <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/dump")}>MORE DETAILS</Button>
-              </CardContent>
-            </Card>
-            <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
-      <CardContent>
-        <img
-          src="/trailers/superwide/superwide-1.jpg"
-          alt="Trailer"
-          className="rounded-md my-6"
-          width="450"
-          height="200"
-          style={{ aspectRatio: "350/200", objectFit: "cover" }}
-        />
-        <div className="flex justify-start gap-2 mt-4">
-          <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $100 : 1DAY
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $270 : 3DAYS
-          </Badge>
-          <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $550 : 1WEEK
-          </Badge>
-        </div>
-        <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">2024 PJ 102&quot;x20&apos; BP 5&quot; Superwide - B5</h2>
-        <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
-          <div>
-            <p className="font-bold text-[#ffd100]">Width</p>
-            <p>102&quot</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">GVWR</p>
-            <p>9,899 lbs</p>
-          </div>
-          <div>
-            <p className="font-bold text-[#ffd100]">Axle</p>
-            <p>(2) 5,200 lbs</p>
-          </div>
-        </div>
-        <div className="flex items-center mt-4">
-          <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Car Hauler</p>
-          <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-          <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
-        </div>
-        <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/superwide")}>MORE DETAILS</Button>
-      </CardContent>
-            </Card>
-            </div>
+                )
+              }
+
             {/* This is the pagination part */}
             <div className="flex items-center justify-center w-full p-4 bg-black text-white md:pt-[60px] text-[24px]">
               <div className="flex flex-col md:flex-row items-center md:space-y-0 space-y-2 space-x-1 md:space-x-4">
-                <span>1 - 10 of 50 Results</span>
+                <span>Showing all results:</span>
                 <Button
                   variant="outline"
                   className="flex items-center space-x-2 text-[24px] bg-black"
+                  onClick={()=>{
+                   currentPage > 0 ? setCurrentPage(currentPage-1) : alert("End of Previous Pages")}}
                 >
                   <ArrowLeftIcon className="w-[18px] h-[18px] text-[#FFD100]" />
                   <span className="text-white">Prev</span>
                 </Button>
                 <div className="flex items-center space-x-1 md:space-x-4">
-                <Button
-                  variant="outline"
-                  className="bg-black text-[#ffd100] text-[24px]"
-                >
-                  01
-                </Button>
-                <Button variant="outline" className="bg-black text-white text-[24px]">
-                  02
-                </Button>
-                <Button variant="outline" className="text-[24px] bg-black text-white">
-                  03
-                </Button>
-                <Button variant="outline" className="text-[24px] bg-black text-white">
-                  04
-                </Button>
-                <Button variant="outline" className="text-[24px] bg-black text-white">
-                  05
-                </Button>
-                <span>...</span>
-                <Button variant="outline" className="text-[24px] bg-black text-white">
-                  10
-                </Button>
+                  {
+                    // Pagination buttons
+                    [...Array(totalPages)].map((_, index) => (
+                      <Button
+                        key={index+1}
+                        variant="outline"
+                        className={`bg-black text-[24px] ${currentPage === index+1 ? "text-[#ffd100]" : "text-white"}`}
+                        onClick={()=>setCurrentPage(index+1)}
+                      >
+                        {index + 1}
+                      </Button>
+                    ))
+                  }
 
                 </div>
                 <Button
@@ -520,7 +287,9 @@ export default function Products() {
                   className="flex items-center space-x-2 text-[24px] bg-black"
                 >
                   <span className="text-white">Next</span>
-                  <ArrowRightIcon className="w-[18px] h-[18px] text-[#FFD100]" />
+                  <ArrowRightIcon className="w-[18px] h-[18px] text-[#FFD100]" 
+                  onClick={()=>{currentPage < totalPages ? setCurrentPage(currentPage-1) : alert("End of Next Pages")}}
+                  />
                 </Button>
               </div>
             </div>

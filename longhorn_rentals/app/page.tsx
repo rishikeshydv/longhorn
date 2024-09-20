@@ -29,6 +29,7 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
+import e from "express";
 export default function Home() {
   const router = useRouter();
   const [date, setDate] = React.useState<DateRange>({
@@ -39,7 +40,33 @@ export default function Home() {
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   const [trailerType, setTrailerType] = React.useState<string>("");
 
-  console.log(trailerType);
+  const onSubmit = () => {
+    if (trailerType === "") {
+      alert("Please select a trailer type");
+      return;
+    }
+    if (trailerType === "2024-enclosed") {
+      router.push("/details/2024-enclosed");
+    }
+    else if (trailerType === "2023-enclosed") {
+      router.push("/details/2023-enclosed");
+    }
+    else if (trailerType === "2021-pj") {
+      router.push("/details/2021-pj");
+    }
+    else if (trailerType === "utility") {
+      router.push("/details/utility");
+    }
+    else if (trailerType === "livestock") {
+      router.push("/details/livestock");
+    }
+    else if (trailerType === "dump") {
+      router.push("/details/dump");
+    }
+    else if (trailerType === "superwide") {
+      router.push("/details/superwide");
+    }
+  }
   return (
     <main className="overflow-x-hidden">
       <section className="bg-home-section bg-no-repeat bg-cover bg-center md:min-h-[100vh] md:w-full">
@@ -197,7 +224,7 @@ export default function Home() {
                 </RadioGroup>
               </div>
               <div className="mt-5 md:mt-10 flex justify-center">
-              <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500">
+              <Button className="bg-[#FFD100] text-black text-[17px] py-[22px] w-[131px] hover:bg-yellow-500" onClick={onSubmit}>
                   Get A Price
                 </Button>
               </div>

@@ -24,6 +24,7 @@ import MyCarousal from "@/components/carousal/MyCarousal";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
 import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
+import { useRouter } from "next/navigation";
 
 export default function Details() {
   const [date, setDate] = React.useState<DateRange>({
@@ -35,7 +36,34 @@ export default function Details() {
   const [trailerType, setTrailerType] = React.useState<string>("");
   const price = 100.00;
   const [total, setTotal] = React.useState<number>(0);
-
+  const router = useRouter();
+  const onSubmit = () => {
+    if (trailerType === "") {
+      alert("Please select a trailer type");
+      return;
+    }
+    if (trailerType === "2024-enclosed") {
+      router.push("/details/2024-enclosed");
+    }
+    else if (trailerType === "2023-enclosed") {
+      router.push("/details/2023-enclosed");
+    }
+    else if (trailerType === "2021-pj") {
+      router.push("/details/2021-pj");
+    }
+    else if (trailerType === "utility") {
+      router.push("/details/utility");
+    }
+    else if (trailerType === "livestock") {
+      router.push("/details/livestock");
+    }
+    else if (trailerType === "dump") {
+      router.push("/details/dump");
+    }
+    else if (trailerType === "superwide") {
+      router.push("/details/superwide");
+    }
+  }
   //list of images
   const urlList = [
     "/trailers/2024-enclosed/2024-enclosed-1.png",

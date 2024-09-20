@@ -43,9 +43,9 @@ export default function ReviewCarousalMobile() {
           {/* First set of 3 reviews */}
           <div className="flex-[0_0_100%]">
             <div className="md:grid md:grid-cols-3 gap-8 p-10">
-              <Review
+            <Review
                 img="/reviews/review2.jpg"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                content="Great Service, very responsive and respectful. I would recommend them to anyone."
                 name="Genene Bell"
                 profession="Trailer Rental Customer"
               />
@@ -55,10 +55,10 @@ export default function ReviewCarousalMobile() {
           {/* Second set of 3 reviews */}
           <div className="flex-[0_0_100%]">
             <div className="md:grid md:grid-cols-3 gap-8 p-10">
-              <Review
+            <Review
                 img="/reviews/review1.png"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="John Doe"
+                content="I had a great experience with Longhorn Rentals. They were very professional and the trailer was in great condition."
+                name="Vladislav Krishtop"
                 profession="Trailer Rental Customer"
               />
             </div>

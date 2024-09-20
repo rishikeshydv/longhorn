@@ -45,20 +45,20 @@ export default function ReviewCarousal() {
             <div className="grid grid-cols-3 gap-8 p-10">
               <Review
                 img="/reviews/review2.jpg"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                content="Great Service, very responsive and respectful. I would recommend them to anyone."
                 name="Genene Bell"
                 profession="Trailer Rental Customer"
               />
               <Review
                 img="/reviews/review1.png"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="John Doe"
+                content="I had a great experience with Longhorn Rentals. They were very professional and the trailer was in great condition."
+                name="Vladislav Krishtop"
                 profession="Trailer Rental Customer"
               />
               <Review
                 img="/reviews/review3.png"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="Jane Doe"
+                content="I would definitely recommend Longhorn Rentals to anyone looking for a trailer. They were very professional and the trailer was in great condition."
+                name="Carlos A. Rodriguez"
                 profession="Trailer Rental Customer"
               />
             </div>
@@ -68,21 +68,21 @@ export default function ReviewCarousal() {
           <div className="flex-[0_0_100%]">
             <div className="grid grid-cols-3 gap-8 p-10">
               <Review
-                img="/reviews/review2.jpg"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="Another Person"
+                img="/reviews/review4.jpg"
+                content=" Good quality trailers and great customer service. I would recommend them to anyone."
+                name="Blaike Komieter"
                 profession="Trailer Rental Customer"
               />
               <Review
-                img="/reviews/review1.png"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="Another Customer"
+                img="/reviews/review5.webp"
+                content="What a great experience! I would recommend Longhorn Rentals to anyone looking for a trailer."
+                name="George Ruiz"
                 profession="Trailer Rental Customer"
               />
               <Review
-                img="/reviews/review3.png"
-                content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-                name="Yet Another"
+                img="/reviews/review6.jpg"
+                content="I had a great experience with Longhorn Rentals. They were very professional and the trailer was in great condition."
+                name="Christian Dewey"
                 profession="Trailer Rental Customer"
               />
             </div>
