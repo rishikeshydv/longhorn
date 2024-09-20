@@ -15,8 +15,7 @@ export default function Footer() {
           className="mr-6 md:mr-0"
         />
         <p className="hidden md:flex max-w-2xl text-center text-muted-foreground text-[24px]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
-          standard dummy text ever since the 1500s.
+        Welcome to Longhorn Trailer Rentals in Stephenville, TX! We are your premier destination for high-quality and reliable trailer rentals in Erath County and the surrounding areas. 
         </p>
         <div className="flex space-x-4">
           <Button variant="ghost" className="p-2 bg-black rounded-[10px]">
@@ -75,13 +74,13 @@ export default function Footer() {
               <Button variant="ghost" className="p-2 bg-black rounded-[5px] w-[40px] h-[40px]">
                 <MailIcon className="w-6 h-6 text-[#FFD100]" />
               </Button>
-              <span>demolonghorntrailers@gmail.com</span>
+              <span>longhorntrailrentalstx@gmail.com</span>
             </li>
             <li className="flex items-center space-x-2">
               <Button variant="ghost" className="p-2 bg-black rounded-[5px] w-[40px] h-[40px]">
                 <PhoneIcon className="w-6 h-6 text-[#FFD100]" />
               </Button>
-              <span>+44 2598 000 XXX</span>
+              <span> +1 (254) 434-8519</span>
             </li>
             <li className="flex items-center space-x-2">
               <Button variant="ghost" className="p-2 bg-black rounded-[5px] w-[40px] h-[40px]">

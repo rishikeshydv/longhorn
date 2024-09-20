@@ -230,10 +230,7 @@ export default function Home() {
               <span className="text-[#FFD100]">THE RELENTLESS</span>
             </div>
             <p className="text-[20px] md:text-[24px] pb-[40px]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
-              omnis quia earum nam optio consequuntur facere! Atque temporibus
-              qui iure provident excepturi natus, quos quisquam nostrum amet ut
-              accusamus odit.
+            Whether you&apos;re planning a weekend getaway, moving to a new home, or embarking on an adventurous road trip, our wide selection of meticulously maintained trailers, exceptional customer service, and flexible rental terms make us the top choice for all your hauling needs. 
             </p>
             <div className="flex space-x-[5px] md:space-x-[30px] pb-[40px]">
               <div className="border p-[20px] rounded-[10px] w-[157px] h-auto">

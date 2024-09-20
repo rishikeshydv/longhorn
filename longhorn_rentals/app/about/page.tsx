@@ -1,11 +1,14 @@
+"use client"
 import React from 'react'
 import NavBar from "@/components/navbar/NavBar";
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card"
 import ReviewCarousal from '@/components/carousal/ReviewCarousal';
 import ReviewCarousalMobile from '@/components/carousal/ReviewCarousal_Mobile';
+import { useRouter } from 'next/navigation';
 
 export default function About() {
+  const router = useRouter();
   return (
     <main>
     <section className="flex flex-col min-h-[30vh] md:min-h-[90vh] bg-about bg-no-repeat bg-cover bg-center">
@@ -20,11 +23,12 @@ export default function About() {
     </section>
     <section className="bg-[#FFD100] w-full h-[84px] hidden md:flex justify-center items-center">
         <span className="text-[22px] text-black py-2 uppercase">
-        Let&apos;s make something great work together.
+        WE'RE HERE TO HELP YOU CHOOSE THE RIGHT TRAILER FOR THE RIGHT JOB.
+  
         </span>
         &nbsp;&nbsp;&nbsp;
-        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 uppercase hover:bg-yellow-500">
-        Got a project in mind?
+        <Button className="bg-[#FFFFFF] text-black text-[22px] rounded-[50px] p-6 uppercase hover:bg-yellow-500" onClick={()=>router.push("/contact")}>
+        CONTACT US NOW
         </Button>
       </section>
       <section className='px-[75px] md:px-[150px] pt-[60px] md:pt-[120px] pb-[50px] md:pb-[100px]'>
@@ -38,9 +42,7 @@ export default function About() {
         </p>
       </div>
       <p className="text-[18px] md:text-[24px] text-muted-foreground md:flex-[0.45]">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries.
+      Whether you&apos;re planning a weekend getaway, moving to a new home, or embarking on an adventurous road trip, our wide selection of meticulously maintained trailers, exceptional customer service, and flexible rental terms make us the top choice for all your hauling needs.
       </p>
         </div>
       <div className="grid gap-8 md:grid-cols-3">
@@ -52,8 +54,7 @@ export default function About() {
           </div>
           <h3 className="mb-2 text-[24px] font-semibold">Great Service Experience</h3>
           <p className="text-[20px] text-muted-foreground">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry&apos;s standard.
+            We provide a wide range of trailers to suit your needs, whether you&apos;re moving, hauling equipment, or going on a road trip.
           </p>
         </Card>
         <Card className="py-[60px] px-[30px] text-center">
@@ -64,8 +65,7 @@ export default function About() {
           </div>
           <h3 className="mb-2 text-[24px] font-semibold">Affordable & Discounts</h3>
           <p className="text-[20px] text-muted-foreground">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry&apos;s standard.
+            We offer competitive pricing and discounts on our trailers to help you save money on your rental.
           </p>
         </Card>
         <Card className="py-[60px] px-[30px] text-center">
@@ -76,8 +76,7 @@ export default function About() {
           </div>
           <h3 className="mb-2 text-[24px] font-semibold">Insuranced Vehicles</h3>
           <p className="text-[20px] text-muted-foreground">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry&apos;s standard.
+            Our trailers are insured and come with a range of features to ensure the safety of your cargo.
           </p>
         </Card>
       </div>
@@ -97,7 +96,7 @@ export default function About() {
           />
         </div>
         <div className="mt-8 md:mt-0 md:ml-12">
-          <h2 className="text-[15px] font-semibold text-gray-400">CAMPING RV RENTALS</h2>
+          <h2 className="text-[15px] md:text-[25px] font-semibold text-gray-400">CAMPING RV RENTALS</h2>
           <div className="text-[35px] md:text-[80px] tracking-wide md:mt-[-20px]">
             <span className={`text-white`} style={{fontFamily:"tungsten-semibold"}}>
               HAIL WITHOUT
