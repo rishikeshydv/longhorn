@@ -89,7 +89,7 @@ export default function Contact() {
       </div>
     </div>
       </section>
-      <section className='bg-home-section md:min-h-[100vh] px-10 md:px-0'>
+      <section className='bg-home-section md:min-h-[100vh] p-10 md:p-0'>
       <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center border-1 border-white"
     >

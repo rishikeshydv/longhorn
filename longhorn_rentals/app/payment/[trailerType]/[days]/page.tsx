@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import NavBar from '@/components/navbar/NavBar'
 import { useParams } from 'next/navigation'
 import { MdBookmarkAdd } from "react-icons/md";
+import { set } from 'date-fns'
 
 export default function Payment() {
     const { trailerType,days } = useParams();
@@ -24,6 +25,8 @@ export default function Payment() {
     const [textColor7, setTextColor7] = React.useState("text-black");
     const [buttonColor7, setButtonColor7] = React.useState("bg-white");
     //addons
+    const [hitch5, setHitch5] = React.useState(0);
+    const [hitch7, setHitch7] = React.useState(0);
     const addons = [
       {
         title: "Add 5' Drop Hitch",
@@ -40,8 +43,6 @@ export default function Payment() {
         description3: "2' 5/16 ball and a 2' ball",
       }
     ]
-    const [hitch5, setHitch5] = React.useState(false);
-    const [hitch7, setHitch7] = React.useState(false);
 
     //user information
     const [name, setName] = React.useState("");
@@ -67,15 +68,9 @@ export default function Payment() {
     console.log(response.json());
   };
 
-  //updating the price with hitches
-  useEffect(() => {
-    if (hitch5) {
-      setTotal(total + 10);
-    }
-    if (hitch7) {
-      setTotal(total + 10);
-    }
-  }, [hitch5, hitch7]);
+
+  
+
 
   //handling stripe payment
     const [clientSecret, setClientSecret] = useState<string>("");
@@ -198,7 +193,7 @@ useEffect(() => {
     <NavBar />
     </div>
 
-    <div className='grid grid-rows-2 gap-8 max-w-4xl pt-20 pb-10 mx-auto'>
+    <div className='grid md:grid-rows-2 md:gap-8 max-w-4xl md:pt-20 pb-10 mx-auto'>
 
     <Card className='border-none shadow-none'>
           <CardHeader>
@@ -218,7 +213,7 @@ useEffect(() => {
               <Input id="address" placeholder="Enter your address" className='text-[20px]' onChange={(e)=>setAddress(e.target.value)}/>
             </div>
           </CardContent>
-        </Card>
+    </Card>
 
     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-8">
       <Card>
@@ -319,15 +314,18 @@ useEffect(() => {
               <p className="text-muted-foreground text-[16px] mb-6">{addons[0].description3}</p>
               <Button variant="outline" size="sm" className={`w-full text-[20px] ${buttonColor5} ${textColor5}`} 
               onClick={() => {
-                if (hitch5) {
+                if (hitch5==10) {
                   alert("Item Removed from Cart");
-                  setHitch5(false);
+                  setHitch5(0);
+                  setTotal(prevTotal => prevTotal - 10);
                   setButtonColor5("bg-white");
                   setButtonText5("Add to Cart");
-                  setTextColor5("text-white");
-                } else {
+                  setTextColor5("text-black");
+                } 
+                else if (hitch5==0){
                   alert("Item Added to Cart");
-                  setHitch5(true);
+                  setHitch5(10);
+                  setTotal(prevTotal => prevTotal + 10); 
                   setButtonColor5("bg-green-400");
                   setButtonText5("Remove from Cart");
                   setTextColor5("text-black");
@@ -353,15 +351,17 @@ useEffect(() => {
               <p className="text-muted-foreground text-[16px] mb-6">{addons[1].description3}</p>
               <Button variant="outline" size="sm" className={`w-full text-[20px] ${buttonColor7} ${textColor7}`}
                              onClick={() => {
-                              if (hitch7) {
+                              if (hitch7 == 10) {
                                 alert("Item Removed from Cart");
-                                setHitch7(false);
+                                setHitch7(0);
+                                setTotal(prevTotal => prevTotal - 10);
                                 setButtonColor7("bg-white");
                                 setButtonText7("Add to Cart");
                                 setTextColor7("text-black");
-                              } else {
+                              } else if (hitch7 == 0) {
                                 alert("Item Added to Cart");
-                                setHitch7(true);
+                                setHitch7(10);
+                                setTotal(prevTotal => prevTotal + 10);
                                 setButtonColor7("bg-green-400");
                                 setButtonText7("Remove from Cart");
                                 setTextColor7("text-black");
