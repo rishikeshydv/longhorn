@@ -49,7 +49,7 @@ export default function Trailer({trailer}: {trailer: number}) {
                 <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
                 <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
                 <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-                <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+                <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
               </div>
               <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2024-enclosed")}>MORE DETAILS</Button>
             </CardContent>
@@ -97,7 +97,7 @@ export default function Trailer({trailer}: {trailer: number}) {
             <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
             <p className="text-[#808080] text-[18x]">Enclosed Trailer</p>
             <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-            <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+            <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
           </div>
           <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2023-enclosed")}>MORE DETAILS</Button>
         </CardContent>
@@ -144,7 +144,7 @@ export default function Trailer({trailer}: {trailer: number}) {
             <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
             <p className="text-[#808080] text-[18x]">Car Hauler</p>
             <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-            <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+            <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
           </div>
           <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2021-pj")}>MORE DETAILS</Button>
         </CardContent>
@@ -191,7 +191,7 @@ export default function Trailer({trailer}: {trailer: number}) {
             <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
             <p className="text-[#808080] text-[18x]">Utility Trailer</p>
             <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-            <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+            <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
           </div>
           <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/utility")}>MORE DETAILS</Button>
         </CardContent>
@@ -238,7 +238,7 @@ export default function Trailer({trailer}: {trailer: number}) {
             <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
             <p className="text-[#808080] text-[18x]">Livestock Trailer</p>
             <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-            <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+            <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
           </div>
           <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/livestock")}>MORE DETAILS</Button>
         </CardContent>
@@ -285,7 +285,7 @@ export default function Trailer({trailer}: {trailer: number}) {
             <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
             <p className="text-[#808080] text-[18x]">Dump Trailer</p>
             <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-            <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+            <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
           </div>
           <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/dump")}>MORE DETAILS</Button>
         </CardContent>
@@ -333,7 +333,7 @@ export default function Trailer({trailer}: {trailer: number}) {
                 <CarIcon className="w-4 h-4 mr-2 text-[#ffd100]" />
                 <p className="text-[#808080] text-[18x]">Car Hauler</p>
                 <LocateIcon className="w-4 h-4 mx-2 text-[#ffd100]" />
-                <p className="text-[#808080] text-[18x]">Stephensville, TX</p>
+                <p className="text-[#808080] text-[18x]">Stephenville, TX</p>
               </div>
               <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/superwide")}>MORE DETAILS</Button>
             </CardContent>

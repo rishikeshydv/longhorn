@@ -11,9 +11,11 @@ import MyCarousal from "@/components/carousal/MyCarousal";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
 import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 export default function Details() {
-  // const router = useRouter();
+  const router = useRouter();
+  const trailerType = "superwide";
+  const [day,setDay]=React.useState<number>(1);
   const [date, setDate] = React.useState<DateRange>({
     from: new Date(),
     to: new Date(),
@@ -68,6 +70,7 @@ export default function Details() {
     }
     const diff = Math.abs(date.to.getTime() - date.from.getTime());
     const days = Math.ceil(diff / (1000 * 60 * 60 * 24))+1;
+    setDay(days);
     //3 days and 7 days discount
     if (days == 3){
       setTotal(270);
@@ -250,7 +253,7 @@ export default function Details() {
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
-</svg>Stephensville, TX - Reliable Car Hauler</p>
+</svg>Stephenville, TX - Reliable Car Hauler</p>
               </div>
           <div className="flex flex-col md:flex-row justify-center md:space-x-[30px]">
             <div className="flex flex-col bg-white overflow-hidden">
@@ -274,7 +277,7 @@ export default function Details() {
                 <p className="flex gap-2 text-[#808080]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
 <path d="M9.00013 21.6668L8.40819 21.1357C7.59215 20.4204 0.466797 13.9785 0.466797 9.26642C0.466797 4.33291 4.28731 0.333496 9.00013 0.333496C13.7129 0.333496 17.5335 4.33291 17.5335 9.26642C17.5335 13.9785 10.4081 20.4204 9.59545 21.1392L9.00013 21.6668ZM9.00013 2.26506C5.30811 2.26943 2.31617 5.40147 2.31199 9.26638C2.31199 12.2266 6.69578 16.9555 9.00013 19.1199C11.3045 16.9547 15.6883 12.223 15.6883 9.26638C15.6841 5.40147 12.6922 2.26947 9.00013 2.26506Z" fill="#FFD100"/>
 <path d="M8.99973 12.8075C7.1316 12.8075 5.61719 11.2221 5.61719 9.26652C5.61719 7.31092 7.1316 5.72559 8.99973 5.72559C10.8679 5.72559 12.3823 7.31092 12.3823 9.26652C12.3823 11.2221 10.8679 12.8075 8.99973 12.8075ZM8.99973 7.49601C8.06567 7.49601 7.30846 8.28868 7.30846 9.26648C7.30846 10.2443 8.06567 11.0369 8.99973 11.0369C9.93379 11.0369 10.691 10.2443 10.691 9.26648C10.691 8.28868 9.93383 7.49601 8.99973 7.49601Z" fill="#FFD100"/>
-</svg>Stephensville, TX - Reliable Car Hauler</p>
+</svg>Stephenville, TX - Reliable Car Hauler</p>
               </div>
             </div>
             <div className="pt-6 md:pt-0 bg-[#F5F5F5] flex flex-col gap-[26px]" style={{ borderRadius: "0px 0px 16px 16px" }}>
@@ -317,7 +320,7 @@ export default function Details() {
                   disabled
                   className="bg-white flex justify-between text-[#808080] text-[16px] tracking-wide px-[15px] py-[10px] h-[60px] w-full"
                 >
-                  Stephensville, TX
+                  Stephenville, TX
                   <GrLocation className="text-black w-[20px] h-[20px]" />
                 </Button>
               </div>
@@ -339,7 +342,7 @@ export default function Details() {
                 </p>
                 <div className="flex space-x-[30px]">
                   <p className="md:text-[26px]">Total: ${total}.00</p>
-                  <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black hover:bg-yellow-500">
+                  <Button className="text-[18px] px-[30px] bg-[#ffd100] text-black hover:bg-yellow-500" onClick={()=>router.push(`/payment/${trailerType}/${day}`)}>
                     BOOK NOW
                   </Button>
                 </div>

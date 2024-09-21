@@ -87,7 +87,7 @@ export default function Footer() {
                 <MapPinIcon className="w-6 h-6 text-[#FFD100]" />
               </Button>
               <span>
-                Stephensville, TX
+                Stephenville, TX
                 <br />
                 United States
               </span>

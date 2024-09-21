@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
           <h3 className="mb-2 text-[24px] font-semibold">Head Office</h3>
           <p className="text-[20px] text-muted-foreground">
-          Co Rd 182, Stephensville, TX 76401
+          Co Rd 182, Stephenville, TX 76401
           </p>
         </Card>
         <Card className="py-[60px] px-[30px] text-center">
