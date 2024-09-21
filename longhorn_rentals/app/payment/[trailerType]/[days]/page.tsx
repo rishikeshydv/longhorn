@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import NavBar from '@/components/navbar/NavBar'
 import { useParams } from 'next/navigation'
 import { MdBookmarkAdd } from "react-icons/md";
-import { set } from 'date-fns'
 
 export default function Payment() {
     const { trailerType,days } = useParams();
