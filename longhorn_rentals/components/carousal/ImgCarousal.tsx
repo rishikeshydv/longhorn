@@ -1,26 +1,24 @@
 "use client";
 
-import useEmblaCarousel from 'embla-carousel-react';
+import useEmblaCarousel from "embla-carousel-react";
 import { useState, useEffect, useCallback } from "react";
 
 export default function ImgCarousal() {
   const [emblaRef, embla] = useEmblaCarousel({
     align: "start",
-    loop: false, // No loop to easily manage sets of 3 reviews
+    loop: true, // Enable looping for infinite scroll
     skipSnaps: false,
-    containScroll: "trimSnaps", // Ensure it trims extra space if fewer slides
+    containScroll: "trimSnaps",
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  // Scroll to the selected set of reviews
   const scrollTo = useCallback(
     (index: number) => embla && embla.scrollTo(index),
     [embla]
   );
 
-  // Update the selected index when the carousel scrolls
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
@@ -33,87 +31,57 @@ export default function ImgCarousal() {
     embla.on("select", onSelect);
   }, [embla, onSelect]);
 
+  // Auto scroll logic
+  useEffect(() => {
+    if (!embla) return;
+
+    const autoScroll = setInterval(() => {
+      embla.scrollNext(); // Automatically scroll to the next slide
+    }, 2000); // Adjust the time interval (3000ms = 3 seconds)
+
+    return () => clearInterval(autoScroll); // Clear the interval on component unmount
+  }, [embla]);
+
+  // const images = [
+  //   { src: "/trailers/trailer2.png", alt: "Trailer 1", width: 300, height: 400 },
+  //   { src: "/trailers/trailer2.png", alt: "Trailer 2", width: 300, height: 300 },
+  //   { src: "/trailers/trailer2.png", alt: "Trailer 3", width: 300, height: 400 },
+  //   { src: "/trailers/trailer2.png", alt: "Trailer 4", width: 300, height: 400 },
+  // ];
+
+
+  const images = [
+    { src: "/trailers/2021-pj/2021-pj-1.png", alt: "Trailer 1", width: 300, height: 400 },
+    { src: "/trailers/2024-enclosed/2024-enclosed-1.png", alt: "Trailer 2", width: 300, height: 400 },
+    { src: "/trailers/dump/dump-1.png", alt: "Trailer 3", width: 300, height: 400 },
+    { src: "/trailers/livestock/livestock-1.png", alt: "Trailer 4", width: 300, height: 400 },
+  ];
+
   return (
     <div className="overflow-hidden px-[100px]">
       {/* Carousel Container */}
       <div className="overflow-hidden" ref={emblaRef}>
-        {/* Carousel inner container */}
+        {/* Carousel Inner Container */}
         <div className="flex">
-          {/* First set of 3 reviews */}
-          <div className="flex-[0_0_100%]">
-          <div className="flex gap-10 overflow-x-auto px-4 pt-[103px] pb-[70px]">
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-            </div>
-          </div>
-          
-          {/* Second set of 3 reviews */}
-          <div className="flex-[0_0_100%]">
-          <div className="flex gap-10 overflow-x-auto px-4 pt-[103px] pb-[70px]">
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 1"
-                className="rounded-lg"
-                width="300"
-                height="400"
-                style={{ aspectRatio: "300/400", objectFit: "cover" }}
-              />
-              <img
-                src="/trailers/trailer2.png"
-                alt="Trailer 2"
-                className="rounded-lg py-4"
-                width="300"
-                height="300"
-                style={{ aspectRatio: "300/300", objectFit: "cover" }}
-              />
-            </div>
-          </div>
+          {Array(1)
+            .fill(images)
+            .flat()
+            .map((image, index) => (
+              <div className="flex-[0_0_100%]" key={index}>
+                <div className="flex gap-6 px-4 pt-[103px] pb-[70px]">
+                  {images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img.src}
+                      alt={img.alt}
+                      className="rounded-lg object-cover"
+                      width={img.width}
+                      height={img.height}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
         </div>
       </div>
 

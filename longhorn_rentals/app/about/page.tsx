@@ -82,7 +82,7 @@ export default function About() {
       </div>
     </div>
       </section>
-      <section className='md:min-h-[100vh] bg-about-us md:px-[100px] px-[50px]'>
+      <section className='md:max-h-[100vh] bg-about-us bg-no-repeat bg-cover bg-center md:px-[100px] px-[50px]'>
       <div className="flex md:flex-col items-center justify-center min-h-screen text-white">
       <div className="flex flex-col md:flex-row justify-center items-center p-4">
         <div className="">

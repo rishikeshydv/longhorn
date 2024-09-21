@@ -318,7 +318,7 @@ export default function Trailer({trailer}: {trailer: number}) {
               <div className="flex justify-start space-x-[15px] mt-2 text-[24px]">
                 <div>
                   <p className="font-bold text-[#ffd100]">Width</p>
-                  <p>102&quot</p>
+                  <p>102&quot;</p>
                 </div>
                 <div>
                   <p className="font-bold text-[#ffd100]">GVWR</p>

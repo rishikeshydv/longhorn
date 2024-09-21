@@ -32,6 +32,23 @@ export default function ReviewCarousal() {
     onSelect();
     setScrollSnaps(embla.scrollSnapList());
     embla.on("select", onSelect);
+     // Auto-scroll effect
+     const autoScroll = setInterval(() => {
+      // Get the current index
+const currentIndex = embla.selectedScrollSnap();
+const totalCards = embla.scrollSnapList().length;
+
+      // Check if the current index is the last one
+if (currentIndex === totalCards - 1) {
+  embla.scrollTo(0); // Reset to the first card
+} else {
+  embla.scrollNext(); // Scroll to the next slide
+}
+}, 2000); // 2 seconds interval
+
+return () => {
+  clearInterval(autoScroll); // Clear the interval on component unmount
+};
   }, [embla, onSelect]);
 
   return (

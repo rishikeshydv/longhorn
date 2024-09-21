@@ -24,75 +24,96 @@ export default function Filters() {
         <AccordionItem value="item-1">
           <AccordionTrigger>WIDTH</AccordionTrigger>
           <AccordionContent>
-          <RadioGroup defaultValue="option-one">
+          <RadioGroup defaultValue="all">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+            <RadioGroupItem value="all" id="option-all"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">All</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+            <RadioGroupItem value="60" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">60&quot; Wide</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="83" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">83&quot; Wide</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="102" id="option-three" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-three" className="text-[20px]">102&quot; Wide</Label>
           </div>
         </RadioGroup>
 
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>LENGTH</AccordionTrigger>
+          <AccordionTrigger>GVMR</AccordionTrigger>
           <AccordionContent>
-          <RadioGroup defaultValue="option-one">
+          <RadioGroup defaultValue="all">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+            <RadioGroupItem value="all" id="option-all"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">All</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+            <RadioGroupItem value="3000" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Below 3,000 GVMR</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="6000" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Below 6,000 GVMR</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="10000" id="option-three" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-three" className="text-[20px]">Below 10,000 GVMR</Label>
           </div>
         </RadioGroup>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>GVMR</AccordionTrigger>
+          <AccordionTrigger className="uppercase">Trailer Type</AccordionTrigger>
           <AccordionContent>
-          <RadioGroup defaultValue="option-one">
+          <RadioGroup defaultValue="all">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+            <RadioGroupItem value="all" id="option-all"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">All</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+            <RadioGroupItem value="enclosed" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">Enclosed</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="car-hauler" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">Car Hauler</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="utility" id="option-three" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-three" className="text-[20px]">Utility</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="livestock" id="option-four" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-four" className="text-[20px]">Livestock</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="dump" id="option-five" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-five" className="text-[20px]">Dump</Label>
           </div>
         </RadioGroup>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger>CARGO CAPACITY</AccordionTrigger>
+          <AccordionTrigger className="uppercase">Axles</AccordionTrigger>
           <AccordionContent>
-          <RadioGroup defaultValue="option-one">
+          <RadioGroup defaultValue="all">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+            <RadioGroupItem value="all" id="option-all"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">All</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
-          </div>
-        </RadioGroup>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-5">
-          <AccordionTrigger>PULL TYPE</AccordionTrigger>
-          <AccordionContent>
-          <RadioGroup defaultValue="option-one">
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-one" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-one" className="text-[20px]">Option One</Label>
+            <RadioGroupItem value="3500" id="option-one"  className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-one" className="text-[20px]">3,500 lbs</Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two" className="text-[#ffd100] bg-gray-400"/>
-            <Label htmlFor="option-two" className="text-[20px]">Option Two</Label>
+            <RadioGroupItem value="5200" id="option-two" className="text-[#ffd100] bg-gray-400"/>
+            <Label htmlFor="option-two" className="text-[20px]">5,200 lbs</Label>
           </div>
         </RadioGroup>
           </AccordionContent>

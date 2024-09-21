@@ -3,65 +3,52 @@ import React from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Calendar } from "@/components/ui/calendar";
 import { DateRange } from "react-day-picker";
 import { LuCalendarRange } from "react-icons/lu";
 import { GrLocation } from "react-icons/gr";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import MyCarousal from "@/components/carousal/MyCarousal";
 import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
 import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export default function Details() {
-  const router = useRouter();
+  // const router = useRouter();
   const [date, setDate] = React.useState<DateRange>({
     from: new Date(),
     to: new Date(),
   });
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
-  const [trailerType, setTrailerType] = React.useState<string>("");
-  const onSubmit = () => {
-    if (trailerType === "") {
-      alert("Please select a trailer type");
-      return;
-    }
-    if (trailerType === "2024-enclosed") {
-      router.push("/details/2024-enclosed");
-    }
-    else if (trailerType === "2023-enclosed") {
-      router.push("/details/2023-enclosed");
-    }
-    else if (trailerType === "2021-pj") {
-      router.push("/details/2021-pj");
-    }
-    else if (trailerType === "utility") {
-      router.push("/details/utility");
-    }
-    else if (trailerType === "livestock") {
-      router.push("/details/livestock");
-    }
-    else if (trailerType === "dump") {
-      router.push("/details/dump");
-    }
-    else if (trailerType === "superwide") {
-      router.push("/details/superwide");
-    }
-  }
+  // const [trailerType, setTrailerType] = React.useState<string>("");
+  // const onSubmit = () => {
+  //   if (trailerType === "") {
+  //     alert("Please select a trailer type");
+  //     return;
+  //   }
+  //   if (trailerType === "2024-enclosed") {
+  //     router.push("/details/2024-enclosed");
+  //   }
+  //   else if (trailerType === "2023-enclosed") {
+  //     router.push("/details/2023-enclosed");
+  //   }
+  //   else if (trailerType === "2021-pj") {
+  //     router.push("/details/2021-pj");
+  //   }
+  //   else if (trailerType === "utility") {
+  //     router.push("/details/utility");
+  //   }
+  //   else if (trailerType === "livestock") {
+  //     router.push("/details/livestock");
+  //   }
+  //   else if (trailerType === "dump") {
+  //     router.push("/details/dump");
+  //   }
+  //   else if (trailerType === "superwide") {
+  //     router.push("/details/superwide");
+  //   }
+  // }
     //list of images
     const urlList = [
       "/trailers/2021-pj/2021-pj-1.png",
@@ -75,7 +62,6 @@ export default function Details() {
 
   const price = 100.00;
   const [total, setTotal] = React.useState<number>(0);
-  console.log(trailerType);
   React.useEffect(() => {
     if (!date.from || !date.to) {
       return;
@@ -94,9 +80,11 @@ export default function Details() {
     }
   },
   [date]);
+
+
   return (
     <main className="overflow-x-hidden">
-      <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
+      {/* <section className="bg-product-page bg-no-repeat bg-cover bg-center min-h-[95vh]">
         <NavBar />
         <div className="mt-[120px] flex flex-col justify-center items-center">
           <div className="text-[35px] md:text-[75px] tracking-wide px-[55px] md:px-[219px] text-center">
@@ -105,7 +93,6 @@ export default function Details() {
               &gt; RENTAL LISTINGS
             </span>
           </div>
-          {/* Box */}
           <div className="px-[80px] md:px-[160px] mt-12 mb-16 md:mb-0">
             <div
               className="flex flex-col md:flex-row justify-center md:space-x-4 bg-[#FFFFFF] border-1 border-white rounded-[20px] p-[25px] md:px-[50px] md:py-[40px] w-full"
@@ -254,7 +241,10 @@ export default function Details() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+            <div className="bg-black">
+      <NavBar />
+      </div>
       <section className="min-h-[100vh] bg-white">
         <div className="py-[80px] px-[30px] md:px-[60px] flex flex-col gap-[60px]">
         <div className="md:hidden flex flex-col justify-start items-start">

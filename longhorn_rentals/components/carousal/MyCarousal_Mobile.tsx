@@ -150,7 +150,7 @@ export default function MyCarousalMobile() {
                     {/* third set of 3 reviews */}
                     <div className="flex-[0_0_100%]">
           <div className="flex justify-center gap-4 p-4 bg-black mt-10">
-          <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
+    <Card className=" bg-[#1a1a1a] text-white border-[#808080] border-[1px]">
       <CardContent>
         <img
           src="/trailers/2021-pj/2021-pj-1.png"

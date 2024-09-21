@@ -29,7 +29,7 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import ReviewCarousalMobile from "@/components/carousal/ReviewCarousal_Mobile";
 import ImgCarousalMobile from "@/components/carousal/ImgCarousal_Mobile";
 import ImgCarousal from "@/components/carousal/ImgCarousal";
-import e from "express";
+
 export default function Home() {
   const router = useRouter();
   const [date, setDate] = React.useState<DateRange>({

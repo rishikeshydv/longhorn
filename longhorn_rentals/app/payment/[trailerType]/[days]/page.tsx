@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -14,6 +14,15 @@ export default function Payment() {
     const { trailerType,days } = useParams();
     const shipping = 0;
     const discount = 0;
+    const [total, setTotal] = React.useState(0);
+    //for hitch5
+    const [buttonText5, setButtonText5] = React.useState("Add to Cart");
+    const [textColor5, setTextColor5] = React.useState("text-black");
+    const [buttonColor5, setButtonColor5] = React.useState("bg-white");
+    //for hitch7
+    const [buttonText7, setButtonText7] = React.useState("Add to Cart");
+    const [textColor7, setTextColor7] = React.useState("text-black");
+    const [buttonColor7, setButtonColor7] = React.useState("bg-white");
     //addons
     const addons = [
       {
@@ -31,90 +40,187 @@ export default function Payment() {
         description3: "2' 5/16 ball and a 2' ball",
       }
     ]
+    const [hitch5, setHitch5] = React.useState(false);
+    const [hitch7, setHitch7] = React.useState(false);
+
+    //user information
+    const [name, setName] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [address, setAddress] = React.useState("");
+
+    //handling emails
+  const OrderDeliveryEmail = async (orderNumber: string, email: string) => {
+    const response = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        name: name,
+        product: trailerType.toString().toUpperCase(),
+        days: days,
+        date: new Date().toLocaleDateString(),
+        total: total,
+      }),
+    });
+    console.log(response.json());
+  };
+
+  //updating the price with hitches
+  useEffect(() => {
+    if (hitch5) {
+      setTotal(total + 10);
+    }
+    if (hitch7) {
+      setTotal(total + 10);
+    }
+  }, [hitch5, hitch7]);
+
+  //handling stripe payment
+    const [clientSecret, setClientSecret] = useState<string>("");
+  useEffect(() => {
+    // Fetch the client secret from your backend
+    const fetchClientSecret = async () => {
+      if (total === 0){
+        return;
+      }
+      let newAmount = 0;
+      newAmount = total * 100;
+      const response = await fetch('/api/create-payment-intent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ amount: newAmount}), // Adjust as needed
+      });
+
+      const data = await response.json();
+      setClientSecret(data.clientSecret);
+    };
+    //actual code
+    // if (total > 0){
+    //   fetchClientSecret();
+    // }
+
+    //dummy code
+    if (total > 9999999999){
+      fetchClientSecret();
+    }
+}, [total]);
+
+useEffect(() => {
     //calculating total
     if(trailerType == "2024-enclosed"){
       if (Number(days) == 3){
-        var total = 270;
+        setTotal(270);
       }
       else if (Number(days) == 7){
-        var total = 550;
+        setTotal(550);
       }
       else {
-        var total = 100 * Number(days);
+        setTotal(100 * Number(days));
       }
     }
     else if (trailerType == "2023-enclosed"){
       if (Number(days) == 3){
-        var total = 150;
+        setTotal(150);
       }
       else if (Number(days) == 7){
-        var total = 280;
+        setTotal(280);
       }
       else {
-        var total = 60 * Number(days);
+        setTotal(60 * Number(days));
       }
     }
     else if (trailerType == "2021-pj"){
       if (Number(days) == 3){
-        var total = 270;
+        setTotal(270);
       }
       else if (Number(days) == 7){
-        var total = 550;
+        setTotal(550);
       }
       else {
-        var total = 100 * Number(days);
+        setTotal(100 * Number(days));
       }
     }
     else if (trailerType == "dump"){
       if (Number(days) == 3){
-        var total = 390;
+        setTotal(390);
       }
       else if (Number(days) == 7){
-        var total = 800;
+        setTotal(800);
       }
       else {
-        var total = 145 * Number(days);
+        setTotal(145 * Number(days));
       }
     }
     else if (trailerType == "livestock"){
       if (Number(days) == 3){
-        var total = 240;
+        setTotal(240);
       }
       else if (Number(days) == 7){
-        var total = 490;
+        setTotal(490);
       }
       else {
-        var total = 90 * Number(days);
+        setTotal(90 * Number(days));
       }
     }
     else if (trailerType == "utility"){
       if (Number(days) == 3){
-        var total = 130;
+        setTotal(130);
       }
       else if (Number(days) == 7){
-        var total = 290;
+        setTotal(290);
       }
       else {
-        var total = 50 * Number(days);
+        setTotal(50 * Number(days));
       }
     }
     else{
       if (Number(days) == 3){
-        var total = 270;
+        setTotal(270);
       }
       else if (Number(days) == 7){
-        var total = 550;
+        setTotal(550);
       }
       else {
-        var total = 100 * Number(days);
+        setTotal(100 * Number(days));
       }
     }
+  }, [trailerType, days]);
+
+  //useless code for build purpose
+  console.log(email,address,OrderDeliveryEmail,clientSecret);
   return (
    <main>
     <div className='bg-black'>
     <NavBar />
     </div>
-    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto p-4 md:p-8">
+
+    <div className='grid grid-rows-2 gap-8 max-w-4xl pt-20 pb-10 mx-auto'>
+
+    <Card className='border-none shadow-none'>
+          <CardHeader>
+            <CardTitle className='text-[35px]'>User Information</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid gap-2">
+              <Label htmlFor="name" className='text-[24px]'>Name</Label>
+              <Input id="name" placeholder="Enter your name" className='text-[20px]' onChange={(e)=>setName(e.target.value)}/>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email" className='text-[24px]'>Email</Label>
+              <Input id="email" type="email" placeholder="Enter your email" className='text-[20px]' onChange={(e)=>setEmail(e.target.value)}/>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="address" className='text-[24px]'>Address</Label>
+              <Input id="address" placeholder="Enter your address" className='text-[20px]' onChange={(e)=>setAddress(e.target.value)}/>
+            </div>
+          </CardContent>
+        </Card>
+
+    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-8">
       <Card>
         <CardHeader>
           <CardTitle className='text-[35px]'>Payment</CardTitle>
@@ -161,7 +267,7 @@ export default function Payment() {
           </div>
         </CardContent>
       </Card>
-      <div className="grid gap-4">
+      <div className="grid gap-12">
         <Card>
           <CardHeader>
             <CardTitle className='text-[35px]'>Order Summary</CardTitle>
@@ -191,29 +297,81 @@ export default function Payment() {
         </Button>
       </div>
     </div>
+
+    </div>
     <section className="py-12 px-4 md:px-6">
       <div className="container mx-auto">
         <h2 className="text-[35px] font-bold mb-8">Explore Our Addons</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {addons.map((addon, index) => (
-            <div key={index} className="bg-card p-6 rounded-lg shadow-sm transition-all hover:shadow-md">
+
+            <div className="bg-card p-6 rounded-lg shadow-sm border-[1px] border-gray-200 transition-all hover:shadow-md">
               <div className="flex items-center mb-4">
                 <div className="bg-muted rounded-md p-2 mr-4">
                 <MdBookmarkAdd />
                 </div>
-                <h3 className="text-[24px] font-semibold">{addon.title}</h3>
+                <h3 className="text-[24px] font-semibold">{addons[0].title}</h3>
               </div>
               <div className='overflow-hidden mb-4'>
-              <img src={addon.src} alt="" className='rounded-3xl' style={{ aspectRatio: "350/350", objectFit: "cover" }}/>
+              <img src={addons[0].src} alt="" className='rounded-3xl' style={{ aspectRatio: "350/350", objectFit: "cover" }}/>
               </div>
-              <p className="text-muted-foreground text-[16px]">{addon.description1}</p>
-              <p className="text-muted-foreground text-[16px]">{addon.description2}</p>
-              <p className="text-muted-foreground text-[16px] mb-6">{addon.description3}</p>
-              <Button variant="outline" size="sm" className="w-full text-[20px]">
-                Add
+              <p className="text-muted-foreground text-[16px]">{addons[0].description1}</p>
+              <p className="text-muted-foreground text-[16px]">{addons[0].description2}</p>
+              <p className="text-muted-foreground text-[16px] mb-6">{addons[0].description3}</p>
+              <Button variant="outline" size="sm" className={`w-full text-[20px] ${buttonColor5} ${textColor5}`} 
+              onClick={() => {
+                if (hitch5) {
+                  alert("Item Removed from Cart");
+                  setHitch5(false);
+                  setButtonColor5("bg-white");
+                  setButtonText5("Add to Cart");
+                  setTextColor5("text-white");
+                } else {
+                  alert("Item Added to Cart");
+                  setHitch5(true);
+                  setButtonColor5("bg-green-400");
+                  setButtonText5("Remove from Cart");
+                  setTextColor5("text-black");
+                }
+              }}
+              >
+                {buttonText5}
               </Button>
             </div>
-          ))}
+
+            <div className="bg-card p-6 rounded-lg shadow-sm border-[1px] border-gray-200 transition-all hover:shadow-md">
+              <div className="flex items-center mb-4">
+                <div className="bg-muted rounded-md p-2 mr-4">
+                <MdBookmarkAdd />
+                </div>
+                <h3 className="text-[24px] font-semibold">{addons[1].title}</h3>
+              </div>
+              <div className='overflow-hidden mb-4'>
+              <img src={addons[1].src} alt="" className='rounded-3xl' style={{ aspectRatio: "350/350", objectFit: "cover" }}/>
+              </div>
+              <p className="text-muted-foreground text-[16px]">{addons[1].description1}</p>
+              <p className="text-muted-foreground text-[16px]">{addons[1].description2}</p>
+              <p className="text-muted-foreground text-[16px] mb-6">{addons[1].description3}</p>
+              <Button variant="outline" size="sm" className={`w-full text-[20px] ${buttonColor7} ${textColor7}`}
+                             onClick={() => {
+                              if (hitch7) {
+                                alert("Item Removed from Cart");
+                                setHitch7(false);
+                                setButtonColor7("bg-white");
+                                setButtonText7("Add to Cart");
+                                setTextColor7("text-black");
+                              } else {
+                                alert("Item Added to Cart");
+                                setHitch7(true);
+                                setButtonColor7("bg-green-400");
+                                setButtonText7("Remove from Cart");
+                                setTextColor7("text-black");
+                              }
+                            }}
+               >
+                {buttonText7}
+              </Button>
+            </div>
+ 
         </div>
       </div>
     </section>

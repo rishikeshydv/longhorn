@@ -43,7 +43,7 @@ export default function ImgCarousalMobile() {
           <div className="flex-[0_0_100%]">
           <div className="flex gap-10 overflow-x-auto px-4 pt-[50px] md:pt-[103px] md:pb-[70px]">
               <img
-                src="/trailers/trailer2.png"
+                src="/trailers/2021-pj/2021-pj-1.png"
                 alt="Trailer 1"
                 className="rounded-lg"
                 width="300"
@@ -57,7 +57,7 @@ export default function ImgCarousalMobile() {
           <div className="flex-[0_0_100%]">
           <div className="flex gap-10 overflow-x-auto px-4 pt-[50px] md:pt-[103px] md:pb-[70px]">
               <img
-                src="/trailers/trailer2.png"
+                src="/trailers/2024-enclosed/2024-enclosed-1.png"
                 alt="Trailer 1"
                 className="rounded-lg"
                 width="300"
@@ -70,7 +70,7 @@ export default function ImgCarousalMobile() {
           <div className="flex-[0_0_100%]">
           <div className="flex gap-10 overflow-x-auto px-4 pt-[50px] md:pt-[103px] md:pb-[70px]">
               <img
-                src="/trailers/trailer2.png"
+                src="/trailers/dump/dump-1.png"
                 alt="Trailer 1"
                 className="rounded-lg"
                 width="300"
