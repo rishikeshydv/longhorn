@@ -68,7 +68,7 @@ export default function ImgCarousal() {
             .flat()
             .map((image, index) => (
               <div className="flex-[0_0_100%]" key={index}>
-                <div className="flex gap-6 px-4 pt-[103px] pb-[70px]">
+                <div className="flex justify-center gap-6 px-4 pt-[103px] pb-[70px]">
                   {images.map((img, i) => (
                     <img
                       key={i}
