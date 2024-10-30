@@ -14,7 +14,7 @@ const EmailTemplate= ({order}:{order:OrderDetails}) => {
     <section className="w-full min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center p-4">
       <div className="max-w-4xl bg-white rounded-2xl shadow-2xl p-8 flex flex-col md:flex-row gap-8">
         <div className="space-y-6">
-          <p className='text-gray-700 leading-relaxed font-bold'>Dear Customer,</p>
+          <p className='text-gray-700 leading-relaxed font-bold'>Dear {order.name},</p>
           <p className="text-gray-700 leading-relaxed">
             We wanted to take a moment to express our sincere gratitude for your support and trust in our trailer rentals. Your
             business means the world to us, and we are honored to have you as a valued customer.
@@ -38,22 +38,22 @@ const EmailTemplate= ({order}:{order:OrderDetails}) => {
           </div>
         </div>
         <div className="bg-gray-100 rounded-2xl p-8 flex-1">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Order Details</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 underline">Order Details</h2>
           <div className="space-y-6">
             <div className="flex justify-between">
               <span className="text-gray-600">Order Date:&nbsp;&nbsp;</span>
               <span className="font-bold text-gray-800">{order.date}</span>
             </div>
             <div className="space-y-4">
-              <span className="text-gray-600 font-bold">Items:</span>
-                  <div className="flex justify-between" key={order.name}>
-                    <span className="text-gray-600">{order.name}</span>
+              <p className="text-gray-600 font-bold" style={{fontSize:"14px",textDecoration:"underline"}}>Items:</p>
+                  <div className="flex justify-between" key={order.product} style={{marginTop:"-6px"}}>
+                    <span className="text-gray-600">{order.product}</span>
                     <span className="font-bold text-gray-800">&nbsp;&nbsp;x&nbsp;{order.days}</span>
                   </div>
 
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Total:</span>
+              <span className="text-gray-600">Total:&nbsp;&nbsp;&nbsp;</span>
               <span className="font-bold text-gray-800">${order.total}</span>
             </div>
           </div>

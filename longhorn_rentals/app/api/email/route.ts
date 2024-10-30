@@ -9,7 +9,7 @@ export async function POST(req:NextRequest) {
     try {
         const orderReceived = await req.json();
       const { data, error } = await resend.emails.send({
-          from: "info@fsclipz.com",
+          from: "Longhorn Trailers <help@longhorntrailerrentals.com>",
           to: orderReceived.email,
           subject: "🎉Thank you for your purchase!",
           react: EmailTemplate({ order:orderReceived})
