@@ -3,14 +3,18 @@ import React, {useEffect, useState} from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
+
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import NavBar from '@/components/navbar/NavBar'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { MdBookmarkAdd } from "react-icons/md";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import PaymentForm from '@/components/payment-form/PaymentForm'
 
 export default function Payment() {
+    const router = useRouter();
     const { trailerType,days } = useParams();
     const shipping = 0;
     const discount = 0;
@@ -44,31 +48,45 @@ export default function Payment() {
     ]
 
     //user information
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [address, setAddress] = React.useState("");
+    const [name_, setName] = React.useState("");
+    const [email_, setEmail] = React.useState("");
+    const [address_, setAddress] = React.useState("");
 
     //handling emails
-  const OrderDeliveryEmail = async (orderNumber: string, email: string) => {
-    const response = await fetch("/api/email", {
+  const OrderDeliveryEmail = async () => {
+    await fetch("/api/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
-        name: name,
+        email: email_,
+        name: name_,
         product: trailerType.toString().toUpperCase(),
         days: days,
         date: new Date().toLocaleDateString(),
         total: total,
+        address: address_,
       }),
     });
-    console.log(response.json());
+
+    await fetch("/api/self-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email_,
+        name: name_,
+        product: trailerType.toString().toUpperCase(),
+        days: days,
+        date: new Date().toLocaleDateString(),
+        total: total,
+        address: address_,
+      }),
+    });
   };
 
-
-  
 
 
   //handling stripe payment
@@ -92,17 +110,23 @@ export default function Payment() {
       const data = await response.json();
       setClientSecret(data.clientSecret);
     };
-    //actual code
-    // if (total > 0){
-    //   fetchClientSecret();
-    // }
-
-    //dummy code
-    if (total > 9999999999){
+    if (total > 0){
       fetchClientSecret();
     }
 }, [total]);
 
+      const [paymentCompleted, setPaymentCompleted] = React.useState(false);
+      const stripePromise = loadStripe(
+        process.env.NEXT_PUBLIC_STRIPE_LIVE_PUBLISHABLE_KEY!
+      );
+
+      useEffect(() => {
+        if (paymentCompleted){
+          OrderDeliveryEmail();
+          router.push("/success");
+        }
+      },[paymentCompleted])
+    
 useEffect(() => {
     //calculating total
     if(trailerType == "2024-enclosed"){
@@ -184,8 +208,6 @@ useEffect(() => {
     }
   }, [trailerType, days]);
 
-  //useless code for build purpose
-  console.log(email,address,OrderDeliveryEmail,clientSecret);
   return (
    <main>
     <div className='bg-black'>
@@ -214,7 +236,36 @@ useEffect(() => {
           </CardContent>
     </Card>
 
-    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-8">
+    <div>
+    {clientSecret? (
+                  <Elements
+                    options={{
+                      clientSecret: clientSecret,
+                      appearance: { theme: "stripe" },
+                    }}
+                    stripe={stripePromise}
+                  >
+                    <PaymentForm
+                      clientSecret={clientSecret}
+                      setPaymentCompleted={setPaymentCompleted}
+                      total={total}
+                      shipping={shipping}
+                      discount={discount}
+                      trailerType={trailerType as string}
+                      daysOfRental={days as string}
+                    />
+                  </Elements>
+                ):
+                (
+                  <div>
+                    Loading.. .
+                  </div>
+                )
+                }
+    </div>
+
+
+    {/* <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-8">
       <Card>
         <CardHeader>
           <CardTitle className='text-[35px]'>Payment</CardTitle>
@@ -259,6 +310,29 @@ useEffect(() => {
               <Input id="cvv" placeholder="123" className='text-[24px]'/>
             </div>
           </div>
+          {
+            clientSecret ? (
+              <Elements
+                options={{
+                  clientSecret: clientSecret,
+                  appearance: { theme: "stripe" },
+                }}
+                stripe={stripePromise}
+                >
+                <CardElement
+              id="payment-element"
+              className="bg-gray-100 p-2"
+            />
+                </Elements>
+
+            ):
+            (
+              <div>
+                Loading...
+              </div>
+            )
+          }
+
         </CardContent>
       </Card>
       <div className="grid gap-12">
@@ -290,7 +364,7 @@ useEffect(() => {
           Pay
         </Button>
       </div>
-    </div>
+    </div> */}
 
     </div>
     <section className="py-12 px-4 md:px-6">

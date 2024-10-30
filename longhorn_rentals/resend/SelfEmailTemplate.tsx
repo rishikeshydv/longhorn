@@ -10,19 +10,17 @@ interface OrderDetails {
     address: string;
 }
 
-const EmailTemplate= ({order}:{order:OrderDetails}) => {
+const SelfEmailTemplate= ({order}:{order:OrderDetails}) => {
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center p-4">
       <div className="max-w-4xl bg-white rounded-2xl shadow-2xl p-8 flex flex-col md:flex-row gap-8">
         <div className="space-y-6">
-          <p className='text-gray-700 leading-relaxed font-bold'>Dear {order.name},</p>
+          <p className='text-gray-700 leading-relaxed font-bold'>Dear Humberto,</p>
           <p className="text-gray-700 leading-relaxed">
-            We wanted to take a moment to express our sincere gratitude for your support and trust in our trailer rentals. Your
-            business means the world to us, and we are honored to have you as a valued customer.
+            {order.name} just placed an order for a {order.product} for {order.days} days. The total cost of the order is ${order.total}.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Thank you for choosing us, and we look forward to continuing to provide you with exceptional trailers and
-            services.
+            The order was placed on {order.date}.
           </p>
           <div className="flex items-center space-x-4">
             <p className="text-gray-700">Best regards,</p>
@@ -45,6 +43,10 @@ const EmailTemplate= ({order}:{order:OrderDetails}) => {
               <span className="text-gray-600">Order Date:&nbsp;&nbsp;</span>
               <span className="font-bold text-gray-800">{order.date}</span>
             </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Order Address:&nbsp;&nbsp;</span>
+              <span className="font-bold text-gray-800">{order.address}</span>
+            </div>
             <div className="space-y-4">
               <p className="text-gray-600 font-bold" style={{fontSize:"14px",textDecoration:"underline"}}>Items:</p>
                   <div className="flex justify-between" key={order.product} style={{marginTop:"-6px"}}>
@@ -64,4 +66,4 @@ const EmailTemplate= ({order}:{order:OrderDetails}) => {
   )
 }
 
-export default EmailTemplate
+export default SelfEmailTemplate
