@@ -146,7 +146,7 @@ export default function Products() {
                         value="2021-pj"
                         className="text-[18px] border-b-[1px]"
                       >
-                        2021 PJ 20&apos; x 102&quos; SUPERWIDE B5
+                        2021 PJ 20&apos; x 102&quot; SUPERWIDE B5
                       </SelectItem>
                       <SelectItem
                         value="utility"

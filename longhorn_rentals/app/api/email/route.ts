@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import dotenv from "dotenv";
 dotenv.config();
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY!);
 export async function POST(req:NextRequest) {
   //here we will check if any of the order is of tyoe Mods
     try {
