@@ -222,10 +222,10 @@ export default function MyCarousal() {
             $50 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $130 : 3DAYS
+            $110 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $290 : 1WEEK
+            $200 : 1WEEK
           </Badge>
         </div>
         <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">6&apos;x8&apos; Big Tex 30SA Utility Trailer</h2>
@@ -309,13 +309,13 @@ export default function MyCarousal() {
         />
         <div className="flex justify-start gap-2 mt-4">
           <Badge variant="default" className="bg-[#ffd100] text-black text-[16px] px-[18px]">
-            $145 : 1DAY
+            $100 : 1DAY
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $390 : 3DAYS
+            $270 : 3DAYS
           </Badge>
           <Badge variant="default" className="bg-[#333] text-white text-[16px] px-[18px]">
-            $800 : 1WEEK
+            $550 : 1WEEK
           </Badge>
         </div>
         <h2 className="mt-4 text-[30px] font-bold border-t-[1px] border-b-[1px] border-[#808080] py-1">14&apos;x83&apos;x36&apos; Dump Trailer</h2>

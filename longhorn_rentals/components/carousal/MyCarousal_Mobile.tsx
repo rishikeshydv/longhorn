@@ -91,7 +91,7 @@ export default function MyCarousalMobile() {
         </div>
         <Button className=" mt-4 bg-[#ffd100] text-black text-[16px] hover:bg-yellow-500" onClick={()=>router.push("/details/2024-enclosed")}>MORE DETAILS</Button>
       </CardContent>
-    </Card>
+      </Card>
   </div>
           </div>
           
