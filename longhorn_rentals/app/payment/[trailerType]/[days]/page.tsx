@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useState} from 'react'
+import React, {use, useEffect, useState} from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -13,10 +13,45 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from '@/components/payment-form/PaymentForm'
 
+//rental and stripe fees
+import { DumpTrailerPrice, DumpTrailerStripeFees } from '@/pricings/dump-price'
+import { CarHaulerStripeFees, CarHaulerPrice } from '@/pricings/hauler-price'
+import { LargeEnclosedStripeFees, LargeEnclosedTrailerPrice } from '@/pricings/large-enclosed-price'
+import { LivestockTrailerStripeFees,LivestockTrailerPrice } from '@/pricings/livestock-price'
+import { SmallEnclosedStripeFees,SmallEnclosedPrice } from '@/pricings/small-enclosed-price'
+import { UtilityTrailerStripeFees,UtilityTrailerPrice } from '@/pricings/utility-price'
+
 export default function Payment() {
     const router = useRouter();
     const { trailerType,days } = useParams();
-    const shipping = 0;
+    const [shipping, setShipping] = React.useState(0);
+    //setting shipping fees
+    useEffect(() => {
+      if (trailerType == "2024-enclosed"){
+        setShipping(LargeEnclosedStripeFees[days.toString() as keyof typeof LargeEnclosedStripeFees]);
+      }
+      else if (trailerType == "2023-enclosed"){
+        setShipping(SmallEnclosedStripeFees[days.toString() as keyof typeof SmallEnclosedStripeFees]);
+      }
+      else if (trailerType == "2021-pj"){
+        setShipping(CarHaulerStripeFees[days.toString() as keyof typeof CarHaulerStripeFees]);
+      }
+      else if (trailerType == "dump"){
+        setShipping(DumpTrailerStripeFees[days.toString() as keyof typeof DumpTrailerStripeFees]);
+      }
+      else if (trailerType == "livestock"){
+        setShipping(LivestockTrailerStripeFees[days.toString() as keyof typeof LivestockTrailerStripeFees]);
+      }
+      else if (trailerType == "utility"){
+        setShipping(UtilityTrailerStripeFees[days.toString() as keyof typeof UtilityTrailerStripeFees]);
+      }
+      else if (trailerType == "superwide"){
+        setShipping(CarHaulerStripeFees[days.toString() as keyof typeof CarHaulerStripeFees]);
+      }
+      else{
+        setShipping(0);
+      }
+    }, [days]);
     const discount = 0;
     const [total, setTotal] = React.useState(0);
     //for hitch5
@@ -130,81 +165,49 @@ export default function Payment() {
 useEffect(() => {
     //calculating total
     if(trailerType == "2024-enclosed"){
-      if (Number(days) == 3){
-        setTotal(270);
-      }
-      else if (Number(days) == 7){
-        setTotal(550);
-      }
-      else {
-        setTotal(100 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = LargeEnclosedTrailerPrice[daysString as keyof typeof LargeEnclosedTrailerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else if (trailerType == "2023-enclosed"){
-      if (Number(days) == 3){
-        setTotal(150);
-      }
-      else if (Number(days) == 7){
-        setTotal(280);
-      }
-      else {
-        setTotal(60 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = SmallEnclosedPrice[daysString as keyof typeof SmallEnclosedPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else if (trailerType == "2021-pj"){
-      if (Number(days) == 3){
-        setTotal(270);
-      }
-      else if (Number(days) == 7){
-        setTotal(550);
-      }
-      else {
-        setTotal(100 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = CarHaulerPrice[daysString as keyof typeof CarHaulerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else if (trailerType == "dump"){
-      if (Number(days) == 3){
-        setTotal(390);
-      }
-      else if (Number(days) == 7){
-        setTotal(800);
-      }
-      else {
-        setTotal(145 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = DumpTrailerPrice[daysString as keyof typeof DumpTrailerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else if (trailerType == "livestock"){
-      if (Number(days) == 3){
-        setTotal(240);
-      }
-      else if (Number(days) == 7){
-        setTotal(490);
-      }
-      else {
-        setTotal(90 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = LivestockTrailerPrice[daysString as keyof typeof LivestockTrailerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else if (trailerType == "utility"){
-      if (Number(days) == 3){
-        setTotal(130);
-      }
-      else if (Number(days) == 7){
-        setTotal(290);
-      }
-      else {
-        setTotal(50 * Number(days));
-      }
+      const daysString = days.toString();
+      const trailerPrice = UtilityTrailerPrice[daysString as keyof typeof UtilityTrailerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
+    }
+    else if (trailerType == "superwide"){
+      const daysString = days.toString();
+      const trailerPrice = CarHaulerPrice[daysString as keyof typeof CarHaulerPrice] || 0;
+      // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+      setTotal(trailerPrice);
     }
     else{
-      if (Number(days) == 3){
-        setTotal(270);
-      }
-      else if (Number(days) == 7){
-        setTotal(550);
-      }
-      else {
-        setTotal(100 * Number(days));
-      }
+      setTotal(0);
     }
   }, [trailerType, days]);
 

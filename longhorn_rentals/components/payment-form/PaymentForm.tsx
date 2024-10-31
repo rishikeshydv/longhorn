@@ -138,8 +138,8 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
             <span  className='text-[20px]'>${total}.00</span>
           </div>
           <div className="flex items-center justify-between">
-            <span  className='text-[24px]'>Shipping</span>
-            <span  className='text-[20px]'>${shipping}.00</span>
+            <span  className='text-[24px]'>Tax</span>
+            <span  className='text-[20px]'>${shipping}</span>
           </div>
           <div className="flex items-center justify-between">
             <span  className='text-[24px]'>Discount</span>
@@ -148,7 +148,7 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
           <Separator />
           <div className="flex items-center justify-between font-medium">
             <span  className='text-[30px] font-bold'>Total</span>
-            <span className='text-[24px]'>${total+shipping-discount}.00</span>
+            <span className='text-[24px]'>${total+shipping-discount}</span>
           </div>
         </CardContent>
       </Card>

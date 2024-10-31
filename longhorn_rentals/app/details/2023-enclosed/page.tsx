@@ -12,6 +12,7 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
 import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
 import { useRouter } from "next/navigation";
+import { SmallEnclosedPrice } from "@/pricings/small-enclosed-price";
 
 export default function Details() {
   const trailerType = "2023-enclosed";
@@ -73,16 +74,10 @@ export default function Details() {
     const diff = Math.abs(date.to.getTime() - date.from.getTime());
     const days = Math.ceil(diff / (1000 * 60 * 60 * 24))+1;
     setDay(days);
-    //3 days and 7 days discount
-    if (days == 3){
-      setTotal(150);
-    }
-    else if (days == 7){
-      setTotal(280);
-    }
-    else {
-      setTotal(price * days);
-    }
+    const daysString = days.toString();
+    const trailerPrice = SmallEnclosedPrice[daysString as keyof typeof SmallEnclosedPrice] || 0;
+    // const stripeFee = LargeEnclosedStripeFees[daysString as keyof LargeEnclosedStripeFees] || 0;
+    setTotal(trailerPrice);
   },
   [date]);
   return (
