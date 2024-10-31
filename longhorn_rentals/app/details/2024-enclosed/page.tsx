@@ -12,7 +12,7 @@ import MyCarousalMobile from "@/components/carousal/MyCarousal_Mobile";
 import TrailerImgCarousal from "@/components/carousal/TrailerImgCarousal";
 import TrailerImgCarousalMobile from "@/components/carousal/TrailerImgCarousalMobile";
 import { useRouter } from "next/navigation";
-import { LargeEnclosedStripeFees, LargeEnclosedTrailerPrice } from "@/pricings/large-enclosed-price";
+import { LargeEnclosedTrailerPrice } from "@/pricings/large-enclosed-price";
 
 export default function Details() {
   const trailerType = "2024-enclosed";
@@ -24,7 +24,6 @@ export default function Details() {
   const [start, setStart] = React.useState<string>("MM/DD/YYYY");
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   // const [trailerType, setTrailerType] = React.useState<string>("");
-  const price = 100.00;
   const [total, setTotal] = React.useState<number>(0);
   const router = useRouter();
   // const onSubmit = () => {

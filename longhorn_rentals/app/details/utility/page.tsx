@@ -64,7 +64,6 @@ export default function Details() {
       "/trailers/utility/utility-7.png",
     ];
 
-  const price = 50.00;
   const [total, setTotal] = React.useState<number>(0);
 
   React.useEffect(() => {

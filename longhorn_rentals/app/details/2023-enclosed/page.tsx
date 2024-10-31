@@ -65,7 +65,6 @@ export default function Details() {
     //   }
     // }
 
-  const price = 60.00;
   const [total, setTotal] = React.useState<number>(0);
   React.useEffect(() => {
     if (!date.from || !date.to) {

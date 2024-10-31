@@ -64,7 +64,6 @@ export default function Details() {
     //     router.push("/details/superwide");
     //   }
     // }
-  const price = 145.00;
   const [total, setTotal] = React.useState<number>(0);
   React.useEffect(() => {
     if (!date.from || !date.to) {

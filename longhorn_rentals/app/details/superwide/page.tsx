@@ -63,7 +63,6 @@ export default function Details() {
       "/trailers/superwide/superwide-1.jpg",
     ];
 
-  const price = 100.00;
   const [total, setTotal] = React.useState<number>(0);
   React.useEffect(() => {
     if (!date.from || !date.to) {
