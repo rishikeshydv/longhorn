@@ -151,6 +151,7 @@ export default function Payment() {
 }, [total]);
 
       const [paymentCompleted, setPaymentCompleted] = React.useState(false);
+      
       const stripePromise = loadStripe(
         process.env.NEXT_PUBLIC_STRIPE_LIVE_PUBLISHABLE_KEY!
       );

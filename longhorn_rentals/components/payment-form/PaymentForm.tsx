@@ -27,6 +27,8 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
         "dump":"Dump Trailer",
         "superwide":"Superwide Trailer"
     }
+
+    const [errorMsg, setErrorMsg] = React.useState<string | null>(null);
         //payment state variables
         const stripe = useStripe();
         const elements = useElements();
@@ -43,8 +45,6 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
         },[stripe, clientSecret]);
 
         const onSubmit = async () => {
-            //setShowCart(false);
-            setPaymentCompleted(true);
         
             if (!stripe) {
               // Stripe.js hasn't yet loaded.
@@ -72,10 +72,13 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
             if (error) {
               console.log("[error]", error);
               setIsLoading(false);
+              setErrorMsg("Invalid Card Details. Please try again.");
               return;
             }
         
+            
             setIsLoading(false);
+            setPaymentCompleted(true);
         
            //await PushOrder(newOrder);
             //handling the email
@@ -124,7 +127,9 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
                             },
                         },
                     }}
+
                   />
+        <p className="text-red-500 text-lg">{errorMsg}</p>
       </CardContent>
     </Card>
     <div className="grid gap-12">
@@ -157,7 +162,7 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
       </Button> */}
       <Button size="lg" variant={"default"} onClick={onSubmit} className="w-full text-[24px]" disabled={isLoading || !stripe || !elements}>
               {isLoading ? <div className="spinner" id="spinner"></div> : "Pay"}
-              </Button>
+      </Button>
     </div>
   </div>
   )
