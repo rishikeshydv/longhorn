@@ -2,12 +2,15 @@ import React from 'react'
 
 interface OrderDetails {
     email: string;
+    phone: string;
     name: string;
     product: string;
     days: number;
-    date: string;
+    order_date: string;
     total: number;
     address: string;
+    start: string;
+    end: string;
 }
 
 const SelfEmailTemplate= ({order}:{order:OrderDetails}) => {
@@ -20,7 +23,7 @@ const SelfEmailTemplate= ({order}:{order:OrderDetails}) => {
             {order.name} just placed an order for a {order.product} for {order.days} days. The total cost of the order is ${order.total}.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            The order was placed on {order.date}.
+            The order was placed on {order.order_date}.
           </p>
           <div className="flex items-center space-x-4">
             <p className="text-gray-700">Best regards,</p>
@@ -40,8 +43,16 @@ const SelfEmailTemplate= ({order}:{order:OrderDetails}) => {
           <h2 className="text-2xl font-bold text-gray-800 mb-6 underline">Order Details</h2>
           <div className="space-y-6">
             <div className="flex justify-between">
-              <span className="text-gray-600">Order Date:&nbsp;&nbsp;</span>
-              <span className="font-bold text-gray-800">{order.date}</span>
+              <span className="text-gray-600">Customer Email:&nbsp;&nbsp;</span>
+              <span className="font-bold text-gray-800">{order.email}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Customer Phone:&nbsp;&nbsp;</span>
+              <span className="font-bold text-gray-800">{order.phone}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Rental Date:&nbsp;&nbsp;</span>
+              <span className="font-bold text-gray-800">{order.start} - {order.end}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Order Address:&nbsp;&nbsp;</span>

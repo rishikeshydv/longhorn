@@ -86,6 +86,7 @@ export default function Payment() {
     const [name_, setName] = React.useState("");
     const [email_, setEmail] = React.useState("");
     const [address_, setAddress] = React.useState("");
+    const [phone_, setPhone] = React.useState("");
 
     //handling emails
   const OrderDeliveryEmail = async () => {
@@ -105,6 +106,7 @@ export default function Payment() {
       }),
     });
 
+    //self email
     await fetch("/api/self-email", {
       method: "POST",
       headers: {
@@ -115,9 +117,12 @@ export default function Payment() {
         name: name_,
         product: trailerType.toString().toUpperCase(),
         days: days,
-        date: new Date().toLocaleDateString(),
+        order_date: new Date().toLocaleDateString(),
         total: total,
         address: address_,
+        phone: phone_,
+        start: start_,
+        end: end_,
       }),
     });
   };
@@ -133,7 +138,7 @@ export default function Payment() {
         return;
       }
       let newAmount = 0;
-      newAmount = total * 100;
+      newAmount = (total+shipping) * 100
       const response = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: {
@@ -212,6 +217,26 @@ useEffect(() => {
     }
   }, [trailerType, days]);
 
+  //check if the user inputs his address, name, email and phone number
+  const checkUserInputs = () => {
+    if (name_ === "" || email_ === "" || address_ === "" || phone_ === ""){
+      return false;
+    }
+    return true;
+  }
+
+  //get the sessionStorage
+  const [start_, setStart] = React.useState("");
+  const [end_, setEnd] = React.useState("");
+  React.useEffect(() => {
+    const startDate = sessionStorage.getItem("start");
+    const endDate = sessionStorage.getItem("end");
+    setStart(startDate || "");
+    setEnd(endDate || "");
+  },[]);
+  // console.log('Start Date: ',start_);
+  // console.log('End Date: ',end_);
+
   return (
    <main>
     <div className='bg-black'>
@@ -232,6 +257,10 @@ useEffect(() => {
             <div className="grid gap-2">
               <Label htmlFor="email" className='text-[24px]'>Email</Label>
               <Input id="email" type="email" placeholder="Enter your email" className='text-[20px]' onChange={(e)=>setEmail(e.target.value)}/>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="phone" className='text-[24px]'>Phone</Label>
+              <Input id="phone" type="phone" placeholder="Enter your phone number" className='text-[20px]' onChange={(e)=>setPhone(e.target.value)}/>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="address" className='text-[24px]'>Address</Label>
@@ -257,6 +286,7 @@ useEffect(() => {
                       discount={discount}
                       trailerType={trailerType as string}
                       daysOfRental={days as string}
+                      checkUserInputs={checkUserInputs}
                     />
                   </Elements>
                 ):

@@ -16,8 +16,10 @@ interface PaymentFormProps {
     discount: number;
     trailerType: string;
     daysOfRental: string;
+    //pass a function checkUserInputs
+    checkUserInputs: () => boolean;
   }
-export default function PaymentForm({setPaymentCompleted,clientSecret,total,shipping,discount,trailerType,daysOfRental}: PaymentFormProps) {
+export default function PaymentForm({setPaymentCompleted,clientSecret,total,shipping,discount,trailerType,daysOfRental, checkUserInputs}: PaymentFormProps) {
     const trailerKV = {
         "2024-enclosed":"2024 7x16 Enclosed Trailer",
         "2023-enclosed":"2023 6x12 Enclosed Trailer",
@@ -45,6 +47,13 @@ export default function PaymentForm({setPaymentCompleted,clientSecret,total,ship
         },[stripe, clientSecret]);
 
         const onSubmit = async () => {
+
+          //check if user inputs are valid
+          const isValid = checkUserInputs();
+          if (!isValid) {
+            alert("Please fill in all the fields");
+            return;
+          }
         
             if (!stripe) {
               // Stripe.js hasn't yet loaded.

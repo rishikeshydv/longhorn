@@ -25,6 +25,15 @@ export default function Details() {
   const [end, setEnd] = React.useState<string>("MM/DD/YYYY");
   // const [trailerType, setTrailerType] = React.useState<string>("");
 
+    //store the start and end date in the session storage
+    React.useEffect(() => {
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("start", start);
+        sessionStorage.setItem("end", end);
+      }
+    }
+    ,[start,end]);
+
   // const onSubmit = () => {
   //   if (trailerType === "") {
   //     alert("Please select a trailer type");
